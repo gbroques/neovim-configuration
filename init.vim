@@ -16,8 +16,9 @@ let mapleader = ","
 " Map leader s to save
 noremap <Leader>s :update<CR>
 
-" Map 'jk' to the Esc key
-inoremap jk <Esc>
+" Map 'ne' to the Esc key
+" 'ne' is equivalent to 'jk' for Colemak
+inoremap ne <Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Install Plug
