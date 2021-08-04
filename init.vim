@@ -7,6 +7,13 @@
 " absolute line number.
 set number relativenumber
 
+" Enable filetype plugin and indentation detection
+filetype plugin indent on
+" https://www.youtube.com/watch?v=Gs1VDYnS-Ac&list=PLesiP49zG6snB_Wp3wTeD5u8bc7sDuS5O&t=337s
+set backspace=indent,eol,start
+
+let $RTP=split(&runtimepath, ',')[0]
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
