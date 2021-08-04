@@ -45,6 +45,7 @@ endif
 " https://github.com/junegunn/vim-plug
 call plug#begin(stdpath('data') . '/plugged')
 
+let $GIT_SSL_NO_VERIFY = 'true'
 Plug 'joshdick/onedark.vim' " Theme
 Plug 'itchyny/lightline.vim' " Status Line
 Plug 'sheerun/vim-polyglot' " Better syntax high-lighting
