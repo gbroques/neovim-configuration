@@ -49,6 +49,7 @@ let $GIT_SSL_NO_VERIFY = 'true'
 Plug 'joshdick/onedark.vim' " Theme
 Plug 'itchyny/lightline.vim' " Status Line
 Plug 'sheerun/vim-polyglot' " Better syntax high-lighting
+Plug 'tpope/vim-surround'
 Plug 'uiiaoo/java-syntax.vim' " Java syntax high-lighting not supported in vim-polygot
 
 call plug#end()
