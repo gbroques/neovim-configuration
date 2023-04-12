@@ -23,10 +23,26 @@ local config = {
         "-configuration", vim.fs.normalize(jdtls_path .. '/config_win'),
         "-data", vim.fn.expand('~/.cache/jdtls-workspace/') .. workspace_dir
     },
+    settings = {
+        ['java.format.settings.url'] = vim.fn.expand("~/.vscode/formatter.xml")
+    },
     root_dir = vim.fs.dirname(vim.fs.find({'pom.xml', '.git'}, { upward = true })[1]),
     init_options = {
         -- https://github.com/eclipse/eclipse.jdt.ls/wiki/Language-Server-Settings-&-Capabilities#extended-client-capabilities
         extendedClientCapabilities = jdtls.extendedClientCapabilities,
     },
+    on_attach = function(client, bufnr)
+        -- https://github.com/mfussenegger/dotfiles/blob/833d634251ebf3bf7e9899ed06ac710735d392da/vim/.config/nvim/ftplugin/java.lua#L88-L94
+        local opts = { silent = true, buffer = bufnr }
+        -- Alt + O for organizing imports.
+        vim.keymap.set('n', "<A-o>", jdtls.organize_imports, opts)
+        vim.keymap.set('n', "<leader>df", jdtls.test_class, opts)
+        vim.keymap.set('n', "<leader>dn", jdtls.test_nearest_method, opts)
+        -- cr for (c)ode (r)efactor
+        vim.keymap.set('n', "crv", jdtls.extract_variable, opts)
+        vim.keymap.set('v', 'crm', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]], opts)
+        vim.keymap.set('n', "crc", jdtls.extract_constant, opts)
+    end
 }
+
 jdtls.start_or_attach(config)
