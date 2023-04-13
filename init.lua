@@ -9,6 +9,10 @@ vim.o.cursorline = true
 -- -------
 require('plugins')
 
+require("better_escape").setup {
+    mapping = {"ii"}
+}
+
 -- Theme
 -- -----
 local onedark = require('onedark')
