@@ -13,6 +13,7 @@ vim.g.mapleader = ','
 -- Map leader s to save.
 vim.keymap.set('n', '<leader>s', ':update<CR>')
 
+
 -- Plugins
 -- -------
 require('plugins')
@@ -41,6 +42,8 @@ telescope.setup{
 }
 telescope.load_extension("ui-select")
 telescope.load_extension("fzf")
+
+require('nvim-autopairs').setup {}
 
 -- Theme
 -- -----
