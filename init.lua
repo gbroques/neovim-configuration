@@ -10,7 +10,7 @@ vim.o.cursorline = true
 require('plugins')
 
 require("better_escape").setup {
-    mapping = {"ii"}
+    mapping = {"dh"}
 }
 
 -- Theme
