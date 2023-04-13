@@ -1,13 +1,16 @@
 -- General
 -- -------
--- Set relative line numbers.
+-- Set hybrid relative line numbers.
+vim.wo.number = true
 vim.wo.relativenumber = true
+
 -- Highlight cursor line.
 vim.o.cursorline = true
 vim.g.mapleader = ','
 
 -- Mappings
 -- --------
+-- Map leader s to save.
 vim.keymap.set('n', '<leader>s', ':update<CR>')
 
 -- Plugins
