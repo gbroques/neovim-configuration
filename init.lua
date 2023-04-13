@@ -24,13 +24,15 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
-require('telescope').setup{
+telescope = require('telescope')
+telescope.setup{
   defaults = {
     file_ignore_patterns = {
 	".git"
     }
   },
 }
+telescope.load_extension("ui-select")
 
 -- Theme
 -- -----
@@ -69,3 +71,11 @@ require('lualine').setup {
 -- ------------------------
 -- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>", opts)
+vim.keymap.set('n', '<space>f', function()
+    vim.lsp.buf.format { async = true }
+end, opts)
+
