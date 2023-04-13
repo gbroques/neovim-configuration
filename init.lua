@@ -6,6 +6,10 @@ vim.wo.relativenumber = true
 vim.o.cursorline = true
 vim.g.mapleader = ','
 
+-- Mappings
+-- --------
+vim.keymap.set('n', '<leader>s', ':update<CR>')
+
 -- Plugins
 -- -------
 require('plugins')
