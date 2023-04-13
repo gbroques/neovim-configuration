@@ -18,4 +18,8 @@ return require('packer').startup(function(use)
         run = 'make'
     }
     use 'windwp/nvim-autopairs'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use { 'L3MON4D3/LuaSnip', tag = "v1.*" }
+    use 'saadparwaiz1/cmp_luasnip'
 end)

@@ -8,8 +8,12 @@ local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 vim.o.tabstop = 4
 vim.o.shiftwidth = 0
 
+-- for completions
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
+    capabilities = capabilities,
     cmd = {
         -- java MUST be in PATH and version 17 or greater.
         "java",
