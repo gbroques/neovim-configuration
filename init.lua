@@ -71,34 +71,21 @@ cmp.setup({
 })
 -- Theme
 -- -----
-local onedark = require('onedark')
-onedark.setup  {
-    style = 'cool', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    transparent = true, -- Show/hide background
-    term_colors = true, -- Change terminal color as per the selected theme style
-    code_style = {
-        comments = 'none'
-    },
-    colors = {
-        -- Override grey with tint for lighter line numbers.
-        -- https://github.com/navarasu/onedark.nvim/blob/932a86846d51f3d39a99f7e4d0c0ec34d4e404d3/lua/onedark/palette.lua#L75
-        -- https://www.color-hex.com/color/546178
-        grey = "#8790A0",
-        -- Override bg1 with shade for darker cursor line.
-        -- https://github.com/navarasu/onedark.nvim/blob/932a86846d51f3d39a99f7e4d0c0ec34d4e404d3/lua/onedark/palette.lua#L61
-        -- https://www.color-hex.com/color/2d3343
-        bg1 = '#242835',
-        -- Override foreground with tint.
-        -- https://github.com/navarasu/onedark.nvim/blob/932a86846d51f3d39a99f7e4d0c0ec34d4e404d3/lua/onedark/palette.lua#L67
-        -- https://www.color-hex.com/color/a5b0c5
-        fg = '#b7bfd0'
-    }
-}
-onedark.load()
+vim.o.background = 'dark'
+
+local c = require('vscode.colors').get_colors()
+require('vscode').setup({
+    -- Enable transparent background
+    transparent = true,
+    italic_comments = true,
+    disable_nvimtree_bg = true,
+
+})
+require('vscode').load()
 
 require('lualine').setup {
     options = {
-      theme = 'onedark'
+      theme = 'vscode'
     }
   }
 
