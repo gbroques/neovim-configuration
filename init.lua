@@ -27,6 +27,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 telescope = require('telescope')
 telescope.setup{
   defaults = {
+    wrap_results = true,
     file_ignore_patterns = {
       ".git"
     },
