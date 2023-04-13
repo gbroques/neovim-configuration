@@ -5,6 +5,9 @@ local jdtls_path = '~/jdt-language-server'
 local launcher_jar = vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
 local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 
+vim.o.tabstop = 4
+vim.o.shiftwidth = 0
+
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
     cmd = {
