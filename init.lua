@@ -13,7 +13,6 @@ vim.g.mapleader = ','
 -- Map leader s to save.
 vim.keymap.set('n', '<leader>s', ':update<CR>')
 
-
 -- Plugins
 -- -------
 require('plugins')
@@ -59,7 +58,8 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'luasnip' }
+    { name = 'luasnip' },
+    { name = 'buffer', option = { keyword_length = 5 } } -- increase from default of 3
   }),
   mapping = {
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
