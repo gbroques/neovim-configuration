@@ -129,8 +129,15 @@ require("lualine").setup {
   },
 }
 
+require('nvim-tree').setup {}
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
+
 -- bufferline
-require("bufferline").setup{}
+require("bufferline").setup{
+  options = {
+    offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+  },
+}
 
 -- Language Server Protocol
 -- ------------------------

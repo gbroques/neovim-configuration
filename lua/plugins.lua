@@ -5,9 +5,14 @@ return require('packer').startup(function(use)
     use 'lunarvim/darkplus.nvim'
     -- Download FiraCode Nerd Font
     -- https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
+    use 'nvim-tree/nvim-web-devicons'
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
+    use {
+      'nvim-tree/nvim-tree.lua',
+      requires = { 'nvim-tree/nvim-web-devicons' }
     }
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use 'max397574/better-escape.nvim'
