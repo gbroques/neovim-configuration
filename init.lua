@@ -80,23 +80,8 @@ require("bufferline").setup{}
 
 -- Theme
 -- -----
-vim.o.background = 'dark'
-
-local c = require('vscode.colors').get_colors()
-require('vscode').setup({
-    -- Enable transparent background
-    transparent = true,
-    italic_comments = true,
-    disable_nvimtree_bg = true,
-
-})
-require('vscode').load()
-
-require('lualine').setup {
-    options = {
-      theme = 'vscode'
-    }
-  }
+vim.cmd("colorscheme darkplus")
+require("lualine").setup {}
 
 -- Language Server Protocol
 -- ------------------------
