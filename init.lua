@@ -1,15 +1,23 @@
 -- General
 -- -------
+vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+vim.opt.fileencoding = "utf-8" -- the encoding written to a file
+
+vim.opt.expandtab = true -- convert tabs to spaces
+vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
+vim.opt.tabstop = 2 -- insert 2 spaces for a tab
+
 -- Set hybrid relative line numbers.
 vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- Highlight cursor line.
-vim.o.cursorline = true
-vim.g.mapleader = ','
+vim.opt.cursorline = true
 
 -- for bufferline
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
+
+vim.g.mapleader = ' '
 
 -- Mappings
 -- --------
