@@ -8,6 +8,9 @@ vim.wo.relativenumber = true
 vim.o.cursorline = true
 vim.g.mapleader = ','
 
+-- for bufferline
+vim.o.termguicolors = true
+
 -- Mappings
 -- --------
 -- Map leader s to save.
@@ -21,6 +24,7 @@ require("better_escape").setup {
     mapping = {"dh"}
 }
 
+-- telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -70,6 +74,10 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
 })
+
+-- bufferline
+require("bufferline").setup{}
+
 -- Theme
 -- -----
 vim.o.background = 'dark'

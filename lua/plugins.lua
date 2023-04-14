@@ -2,10 +2,13 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'mfussenegger/nvim-jdtls'
     use 'Mofiqul/vscode.nvim'
+    -- Download FiraCode Nerd Font
+    -- https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use 'max397574/better-escape.nvim'
     use 'windwp/nvim-autopairs'
     use 'tpope/vim-surround'
