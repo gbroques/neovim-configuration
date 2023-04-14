@@ -59,7 +59,8 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'buffer', option = { keyword_length = 5 } } -- increase from default of 3
+    { name = 'buffer', option = { keyword_length = 5 } }, -- increase from default of 3
+    { name = 'path' }
   }),
   mapping = {
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
