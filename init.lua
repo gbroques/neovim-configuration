@@ -61,8 +61,9 @@ require('nvim-autopairs').setup {}
 
 -- Completion
 local cmp = require('cmp')
-local luasnip = require 'luasnip'
 
+-- Snippet engine required for JDTLS completions
+local luasnip = require 'luasnip'
 luasnip.config.setup {}
 
 cmp.setup({
@@ -135,6 +136,7 @@ require('nvim-tree').setup {
     group_empty = true,
   },
 }
+-- e for explorer
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
 
 -- bufferline
