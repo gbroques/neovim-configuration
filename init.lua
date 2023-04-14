@@ -6,6 +6,9 @@ vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2 -- insert 2 spaces for a tab
+vim.opt.smartindent = true -- make indenting smarter again
+vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
+vim.opt.mouse = 'a' -- allow mouse in neovim
 
 -- Set hybrid relative line numbers.
 vim.wo.number = true
@@ -83,13 +86,51 @@ cmp.setup({
   },
 })
 
--- bufferline
-require("bufferline").setup{}
 
 -- Theme
 -- -----
 vim.cmd("colorscheme darkplus")
-require("lualine").setup {}
+local hide_in_width = function()
+  return vim.fn.winwidth(0) > 80
+end
+local spaces = function()
+  return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+end
+require("lualine").setup {
+  options = {
+    globalstatus = true,
+    icons_enabled = true,
+    theme = "auto",
+    component_separators = { left = "", right = ""},
+    section_separators = { left = "", right = "" },
+  },
+  sections = {
+    lualine_a = { "mode" },
+    lualine_b = { "branch" },
+    lualine_c = { {
+     "diagnostics",
+      sources = { "nvim_diagnostic" },
+      sections = { "error", "warn" },
+      symbols = { error = " ", warn = " " },
+      colored = true,
+      always_visible = true,
+    }},
+    lualine_x = { {
+    "diff",
+    colored = false,
+    symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+    cond = hide_in_width,
+  }, spaces, "encoding",  {
+    "filetype",
+    icons_enabled = false,
+  }},
+    lualine_y = { { "location", padding = 1 } },
+    lualine_z = { "progress" },
+  },
+}
+
+-- bufferline
+require("bufferline").setup{}
 
 -- Language Server Protocol
 -- ------------------------
