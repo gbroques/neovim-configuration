@@ -1,4 +1,5 @@
 return require('packer').startup(function(use)
+    -- package manager
     use 'wbthomason/packer.nvim'
     use 'mfussenegger/nvim-jdtls'
     use 'lunarvim/darkplus.nvim'
