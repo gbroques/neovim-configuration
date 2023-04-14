@@ -129,7 +129,12 @@ require("lualine").setup {
   },
 }
 
-require('nvim-tree').setup {}
+require('nvim-tree').setup {
+  renderer = {
+    -- for Java development
+    group_empty = true,
+  },
+}
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
 
 -- bufferline
