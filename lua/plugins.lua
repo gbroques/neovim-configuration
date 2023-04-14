@@ -1,8 +1,9 @@
 return require('packer').startup(function(use)
-    -- package manager
+    -- Package Manager
     use 'wbthomason/packer.nvim'
-    use 'mfussenegger/nvim-jdtls'
+    -- Theme
     use 'lunarvim/darkplus.nvim'
+
     -- Download FiraCode Nerd Font
     -- https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
     use 'nvim-tree/nvim-web-devicons'
@@ -14,12 +15,21 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-tree.lua',
       requires = { 'nvim-tree/nvim-web-devicons' }
     }
-    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+    use {
+      'akinsho/bufferline.nvim',
+      tag = "v3.*",
+      requires = 'nvim-tree/nvim-web-devicons'
+    }
+
+    -- Miscellaneous
     use 'max397574/better-escape.nvim'
     use 'windwp/nvim-autopairs'
     use 'tpope/vim-surround'
 
-    -- telescope
+    -- LSP
+    use 'mfussenegger/nvim-jdtls' -- Java Development Tools Language Server
+
+    -- Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -30,13 +40,13 @@ return require('packer').startup(function(use)
         run = 'make'
     }
 
-    -- completion
+    -- Completion
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'saadparwaiz1/cmp_luasnip'
 
-    -- snippets
+    -- Snippets
     use { 'L3MON4D3/LuaSnip', tag = "v1.*" }
 end)
