@@ -6,7 +6,7 @@ Configure Neovim with IDE features like Visual Studio Code.
 
 1. [Neovim](https://neovim.io/) (`nvim`).
 2. [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip)
-3. `make` / `cmake` (for [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation))
+3. `make` (for [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation))
 
 ### Java
 
