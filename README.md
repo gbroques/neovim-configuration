@@ -18,6 +18,11 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 * Install [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) at `~/jdt-language-server`.
 * `java` version 17 or greater must be in the `PATH`.
 
+### Lua
+
+* Install [lua-language-server](https://github.com/luals/lua-language-server/wiki/Getting-Started#command-line).
+   * `lua-language-server` MUST be in the `PATH`.
+
 
 ## Setup
 

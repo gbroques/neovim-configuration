@@ -46,7 +46,9 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
 
     -- LSP
+    use 'neovim/nvim-lspconfig' -- Configs for nvim LSP client
     use 'mfussenegger/nvim-jdtls' -- Java Development Tools Language Server
+    use 'LuLS/lua-language-server'
 
     -- Telescope
     use {
