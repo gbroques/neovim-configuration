@@ -17,8 +17,6 @@ return require('packer').startup(function(use)
     -- Theme
     use 'lunarvim/darkplus.nvim'
 
-    -- Download FiraCode Nerd Font
-    -- https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
     use 'nvim-tree/nvim-web-devicons'
     use {
         'nvim-lualine/lualine.nvim',
