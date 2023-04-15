@@ -18,6 +18,18 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 * Install [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) at `~/jdt-language-server`.
 * `java` version 17 or greater must be in the `PATH`.
 
+
+## Setup
+
+Clone to Neovim configuration directory depending on operating system:
+
+| Operating System | Clone Command |
+| ---------------- | ------------- |
+| Linux / MacOS    | `git clone git@github.com:gbroques/neovim-configuration.git ~/.config/nvim`       |
+| Windows          | `git clone git@github.com:gbroques/neovim-configuration.git ~/AppData/Local/nvim` |
+
+`:help config`
+
 ## References
 
 * [Christian Chiarulli](https://www.youtube.com/@chrisatmachine)
