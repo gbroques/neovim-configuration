@@ -19,5 +19,5 @@ Configure Neovim with IDE features like Visual Studio Code.
 * [Neovim from Scratch YouTube Playlist](https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
 * [Neovim from Scratch GitHub Repository](https://github.com/LunarVim/Neovim-from-scratch)
 * [More recent & stable 'Neovim from Scratch' GitHub Repository](https://github.com/LunarVim/nvim-basic-ide)
-* [LunaVim](https://github.com/LunarVim/LunarVim)
+* [LunarVim](https://github.com/LunarVim/LunarVim)
 
