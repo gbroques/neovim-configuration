@@ -1,6 +1,11 @@
 # Neovim Configuration
 
-Configure Neovim with IDE features like Visual Studio Code.
+gbroques' personal Neovim configuration with the following goals and philosophy:
+
+* Configure Neovim with IDE features like Visual Studio Code.
+* Omit specifying defaults and refer to help instead.
+* Include comments for someone new to Vim / Neovim.
+* Explain all mnemonics.
 
 ## Prerequisites
 
