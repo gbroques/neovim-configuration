@@ -1,14 +1,13 @@
 -- General
 -- -------
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-vim.opt.fileencoding = "utf-8" -- the encoding written to a file
-
-vim.opt.expandtab = true -- convert tabs to spaces
-vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 2 -- insert 2 spaces for a tab
-vim.opt.smartindent = true -- make indenting smarter again
-vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
-vim.opt.mouse = 'a' -- allow mouse in neovim
+vim.opt.fileencoding = "utf-8"    -- the encoding written to a file
+vim.opt.expandtab = true          -- convert tabs to spaces
+vim.opt.shiftwidth = 2            -- the number of spaces inserted for each indentation
+vim.opt.tabstop = 2               -- insert 2 spaces for a tab
+vim.opt.smartindent = true        -- make indenting smarter again
+vim.opt.showmode = false          -- we don't need to see things like -- INSERT -- anymore
+vim.opt.mouse = 'a'               -- allow mouse in neovim
 
 -- Set hybrid relative line numbers.
 vim.wo.number = true
@@ -32,7 +31,7 @@ vim.keymap.set('n', '<leader>s', ':update<CR>')
 require('plugins')
 
 require("better_escape").setup {
-    mapping = {"dh"}
+  mapping = { "dh" }
 }
 
 -- telescope
@@ -42,8 +41,8 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
-telescope = require('telescope')
-telescope.setup{
+local telescope = require('telescope')
+telescope.setup {
   defaults = {
     wrap_results = true,
     file_ignore_patterns = {
@@ -75,7 +74,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'buffer', option = { keyword_length = 5 } }, -- increase from default of 3
+    { name = 'buffer',  option = { keyword_length = 5 } }, -- increase from default of 3
     { name = 'path' }
   }),
   mapping = {
@@ -102,29 +101,29 @@ require("lualine").setup {
     globalstatus = true,
     icons_enabled = true,
     theme = "auto",
-    component_separators = { left = "", right = ""},
+    component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
   },
   sections = {
     lualine_a = { "mode" },
     lualine_b = { "branch" },
     lualine_c = { {
-     "diagnostics",
+      "diagnostics",
       sources = { "nvim_diagnostic" },
       sections = { "error", "warn" },
       symbols = { error = " ", warn = " " },
       colored = true,
       always_visible = true,
-    }},
+    } },
     lualine_x = { {
-    "diff",
-    colored = false,
-    symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-    cond = hide_in_width,
-  }, spaces, "encoding",  {
-    "filetype",
-    icons_enabled = false,
-  }},
+      "diff",
+      colored = false,
+      symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+      cond = hide_in_width,
+    }, spaces, "encoding", {
+      "filetype",
+      icons_enabled = false,
+    } },
     lualine_y = { { "location", padding = 1 } },
     lualine_z = { "progress" },
   },
@@ -144,10 +143,10 @@ require('nvim-tree').setup {
   },
 }
 -- e for explorer
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>')
 
 -- bufferline
-require("bufferline").setup{
+require("bufferline").setup {
   options = {
     offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
   },
@@ -157,13 +156,36 @@ require("bufferline").setup{
 -- Language Server Protocol
 -- ------------------------
 -- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>", opts)
-vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition)
+vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename)
+vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action)
+vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>")
+vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
 vim.keymap.set('n', '<space>f', function()
-    vim.lsp.buf.format { async = true }
-end, opts)
+  vim.lsp.buf.format { async = true }
+end)
 
+require 'lspconfig'.lua_ls.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
