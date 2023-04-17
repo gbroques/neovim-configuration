@@ -1,45 +1,35 @@
--- General
--- -------
-vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-vim.opt.fileencoding = "utf-8"    -- the encoding written to a file
-vim.opt.expandtab = true          -- convert tabs to spaces
-vim.opt.shiftwidth = 2            -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 2               -- insert 2 spaces for a tab
-vim.opt.smartindent = true        -- make indenting smarter again
-vim.opt.showmode = false          -- we don't need to see things like -- INSERT -- anymore
-vim.opt.mouse = 'a'               -- allow mouse in neovim
-
--- Set hybrid relative line numbers.
-vim.wo.number = true
-vim.wo.relativenumber = true
-
--- Highlight cursor line.
-vim.opt.cursorline = true
-
--- for bufferline
-vim.opt.termguicolors = true
-
-vim.g.mapleader = ' '
-
 -- Mappings
 -- --------
+vim.g.mapleader = ' '
 -- Map leader s to save.
 vim.keymap.set('n', '<leader>s', ':update<CR>')
-
--- Plugins
--- -------
-require('plugins')
-
-require("better_escape").setup {
-  mapping = { "dh" }
-}
-
 -- telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+-- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition)
+vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename)
+vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action)
+vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>")
+vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
+vim.keymap.set('n', '<space>f', function()
+  vim.lsp.buf.format { async = true }
+end)
+-- e for explorer
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>')
+
+require('options')
+require('plugins')
+
+-- better-escape
+require("better_escape").setup {
+  mapping = { "dh" }
+}
+
 
 local telescope = require('telescope')
 telescope.setup {
@@ -56,12 +46,13 @@ telescope.setup {
 telescope.load_extension("ui-select")
 telescope.load_extension("fzf")
 
+-- autopairs
 require('nvim-autopairs').setup {}
 
--- Completion
+-- completion
 local cmp = require('cmp')
 
--- Snippet engine required for JDTLS completions
+-- snippet engine required for JDTLS completions
 local luasnip = require 'luasnip'
 luasnip.config.setup {}
 
@@ -78,6 +69,7 @@ cmp.setup({
     { name = 'buffer',  option = { keyword_length = 5 } }, -- increase from default of 3
     { name = 'path' }
   }),
+  -- TODO: Should this be in keymaps?
   mapping = {
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -87,16 +79,24 @@ cmp.setup({
   },
 })
 
-
--- Theme
+-- theme
 -- -----
 vim.cmd("colorscheme darkplus")
+-- https://github.com/LunarVim/darkplus.nvim/blob/master/lua/darkplus/theme.lua#L303
+local c = require('darkplus.palette')
+
+-- override italic to false
+vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = c.info, bg = 'NONE', bold = true, italic = false, })
+vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = c.folder_blue, bg = 'NONE', bold = true, italic = false, })
+
 local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
 local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
+
+-- lualine
 require("lualine").setup {
   options = {
     globalstatus = true,
@@ -129,22 +129,14 @@ require("lualine").setup {
     lualine_z = { "progress" },
   },
 }
--- https://github.com/LunarVim/darkplus.nvim/blob/master/lua/darkplus/theme.lua#L303
-local c = require('darkplus.palette')
 
--- override italic to false
-vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = c.info, bg = 'NONE', bold = true, italic = false, })
-vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = c.folder_blue, bg = 'NONE', bold = true, italic = false, })
-
-
+-- nvim-tree
 require('nvim-tree').setup {
   renderer = {
     -- for Java development
     group_empty = true,
   },
 }
--- e for explorer
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>')
 
 -- bufferline
 require("bufferline").setup {
@@ -156,17 +148,6 @@ require("bufferline").setup {
 
 -- Language Server Protocol
 -- ------------------------
--- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition)
-vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename)
-vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action)
-vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>")
-vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
-vim.keymap.set('n', '<space>f', function()
-  vim.lsp.buf.format { async = true }
-end)
-
 require 'lspconfig'.lua_ls.setup {
   settings = {
     Lua = {
@@ -181,6 +162,8 @@ require 'lspconfig'.lua_ls.setup {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
+        -- Disable pop-ups about 3rd parties.
+        -- https://github.com/LuaLS/lua-language-server/discussions/1688
         checkThirdParty = false
       },
       -- Do not send telemetry data containing a randomized but unique identifier
