@@ -8,14 +8,7 @@ require('user.completion')
 require('user.colorscheme')
 require('user.statusline')
 require('user.explorer')
-
--- bufferline
-require("bufferline").setup {
-  options = {
-    offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
-  },
-  highlights = { buffer_selected = { italic = false } }
-}
+require('user.tabline')
 
 -- Language Server Protocol
 -- ------------------------
