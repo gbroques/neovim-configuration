@@ -1,6 +1,8 @@
 -- Eclipse Java development tools (JDT) Language Server downloaded from:
 -- https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.21.0/jdt-language-server-1.21.0-202303161431.tar.gz
 local jdtls = require('jdtls')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
+
 -- TODO: Move this to stdpath('data') .. '/language-servers/jdt-language-server'
 --       Update README when you do this.
 local jdtls_path = '~/jdt-language-server'
@@ -11,7 +13,8 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 0
 
 -- for completions
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local client_capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = cmp_nvim_lsp.default_capabilities(client_capabilities)
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -43,9 +46,11 @@ local config = {
     },
     on_attach = function(client, bufnr)
         -- https://github.com/mfussenegger/dotfiles/blob/833d634251ebf3bf7e9899ed06ac710735d392da/vim/.config/nvim/ftplugin/java.lua#L88-L94
+        -- Should these be in keymaps and have desc?
         local opts = { silent = true, buffer = bufnr }
         -- Alt + O for organizing imports.
         vim.keymap.set('n', "<A-o>", jdtls.organize_imports, opts)
+        -- Should 'd' be reserved for debug?
         vim.keymap.set('n', "<leader>df", jdtls.test_class, opts)
         vim.keymap.set('n', "<leader>dn", jdtls.test_nearest_method, opts)
         -- cr for (c)ode (r)efactor
