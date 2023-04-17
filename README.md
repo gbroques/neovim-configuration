@@ -18,7 +18,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 ### Java
 
-Install [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) in a subdirectory `language-servers/jdt-language-server` within the standard data directory for your operating system.
+1. Install [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) in a subdirectory `language-servers/jdt-language-server` within the standard data directory for your operating system.
 
 | Operating System | Data Directory |
 | ---------------- | -------------- |
@@ -29,15 +29,23 @@ Install [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation)
 
 `java` version 17 or greater must be in the `PATH`.
 
+2. Install tree-sitter Java parser from inside Neovim:
+
+    :TSInstall java
+
 ### JavaScript
 
-Install TypeScript Language Server:
+1. Install TypeScript Language Server:
 
     npm install -g typescript typescript-language-server
 
 `typescript-language-server` MUST be in the `PATH`.
 
 **Reference:** https://github.com/neovim/nvim-lspconfig/blob/v0.1.6/lua/lspconfig/server_configurations/tsserver.lua#L34
+
+2. Install tree-sitter JavaScript parser from inside Neovim:
+
+    :TSInstall javascript
 
 ### Lua
 

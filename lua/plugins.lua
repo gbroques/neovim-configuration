@@ -74,6 +74,13 @@ return require('packer').startup(function(use)
     -- Snippets
     use { 'L3MON4D3/LuaSnip', tag = "v1.*" }
 
+    -- Tree-sitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        -- Update installed parsers when upgrading plugin
+        run = ':TSUpdate'
+    }
+
     if packer_bootstrap then
       require('packer').sync()
     end
