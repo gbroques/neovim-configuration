@@ -23,6 +23,8 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- LSP
 -- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
+-- TODO: Should we pass in buffer number like the following example shows?
+-- https://github.com/LunarVim/nvim-basic-ide/blob/3d2b182a3cffe4d3a4490fd6b8b49e8aad023c4a/lua/user/lsp.lua#L19-L48
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
