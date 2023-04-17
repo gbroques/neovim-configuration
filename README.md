@@ -6,6 +6,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 * Omit specifying defaults and refer to [`:help`](https://neovim.io/doc/user/helphelp.html) instead.
 * Include comments for someone new to Vim / Neovim.
 * Explain all mnemonics.
+* Tailored for [Colemak](https://en.wikipedia.org/wiki/Colemak) over [QWERTY](https://en.wikipedia.org/wiki/QWERTY).
 
 ## Prerequisites
 
@@ -42,4 +43,5 @@ Clone to Neovim configuration directory depending on operating system:
 * [Neovim from Scratch GitHub Repository](https://github.com/LunarVim/Neovim-from-scratch)
 * [More recent & stable 'Neovim from Scratch' GitHub Repository](https://github.com/LunarVim/nvim-basic-ide)
 * [LunarVim](https://github.com/LunarVim/LunarVim)
+* [Neovim Lua from Scratch YouTube Playlist](https://www.youtube.com/playlist?list=PLPDVgSbOnt7LXQ8DTzu37UwCpA0elyD0V)
 
