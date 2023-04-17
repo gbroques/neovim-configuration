@@ -12,8 +12,9 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 1. [Neovim](https://neovim.io/) (`nvim`).
 2. [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip)
-3. `make` (for [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation))
-4. Install desired language servers. See below sections.
+3. [ripgrep](https://github.com/BurntSushi/ripgrep#installation) (for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim))
+4. `make` (for [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation))
+5. Install desired language servers. See below sections.
 
 ### Java
 
