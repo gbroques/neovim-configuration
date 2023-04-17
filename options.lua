@@ -1,4 +1,5 @@
 
+-- TODO: Remove all explicit default options.
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.fileencoding = "utf-8"    -- the encoding written to a file
 vim.opt.expandtab = true          -- convert tabs to spaces
