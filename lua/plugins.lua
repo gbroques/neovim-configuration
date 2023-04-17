@@ -55,6 +55,8 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    -- for nvim-jdtls
+    -- https://github.com/mfussenegger/nvim-jdtls/wiki/UI-Extensions
     use 'nvim-telescope/telescope-ui-select.nvim'
     use {
         'nvim-telescope/telescope-fzf-native.nvim',
