@@ -1,5 +1,5 @@
 local cmp = require('cmp')
-local luasnip = require 'luasnip'
+local luasnip = require('luasnip')
 
 -- snippet engine required for JDTLS completions
 luasnip.config.setup {}
