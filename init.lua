@@ -11,16 +11,16 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition)
-vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename)
-vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action)
+vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
 vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>")
 vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
-vim.keymap.set('n', '<space>f', function()
+vim.keymap.set('n', '<leader>f', function()
   vim.lsp.buf.format { async = true }
 end)
 -- e for explorer
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = '(e)xplorer' })
 -- better-escape
 require("better_escape").setup {
   mapping = { "dh" }
