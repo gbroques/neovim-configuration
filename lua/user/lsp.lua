@@ -3,6 +3,9 @@
 local lspconfig = require('lspconfig')
 
 -- JavaScript
+-- TODO: Should we replace this with typescript.nvim to support tsserver's off-spec features?
+--       https://github.com/jose-elias-alvarez/typescript.nvim
+--       https://github.com/neovim/nvim-lspconfig/wiki/Language-specific-plugins
 lspconfig.tsserver.setup {}
 
 -- Lua
