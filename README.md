@@ -23,7 +23,7 @@ Install [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation)
 | Operating System | Data Directory |
 | ---------------- | -------------- |
 | Linux / MacOS    | `~/.local/share/nvim` |
-| Windows          | `~/AppData/Local/nvim` |
+| Windows          | `~/AppData/Local/nvim-data` |
 
 `:help standard-path`
 
