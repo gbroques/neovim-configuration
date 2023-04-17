@@ -2,6 +2,7 @@
 -- https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.21.0/jdt-language-server-1.21.0-202303161431.tar.gz
 local jdtls = require('jdtls')
 -- TODO: Move this to stdpath('data') .. '/language-servers/jdt-language-server'
+--       Update README when you do this.
 local jdtls_path = '~/jdt-language-server'
 local launcher_jar = vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
 local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
