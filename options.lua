@@ -1,20 +1,13 @@
-
--- TODO: Remove all explicit default options.
+-- :help options
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-vim.opt.fileencoding = "utf-8"    -- the encoding written to a file
-vim.opt.expandtab = true          -- convert tabs to spaces
-vim.opt.shiftwidth = 2            -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 2               -- insert 2 spaces for a tab
+vim.opt.expandtab = true          -- convert tabs to spaces in Insert mode
+vim.opt.shiftwidth = 0            -- number of spaces for each step of (auto)indent
+vim.opt.tabstop = 2               -- Number of spaces that a <Tab> in the file countsr for.
 vim.opt.smartindent = true        -- make indenting smarter again
 vim.opt.showmode = false          -- we don't need to see things like -- INSERT -- anymore
 vim.opt.mouse = 'a'               -- allow mouse in neovim
+vim.opt.number = true             -- Show line numbers.
+vim.opt.relativenumber = true     -- Show line number relative to cursor line.
+vim.opt.cursorline = true         -- Highlight text line of cursor.
+vim.opt.termguicolors = true      -- Enable 24-bit RGB color in TUI.
 
--- Set hybrid relative line numbers.
-vim.opt.number = true
-vim.opt.relativenumber = true
-
--- Highlight cursor line.
-vim.opt.cursorline = true
-
--- for bufferline
-vim.opt.termguicolors = true
