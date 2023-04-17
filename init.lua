@@ -1,31 +1,5 @@
--- Mappings
--- --------
-vim.g.mapleader = ' '
--- Map leader s to save.
-vim.keymap.set('n', '<leader>s', ':update<CR>')
--- telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
--- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
-vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>")
-vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
-vim.keymap.set('n', '<leader>f', function()
-  vim.lsp.buf.format { async = true }
-end)
--- e for explorer
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = '(e)xplorer' })
--- better-escape
-require("better_escape").setup {
-  mapping = { "dh" }
-}
 
+require('keymaps')
 require('options')
 require('plugins')
 
