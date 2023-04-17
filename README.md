@@ -17,7 +17,14 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 ### Java
 
-Install [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) at `~/jdt-language-server`.
+Install [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) in a subdirectory `language-servers/jdt-language-server` within the standard data directory for your operating system.
+
+| Operating System | Data Directory |
+| ---------------- | -------------- |
+| Linux / MacOS    | `~/.local/share/nvim` |
+| Windows          | `~/AppData/Local/nvim` |
+
+`:help standard-path`
 
 `java` version 17 or greater must be in the `PATH`.
 
