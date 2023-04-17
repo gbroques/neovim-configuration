@@ -21,15 +21,13 @@ vim.keymap.set('n', '<space>f', function()
 end)
 -- e for explorer
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>')
-
-require('options')
-require('plugins')
-
 -- better-escape
 require("better_escape").setup {
   mapping = { "dh" }
 }
 
+require('options')
+require('plugins')
 
 local telescope = require('telescope')
 telescope.setup {
