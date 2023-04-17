@@ -7,14 +7,7 @@ require('user.autopairs')
 require('user.completion')
 require('user.colorscheme')
 require('user.statusline')
-
--- nvim-tree
-require('nvim-tree').setup {
-  renderer = {
-    -- for Java development
-    group_empty = true,
-  },
-}
+require('user.explorer')
 
 -- bufferline
 require("bufferline").setup {
