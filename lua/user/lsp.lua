@@ -1,8 +1,12 @@
--- Language Server Protocol
--- ------------------------
+-- Language Server Protocol Configuration
+-- --------------------------------------
+local lspconfig = require('lspconfig')
+
+-- JavaScript
+lspconfig.tsserver.setup {}
 
 -- Lua
-require 'lspconfig'.lua_ls.setup {
+lspconfig.lua_ls.setup {
   settings = {
     Lua = {
       runtime = {
