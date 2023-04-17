@@ -3,9 +3,7 @@ require('keymaps')
 require('options')
 require('plugins')
 require('user.telescope')
-
--- autopairs
-require('nvim-autopairs').setup {}
+require('user.autopairs')
 
 -- completion
 local cmp = require('cmp')
