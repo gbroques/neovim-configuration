@@ -12,7 +12,7 @@ vim.g.mapleader = ' '
 -- 'dh' is a convenient escape from Insert mode in Colemak.
 require("better_escape").setup { mapping = { "dh" } }
 
-vim.keymap.set('n', '<leader>s', ':update<CR>', { desc = '(s)ave'})
+vim.keymap.set('n', '<leader>s', ':update<CR>', { desc = '(s)ave' })
 
 -- Telescope
 local builtin = require('telescope.builtin')
@@ -29,7 +29,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- after the language server attaches to the current buffer
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>rn", ":IncRename ")
 vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
 vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>")
 vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")

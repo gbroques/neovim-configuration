@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'tpope/vim-surround'
     use 'folke/which-key.nvim'
+    use 'smjonas/inc-rename.nvim'
 
     -- Comment
     use { "numToStr/Comment.nvim" }
