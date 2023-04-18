@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
     use 'max397574/better-escape.nvim'
     use 'windwp/nvim-autopairs'
     use 'tpope/vim-surround'
+    use 'folke/which-key.nvim'
 
     -- Comment
     use { "numToStr/Comment.nvim" }
