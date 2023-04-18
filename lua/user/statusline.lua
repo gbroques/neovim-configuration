@@ -9,17 +9,8 @@ require("lualine").setup {
   sections = {
     lualine_a = { "mode" },
     lualine_b = {
-      {
-        "filename",
-        path = 3,                -- 3: Absolute path, with tilde as the home directory
-        shorting_target = 10,    -- Shortens path to leave 10 spaces in the window
-        symbols = {
-          modified = '●',      -- Text to show when the file is modified.
-          readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.
-          unnamed = '[No Name]', -- Text to show for unnamed buffers.
-          newfile = '[New]',     -- Text to show for newly created file before first write
-        }
-      },
+      -- TODO: Preface name wit: shortened directory.
+      'buffers'
     },
     lualine_c = {
       {
@@ -31,14 +22,14 @@ require("lualine").setup {
         always_visible = false,
       }
     },
-    lualine_x = { "branch" },
+    lualine_x = { "location" },
     lualine_y = {
       {
         "filetype",
         icon_only = true,
-      },
-      { "location", padding = 1 },
+        padding = 1
+      }
     },
-    lualine_z = { "progress" },
+    lualine_z = { { "branch", icons_enabled = false } },
   },
 }
