@@ -50,6 +50,7 @@ return require('packer').startup(function(use)
 
     -- Editor Pane
     use 'lukas-reineke/indent-blankline.nvim'
+    use 'RRethy/vim-illuminate'
 
     -- Comment
     use { "numToStr/Comment.nvim" }
