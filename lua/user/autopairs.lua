@@ -1,4 +1,6 @@
-require('nvim-autopairs').setup {}
+require('nvim-autopairs').setup {
+  check_ts = true, -- treesitter integration
+}
 
 -- Insert parentheses () after completing function or method.
 local cmp_autopairs = require "nvim-autopairs.completion.cmp"
