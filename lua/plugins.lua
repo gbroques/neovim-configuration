@@ -45,6 +45,10 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'tpope/vim-surround'
 
+    -- Comment
+    use { "numToStr/Comment.nvim" }
+    use { "JoosepAlviste/nvim-ts-context-commentstring" }
+
     -- LSP
     use 'neovim/nvim-lspconfig' -- Configs for nvim LSP client
     use 'mfussenegger/nvim-jdtls' -- Java Development Tools Language Server

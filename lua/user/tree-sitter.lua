@@ -7,7 +7,11 @@ require 'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true,
-  }
+  },
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  },
 }
 -- TODO: Renable folding once telescope bug is fixed.
 -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1337#issuecomment-864442660
