@@ -84,6 +84,7 @@ return require('packer').startup(function(use)
         -- Update installed parsers when upgrading plugin
         run = ':TSUpdate'
     }
+    use 'windwp/nvim-ts-autotag'
 
     if packer_bootstrap then
       require('packer').sync()
