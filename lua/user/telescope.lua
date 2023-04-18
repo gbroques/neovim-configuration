@@ -3,7 +3,7 @@ telescope.setup {
   defaults = {
     wrap_results = true,
     file_ignore_patterns = {
-      ".git"
+      "^.git/"
     },
     layout_config = {
       width = 0.95,
