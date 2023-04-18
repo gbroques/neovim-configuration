@@ -22,6 +22,7 @@ vim.cmd([[
 return require('packer').startup(function(use)
     -- Package Manager
     use 'wbthomason/packer.nvim'
+
     -- Theme
     use 'lunarvim/darkplus.nvim'
 
@@ -85,6 +86,9 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use 'windwp/nvim-ts-autotag'
+
+    -- Git
+    use 'lewis6991/gitsigns.nvim'
 
     if packer_bootstrap then
       require('packer').sync()
