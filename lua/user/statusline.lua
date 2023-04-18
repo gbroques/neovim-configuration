@@ -9,8 +9,7 @@ require("lualine").setup {
   sections = {
     lualine_a = { "mode" },
     lualine_b = {
-      -- TODO: Preface name wit: shortened directory.
-      'buffers'
+      "%<%{pathshorten(expand('%:~'))}"
     },
     lualine_c = {
       {
@@ -22,7 +21,12 @@ require("lualine").setup {
         always_visible = false,
       }
     },
-    lualine_x = { "location" },
+    lualine_x = {
+      {
+        "%m" -- show file modified symbol [+]
+      },
+      "location"
+    },
     lualine_y = {
       {
         "filetype",
