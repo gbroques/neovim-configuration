@@ -48,6 +48,9 @@ return require('packer').startup(function(use)
     use 'folke/which-key.nvim'
     use 'smjonas/inc-rename.nvim'
 
+    -- Editor Pane
+    use 'lukas-reineke/indent-blankline.nvim'
+
     -- Comment
     use { "numToStr/Comment.nvim" }
     use { "JoosepAlviste/nvim-ts-context-commentstring" }
