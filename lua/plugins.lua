@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- Theme
-    use 'lunarvim/darkplus.nvim'
+    use 'folke/tokyonight.nvim'
 
     use 'nvim-tree/nvim-web-devicons'
     use {
@@ -85,6 +85,7 @@ return require('packer').startup(function(use)
 
     -- Snippets
     use { 'L3MON4D3/LuaSnip', tag = "v1.*" }
+    use 'rafamadriz/friendly-snippets'
 
     -- Tree-sitter
     use {

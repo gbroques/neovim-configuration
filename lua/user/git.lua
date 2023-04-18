@@ -9,3 +9,4 @@ gitsigns.setup {
     changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
   },
 }
+require("scrollbar.handlers.gitsigns").setup()
