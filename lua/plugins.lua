@@ -47,11 +47,13 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'folke/which-key.nvim'
   use 'smjonas/inc-rename.nvim'
-
+  -- TODO:
+  -- use 'andymass/vim-matchup'
   -- Editor Pane
   use 'lukas-reineke/indent-blankline.nvim'
   use 'RRethy/vim-illuminate'
   use 'petertriho/nvim-scrollbar'
+  -- TODO: SmiteshP/nvim-navic
 
   -- Comment
   use { "numToStr/Comment.nvim" }
@@ -64,6 +66,8 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-jdtls' -- Java Development Tools Language Server
   -- Lua (Neovim Plugin Development)
   use 'folke/neodev.nvim'
+  -- TODO:
+  -- use 'ray-x/lsp_signature.nvim'
 
   -- Telescope
   use {
@@ -96,10 +100,12 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
   use 'windwp/nvim-ts-autotag'
+  -- TODO: mrjones2014/nvim-ts-rainbow
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
-
+  -- TODO:
+  -- use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   if packer_bootstrap then
     require('packer').sync()
   end
