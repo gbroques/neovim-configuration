@@ -58,7 +58,6 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
     { name = 'luasnip' },
     { name = 'buffer',  option = { keyword_length = 5 } }, -- increase from default of 3
     { name = 'path' }
@@ -113,18 +112,16 @@ cmp.setup({
       local kind = vim_item.kind
       vim_item.kind = kind_icons[kind]
       vim_item.menu = ({
-        nvim_lsp = "LSP",
+        nvim_lsp = kind,
         luasnip = "Snippet",
         buffer = "Buffer",
         path = "Path",
       })[entry.source.name]
-      if vim_item.menu == 'LSP' then
-        vim_item.menu = kind
-      end
       return vim_item
     end,
   }
 })
+
 
 -- for friendly snippets
 require("luasnip.loaders.from_vscode").lazy_load()
