@@ -3,6 +3,7 @@
 gbroques' personal Neovim configuration with the following goals and philosophy:
 
 * Configure Neovim with IDE features like Visual Studio Code.
+* Stable. Plugins are pinned to specific versions.
 * Omit specifying defaults and refer to [`:help`](https://neovim.io/doc/user/helphelp.html) instead.
 * Include comments for someone new to Vim / Neovim.
 * Explain all mnemonics.
