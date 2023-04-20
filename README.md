@@ -69,10 +69,18 @@ Clone to Neovim configuration directory depending on operating system:
 
 ## References
 
+Neovim IDE Distributions:
+
+* [LunarVim](https://github.com/LunarVim/LunarVim)
+* [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+* [NvChad](https://github.com/NvChad/NvChad)
+* [LazyVim](https://github.com/LazyVim/LazyVim)
+
+Other sources:
+
 * [Christian Chiarulli](https://www.youtube.com/@chrisatmachine)
 * [Neovim from Scratch YouTube Playlist](https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
 * [Neovim from Scratch GitHub Repository](https://github.com/LunarVim/Neovim-from-scratch)
 * [More recent & stable 'Neovim from Scratch' GitHub Repository](https://github.com/LunarVim/nvim-basic-ide)
-* [LunarVim](https://github.com/LunarVim/LunarVim)
 * [Neovim Lua from Scratch YouTube Playlist](https://www.youtube.com/playlist?list=PLPDVgSbOnt7LXQ8DTzu37UwCpA0elyD0V)
 
