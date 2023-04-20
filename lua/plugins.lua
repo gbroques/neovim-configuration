@@ -65,6 +65,13 @@ return require('lazy').setup({
   'mfussenegger/nvim-jdtls', -- Java Development Tools Language Server
   -- Lua (Neovim Plugin Development)
   'folke/neodev.nvim',
+  {
+    -- Display language server progress in bottom right corner
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup()
+    end
+  },
   -- TODO:
   -- 'ray-x/lsp_signature.nvim'
 
