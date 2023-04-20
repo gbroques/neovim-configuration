@@ -96,7 +96,7 @@ return require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
     -- Update installed parsers when upgrading plugin
-    run = ':TSUpdate'
+    build = ':TSUpdate'
   },
   'windwp/nvim-ts-autotag',
   -- TODO: mrjones2014/nvim-ts-rainbow
