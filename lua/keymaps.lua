@@ -1,11 +1,6 @@
 -- Overview of categorized default Vim keymaps:
 -- https://devhints.io/vim
 
--- Leader Key
--- -----------------
-vim.g.mapleader = ' '
----------------------
-
 -- Modes
 -- ------------
 -- 'n' - Normal

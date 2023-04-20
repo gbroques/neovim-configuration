@@ -1,6 +1,6 @@
+require('plugins')
 require('keymaps')
 require('options')
-require('plugins')
 require('user.telescope')
 require('user.autopairs')
 require('user.completion')
