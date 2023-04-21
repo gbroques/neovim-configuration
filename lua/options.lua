@@ -10,6 +10,7 @@ vim.opt.number = true             -- Show line numbers.
 vim.opt.relativenumber = true     -- Show line number relative to cursor line.
 vim.opt.cursorline = true         -- Highlight text line of cursor.
 vim.opt.termguicolors = true      -- Enable 24-bit RGB color in TUI.
-vim.opt.ignorecase = true         -- ignore case in search patterns
-vim.opt.smartcase = true          -- smart case
+vim.opt.ignorecase = true         -- ignore case when searching.
+vim.opt.smartcase = true          -- perform case-sensitive search upon uppercase.
+vim.opt.signcolumn = 'yes'        -- always show sign column to avoid layout shift.
 
