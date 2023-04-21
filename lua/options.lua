@@ -12,5 +12,6 @@ vim.opt.cursorline = true         -- Highlight text line of cursor.
 vim.opt.termguicolors = true      -- Enable 24-bit RGB color in TUI.
 vim.opt.ignorecase = true         -- ignore case when searching.
 vim.opt.smartcase = true          -- perform case-sensitive search upon uppercase.
+-- https://www.reddit.com/r/neovim/comments/xjakdy/neovim_gitsigndiagnostic_icons_causes_layout_shift/
 vim.opt.signcolumn = 'yes'        -- always show sign column to avoid layout shift.
 
