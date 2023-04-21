@@ -35,6 +35,9 @@ require('nvim-tree').setup {
   diagnostics = {
     enable = true,
     show_on_dirs = true,
+    -- TODO: Create icons file like LunarVim?
+    -- https://github.com/LunarVim/LunarVim/blob/1.2.0/lua/lvim/icons.lua#L131-L144
+    -- warning & error duplicated in statusline
     icons = {
       hint = "",
       info = "",

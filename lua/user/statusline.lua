@@ -16,6 +16,7 @@ require("lualine").setup {
         "diagnostics",
         sources = { "nvim_diagnostic" },
         sections = { "error", "warn" },
+        -- icons duplicated in explorer
         symbols = { error = " ", warn = " " },
         colored = true,
         always_visible = false,
