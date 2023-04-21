@@ -1,6 +1,9 @@
 -- Overview of categorized default Vim keymaps:
 -- https://devhints.io/vim
 
+-- TODO: Consider slient remap for commands like (u)ndo / (R)edo
+-- which display messages in the last command line.
+
 -- Modes
 -- ------------
 -- 'n' - Normal
