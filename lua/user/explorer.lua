@@ -4,6 +4,10 @@ vim.g.loaded_netrwPlugin = 1
 
 require('nvim-tree').setup {
   renderer = {
+    -- TODO: Enable vinegar style opening?
+    -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes#vinegar-style
+    -- http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
+
     -- Group empty directories for Java development
     group_empty = true,
     icons = {
