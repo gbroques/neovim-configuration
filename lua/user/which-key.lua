@@ -13,6 +13,9 @@ wk.register({
   l = {
     name = 'lsp'
   },
+  r = {
+    name = 'refactor'
+  },
   u = {
     name = 'ui'
   }
