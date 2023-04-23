@@ -11,9 +11,10 @@ local icons = {
   error = "",
 }
 local function lspSymbol(name, icon)
+  local highlight = 'DiagnosticSign' .. name
   vim.fn.sign_define(
-    'DiagnosticSign' .. name,
-    { text = icon }
+    highlight,
+    { text = icon, texthl = highlight }
   )
 end
 lspSymbol('Error', icons.error)
