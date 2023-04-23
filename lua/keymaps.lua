@@ -88,7 +88,10 @@ end, { desc = 'Toggle tabline' })
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = '(e)xplorer' })
 
 -- Git
--- TODO: Add keymaps for git hunks & git.
+vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'branches' })
+vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'commits' })
+vim.keymap.set('n', '<leader>gC', builtin.git_bcommits, { desc = 'commits for buffer' })
+vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'status' })
 
 -- Visual --
 -- Stay in indent mode

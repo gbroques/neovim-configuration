@@ -2,7 +2,13 @@ local wk = require('which-key')
 wk.setup({})
 wk.register({
   f = {
-    name = "find",
+    name = 'find',
+  },
+  g = {
+    name = 'git'
+  },
+  h = {
+    name = 'hunk'
   },
   l = {
     name = 'lsp'
@@ -10,4 +16,4 @@ wk.register({
   u = {
     name = 'ui'
   }
-}, { prefix = "<leader>" })
+}, { prefix = '<leader>' })
