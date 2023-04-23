@@ -69,7 +69,11 @@ return require('lazy').setup({
     -- Display language server progress in bottom right corner
     'j-hui/fidget.nvim',
     config = function()
-      require('fidget').setup()
+      require('fidget').setup({
+        text = {
+          spinner = 'line'
+        }
+      })
     end
   },
   -- TODO:
