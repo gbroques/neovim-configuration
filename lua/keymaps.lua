@@ -70,15 +70,15 @@ vim.keymap.set('n', 'gl', function()
     header = '',
   })
 end, { desc = 'Show line diagnostics' })
-vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>", { desc = 'Goto references' })
+vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { desc = 'Goto references' })
 vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
-vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
+vim.keymap.set('n', 'gW', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>')
 vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Goto t(y)pe definition' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
+vim.keymap.set({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Actions' })
 vim.keymap.set('n', '<leader>lf', function()
   vim.lsp.buf.format { async = true }
 end, { desc = 'Format' })
-vim.keymap.set("n", "<leader>rn", ":IncRename ", { desc = 'Rename' })
+vim.keymap.set('n', '<leader>rn', ':IncRename ', { desc = 'Rename' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 
 -- UI
@@ -89,7 +89,7 @@ vim.keymap.set('n', '<leader>ut', function()
   vim.opt.showtabline = vim.o.showtabline == 2 and 0 or 2
 end, { desc = 'Toggle tabline' })
 -- NvimTree
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = '(e)xplorer' })
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'explorer' })
 
 -- Git
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'branches' })
