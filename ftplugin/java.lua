@@ -31,6 +31,7 @@ local config = {
         "--add-opens", "java.base/java.util=ALL-UNNAMED",
         "--add-opens", "java.base/java.lang=ALL-UNNAMED",
         "-jar", launcher_jar,
+        -- TODO: config_* should be dynamic depending upon OS.
         "-configuration", vim.fs.normalize(jdtls_path .. '/config_win'),
         "-data", vim.fn.expand('~/.cache/jdtls-workspace/') .. workspace_dir
     },
