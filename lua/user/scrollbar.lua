@@ -3,19 +3,15 @@ local colors = require("tokyonight.colors").setup()
 require("scrollbar").setup({
   hide_if_all_visible = true,
   handlers = {
-    cursor = true,
+    cursor = false,
     handle = true,
     diagnostic = true,
     gitsigns = true,
   },
   handle = {
-    color = colors.dark3,
+    color = colors.bg_highlight,
   },
   marks = {
-    Cursor = {
-      text = '█',
-      color = colors.fg_dark
-    },
     Search = { color = colors.orange },
     Error = { color = colors.error },
     Warn = { color = colors.warning },
