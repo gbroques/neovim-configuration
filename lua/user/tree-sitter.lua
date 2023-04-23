@@ -28,6 +28,8 @@ require 'nvim-treesitter.configs'.setup {
         ["if"] = { query = "@function.inner", desc = "inner function" },
         ["ac"] = { query = "@class.outer", desc = "a class" },
         ["ic"] = { query = "@class.inner", desc = "inner class" },
+        ["aa"] = { query = "@parameter.outer", desc = "an argument" },
+        ["ia"] = { query = "@parameter.inner", desc = "inner argument" },
         ["as"] = { query = "@scope", query_group = "locals", desc = "a scope" },
       },
     },
