@@ -83,7 +83,8 @@ return require('lazy').setup({
 
   -- Telescope
   {
-    'nvim-telescope/telescope.nvim', version = '0.1.1',
+    'nvim-telescope/telescope.nvim',
+    version = '0.1.1',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
   -- for nvim-jdtls
@@ -114,9 +115,10 @@ return require('lazy').setup({
   },
   'windwp/nvim-ts-autotag',
   -- TODO: mrjones2014/nvim-ts-rainbow
-  -- TODO: nvim-treesitter/nvim-treesitter-textobjects
-  -- after = "nvim-treesitter",
-  -- requires = "nvim-treesitter/nvim-treesitter",
+  {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
 
   -- Git
   'lewis6991/gitsigns.nvim',
