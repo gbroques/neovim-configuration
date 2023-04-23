@@ -9,6 +9,8 @@ require("lualine").setup {
   sections = {
     lualine_a = { "mode" },
     lualine_b = {
+      -- TODO: Show 3 full length dirs, and shorten the rest; like fish
+      -- Example: prompt_pwd --full-length-dirs 3
       "%<%{pathshorten(expand('%:~'))}"
     },
     lualine_c = {
