@@ -34,6 +34,10 @@ vim.keymap.set("n", "]b", ":bnext<CR>", { desc = 'Next buffer' })
 vim.keymap.set("n", "[b", ":bprevious<CR>", { desc = 'Previous buffer' })
 vim.keymap.set("n", "<S-q>", "<cmd>bdelete!<CR>", { desc = 'Close buffer' })
 
+-- Diagnostics
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+
 -- Clear highlights
 vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = 'Clear search highlighting' })
 
