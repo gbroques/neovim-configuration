@@ -120,8 +120,12 @@ cmp.setup({
       })[entry.source.name]
       return vim_item
     end,
+  },
+  experimental = {
+    ghost_text = true
   }
 })
+
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
