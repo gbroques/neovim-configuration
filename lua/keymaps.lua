@@ -15,8 +15,7 @@ require("better_escape").setup { mapping = { "dh" } }
 
 -- Normal --
 
--- Save
-vim.keymap.set('n', '<leader>s', ':update<CR>', { desc = '(s)ave' })
+vim.keymap.set('n', '<leader>w', ':update<CR>', { desc = '(w)rite' })
 
 -- Better window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -30,15 +29,13 @@ vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
--- Navigate buffers
-vim.keymap.set("n", "<S-l>", ":bnext<CR>")
-vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
+-- Buffers
+vim.keymap.set("n", "]b", ":bnext<CR>", { desc = 'Next buffer' })
+vim.keymap.set("n", "[b", ":bprevious<CR>", { desc = 'Previous buffer' })
+vim.keymap.set("n", "<S-q>", "<cmd>bdelete!<CR>", { desc = 'Close buffer' })
 
 -- Clear highlights
-vim.keymap.set("n", "<leader>h", "<cmd>nohlsearch<CR>")
-
--- Close buffers
-vim.keymap.set("n", "<S-q>", "<cmd>bdelete!<CR>")
+vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = 'Clear search highlighting' })
 
 -- Telescope
 local builtin = require('telescope.builtin')
@@ -76,13 +73,12 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 -- UI
 vim.keymap.set('n', '<leader>us', function()
   vim.opt.laststatus = vim.o.laststatus == 3 and 0 or 3
-end, { desc= 'Toggle statusline' })
+end, { desc = 'Toggle statusline' })
 vim.keymap.set('n', '<leader>ut', function()
   vim.opt.showtabline = vim.o.showtabline == 2 and 0 or 2
-end, { desc= 'Toggle tabline' })
+end, { desc = 'Toggle tabline' })
 -- NvimTree
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = '(e)xplorer' })
-
 
 -- Visual --
 -- Stay in indent mode
