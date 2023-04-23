@@ -7,6 +7,10 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 * Omit specifying defaults and refer to [`:help`](https://neovim.io/doc/user/helphelp.html) instead.
 * Include comments for someone new to Vim / Neovim.
 * Explain all mnemonics.
+* Efficient.
+  * There should not be dupicate mappings for an operation unless the alternative mapping is less keystrokes.
+* Fast.
+* Minimal.
 * Tailored for [Colemak](https://en.wikipedia.org/wiki/Colemak) over [QWERTY](https://en.wikipedia.org/wiki/QWERTY).
 
 ## Prerequisites
