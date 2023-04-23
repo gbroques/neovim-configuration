@@ -62,6 +62,12 @@ vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
 vim.keymap.set('n', '<leader>lf', function()
   vim.lsp.buf.format { async = true }
 end)
+vim.keymap.set('n', 'gl', function()
+  vim.diagnostic.open_float({
+    scope = 'line',
+    header = '',
+  })
+end, { desc = 'Show line diagnostics' })
 
 -- NvimTree
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = '(e)xplorer' })
