@@ -17,7 +17,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 1. [Neovim](https://neovim.io/) (`nvim`).
 2. [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip)
-  * Support ligatures and italics.
+    * Support ligatures and italics.
 3. [ripgrep](https://github.com/BurntSushi/ripgrep#installation) (for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim))
 4. `make` (for [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation))
 5. Install desired language servers. See below sections.
@@ -37,13 +37,13 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 2. Install tree-sitter Java parser from inside Neovim:
 
-    :TSInstall java
+       :TSInstall java
 
 ### JavaScript
 
 1. Install TypeScript Language Server:
 
-    npm install -g typescript typescript-language-server
+       npm install -g typescript typescript-language-server
 
 `typescript-language-server` MUST be in the `PATH`.
 
@@ -51,7 +51,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 2. Install tree-sitter JavaScript parser from inside Neovim:
 
-    :TSInstall javascript
+       :TSInstall javascript
 
 ### Lua
 
