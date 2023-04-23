@@ -41,6 +41,9 @@ return require('lazy').setup({
     version = "v3.*",
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
+  -- TODO:
+  -- 'goolord/alpha-nvim'
+  -- 'ahmedkhalf/project.nvim'
 
   -- Miscellaneous
   'max397574/better-escape.nvim',
