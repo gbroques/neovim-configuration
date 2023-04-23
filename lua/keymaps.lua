@@ -39,10 +39,17 @@ vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = 'Clear search h
 
 -- Telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find (f)iles' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '(G)rep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find (b)uffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find (h)elp' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'buffers' })
+vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'commands' })
+vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'diagnostics' })
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'grep' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'help' })
+vim.keymap.set('n', '<leader>fj', builtin.jumplist, { desc = 'jumplist' })
+vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'keymaps' })
+vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'marks' })
+vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'quickfix' })
+vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'registers' })
 
 -- LSP
 -- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
