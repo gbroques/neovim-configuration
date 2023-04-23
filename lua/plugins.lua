@@ -114,7 +114,7 @@ return require('lazy').setup({
     build = ':TSUpdate'
   },
   'windwp/nvim-ts-autotag',
-  -- TODO: mrjones2014/nvim-ts-rainbow
+  'HiPhish/nvim-ts-rainbow2',
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
     dependencies = "nvim-treesitter/nvim-treesitter",

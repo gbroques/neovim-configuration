@@ -32,6 +32,9 @@ require 'nvim-treesitter.configs'.setup {
       },
     },
   },
+  rainbow = {
+    enable = true
+  }
 }
 -- TODO: Renable folding once telescope bug is fixed.
 -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1337#issuecomment-864442660
