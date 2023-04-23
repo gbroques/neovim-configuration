@@ -58,6 +58,7 @@ return require('lazy').setup({
   'RRethy/vim-illuminate',
   'petertriho/nvim-scrollbar',
   -- TODO: SmiteshP/nvim-navic
+  -- chentoast/marks.nvim
 
   -- Comment
   { "numToStr/Comment.nvim" },
