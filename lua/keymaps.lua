@@ -80,6 +80,9 @@ end, { desc = 'Toggle tabline' })
 -- NvimTree
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = '(e)xplorer' })
 
+-- Git
+-- TODO: Add keymaps for git hunks & git.
+
 -- Visual --
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv")
