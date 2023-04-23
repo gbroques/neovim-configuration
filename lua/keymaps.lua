@@ -59,7 +59,7 @@ vim.keymap.set("n", "<leader>rn", ":IncRename ")
 vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
 vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>")
 vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
-vim.keymap.set('n', '<leader>f', function()
+vim.keymap.set('n', '<leader>lf', function()
   vim.lsp.buf.format { async = true }
 end)
 
