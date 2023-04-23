@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 -- Leader Key
 -- ----------------------------------------------------
 -- Set `mapleader` before lazy so mappings are correct.
+-- Article on why space for the leader key:
+-- https://raindev.io/blog/space-leader/
 vim.g.mapleader = ' '
 -------------------------------------------------------
 -- TODO: Refactor into plugins directory.
