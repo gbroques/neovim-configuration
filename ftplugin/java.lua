@@ -51,7 +51,6 @@ local config = {
     -- Should 'd' be reserved for debug?
     vim.keymap.set('n', "<leader>df", jdtls.test_class, opts)
     vim.keymap.set('n', "<leader>dn", jdtls.test_nearest_method, opts)
-    -- cr for (c)ode (r)efactor
     vim.keymap.set('n', '<leader>rv', jdtls.extract_variable_all, { desc = 'Extract variable', buffer = bufnr })
     vim.keymap.set('v', '<leader>rm', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]], { desc = 'Extract method', buffer = bufnr })
     vim.keymap.set('n', '<leader>rc', jdtls.extract_constant, { desc = 'Extract constant', buffer = bufnr })
