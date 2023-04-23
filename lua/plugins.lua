@@ -107,6 +107,9 @@ return require('lazy').setup({
   },
   'windwp/nvim-ts-autotag',
   -- TODO: mrjones2014/nvim-ts-rainbow
+  -- TODO: nvim-treesitter/nvim-treesitter-textobjects
+  -- after = "nvim-treesitter",
+  -- requires = "nvim-treesitter/nvim-treesitter",
 
   -- Git
   'lewis6991/gitsigns.nvim',
