@@ -116,12 +116,25 @@ cmp.setup({
         luasnip = "Snippet",
         buffer = "Buffer",
         path = "Path",
+        cmdline = 'CMD'
       })[entry.source.name]
       return vim_item
     end,
   }
 })
-
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    {
+      name = 'cmdline',
+      option = {
+        ignore_cmds = { 'Man', '!' }
+      }
+    }
+  })
+})
 
 -- for friendly snippets
 require("luasnip.loaders.from_vscode").lazy_load()
