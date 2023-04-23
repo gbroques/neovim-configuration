@@ -53,15 +53,15 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- https://github.com/LunarVim/nvim-basic-ide/blob/3d2b182a3cffe4d3a4490fd6b8b49e8aad023c4a/lua/user/lsp.lua#L19-L48
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Goto definition' })
 vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
-vim.keymap.set("n", "<leader>rn", ":IncRename ")
+vim.keymap.set("n", "<leader>rn", ":IncRename ", { desc = 'Rename' })
 vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action)
-vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>")
+vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>", { desc = 'Goto references' })
 vim.keymap.set('n', 'gW', "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>")
 vim.keymap.set('n', '<leader>lf', function()
   vim.lsp.buf.format { async = true }
-end)
+end, { desc = 'Format' })
 vim.keymap.set('n', 'gl', function()
   vim.diagnostic.open_float({
     scope = 'line',
