@@ -73,6 +73,13 @@ end, { desc = 'Format' })
 vim.keymap.set("n", "<leader>rn", ":IncRename ", { desc = 'Rename' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 
+-- UI
+vim.keymap.set('n', '<leader>us', function()
+  vim.opt.laststatus = vim.o.laststatus == 3 and 0 or 3
+end, { desc= 'Toggle statusline' })
+vim.keymap.set('n', '<leader>ut', function()
+  vim.opt.showtabline = vim.o.showtabline == 2 and 0 or 2
+end, { desc= 'Toggle tabline' })
 -- NvimTree
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = '(e)xplorer' })
 
