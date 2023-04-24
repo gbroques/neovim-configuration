@@ -131,4 +131,5 @@ return require('lazy').setup({
   'lewis6991/gitsigns.nvim',
   -- TODO:
   -- { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' }
-})
+}, { git = { timeout = 600 } })
+
