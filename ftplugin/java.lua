@@ -14,6 +14,16 @@ vim.o.shiftwidth = 0
 local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_nvim_lsp.default_capabilities(client_capabilities)
 
+local function get_config_dir()
+  if vim.fn.has('linux') then
+    return 'config_linux'
+  elseif vim.fn.has('mac') then
+    return 'config_mac'
+  else
+    return 'config_win'
+  end
+end
+
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
   capabilities = capabilities,
@@ -31,8 +41,7 @@ local config = {
     "--add-opens", "java.base/java.util=ALL-UNNAMED",
     "--add-opens", "java.base/java.lang=ALL-UNNAMED",
     "-jar", launcher_jar,
-    -- TODO: config_* should be dynamic depending upon OS.
-    "-configuration", vim.fs.normalize(jdtls_path .. '/config_win'),
+    "-configuration", vim.fs.normalize(jdtls_path .. '/' .. get_config_dir()),
     "-data", vim.fn.expand('~/.cache/jdtls-workspace/') .. workspace_dir
   },
   settings = {
