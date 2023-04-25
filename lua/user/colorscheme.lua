@@ -5,7 +5,6 @@ require("tokyonight").setup({
     functions = {},
     variables = {},
   },
-  -- test
   on_colors = function(colors)
     colors.comment = colors.dark5
     colors.fg = '#d3dcf7'
