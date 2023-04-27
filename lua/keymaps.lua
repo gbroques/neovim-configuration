@@ -30,6 +30,8 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- Buffers
+-- TODO: Should these be more ergonomic? Helix uses gn and gp for next / pervious buffer.
+--       Square brackets are a bit of a stretch for such a commonly performed action.
 vim.keymap.set("n", "]b", ":bnext<CR>", { desc = 'Next buffer' })
 vim.keymap.set("n", "[b", ":bprevious<CR>", { desc = 'Previous buffer' })
 vim.keymap.set("n", "<S-q>", "<cmd>bdelete!<CR>", { desc = 'Close buffer' })
