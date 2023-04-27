@@ -61,7 +61,12 @@ return require('lazy').setup({
   'RRethy/vim-illuminate',
   'petertriho/nvim-scrollbar',
   -- TODO: SmiteshP/nvim-navic
-  -- chentoast/marks.nvim
+  -- TODO: chentoast/marks.nvim
+  -- TODO: Add custom text objects
+  --       https://youtu.be/wlR5gYd6um0?t=1793
+  --       Indent, Entire, Line
+  --       wellle/targets.vim
+  --       echasnovski/mini.ai
 
   -- Comment
   { "numToStr/Comment.nvim" },
