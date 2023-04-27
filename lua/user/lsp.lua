@@ -1,5 +1,22 @@
 -- Language Server Protocol Configuration
 -- --------------------------------------
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  debug = true,
+  sources = {
+    -- TODO: Switch to eslint_d for performance.
+    null_ls.builtins.diagnostics.eslint.with({
+      timeout = 10000,
+    }),
+    -- TODO: Switch to eslint_d for performance.
+    null_ls.builtins.formatting.eslint.with({
+      timeout = 10000,
+      -- extra_args = { '--debug' }
+    }),
+  },
+})
+
 require("neodev").setup { -- for Lua Neovim Plugin development
 
 }
@@ -12,7 +29,15 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 --       https://github.com/jose-elias-alvarez/typescript.nvim
 --       https://github.com/neovim/nvim-lspconfig/wiki/Language-specific-plugins
 lspconfig.tsserver.setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    if client.name == "tsserver" then
+      -- https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#serverCapabilities
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
+    end
+    -- TODO: Bind keymaps to bufnr.
+  end
 }
 
 -- Lua

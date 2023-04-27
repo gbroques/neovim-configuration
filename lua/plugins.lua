@@ -65,7 +65,8 @@ return require('lazy').setup({
   { "JoosepAlviste/nvim-ts-context-commentstring" },
 
   -- LSP
-  'neovim/nvim-lspconfig', -- Configs for nvim LSP client
+  'neovim/nvim-lspconfig',           -- Configs for nvim LSP client
+  'jose-elias-alvarez/null-ls.nvim', -- Adapts linters / formatters to Neovim's LSP client.
   'LuaLS/lua-language-server',
   -- Java
   'mfussenegger/nvim-jdtls', -- Java Development Tools Language Server
@@ -132,4 +133,3 @@ return require('lazy').setup({
   -- TODO:
   -- { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' }
 }, { git = { timeout = 600 } })
-
