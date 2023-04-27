@@ -48,10 +48,11 @@ return require('lazy').setup({
   -- Miscellaneous
   'max397574/better-escape.nvim',
   'windwp/nvim-autopairs',
-  -- TODO: Add tpope/vim-repeat or switch to a different
-  -- surround plugin like echasnovski/mini.surround or
-  -- kylechui/nvim-surround with dot repeat builtin.
+  -- TODO:
+  -- Try a new surround plugin like echasnovski/mini.surround or
+  -- kylechui/nvim-surround with dot repeat builtin?
   'tpope/vim-surround',
+  'tpope/vim-repeat',
   'folke/which-key.nvim',
   'smjonas/inc-rename.nvim',
   -- TODO:
