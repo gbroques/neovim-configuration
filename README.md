@@ -61,6 +61,12 @@ Install [lua-language-server](https://github.com/luals/lua-language-server/wiki/
 
 **Reference:** https://github.com/neovim/nvim-lspconfig/blob/v0.1.6/lua/lspconfig/server_configurations/sumneko_lua.lua#L45
 
+### Tree-sitter
+
+Install Tree-sitter query parser for [query editor highlighting](https://github.com/nvim-treesitter/playground):
+
+    :TSInstall query
+
 ## Setup
 
 Clone to Neovim configuration directory depending on operating system:

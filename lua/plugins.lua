@@ -127,6 +127,7 @@ return require('lazy').setup({
     'nvim-treesitter/nvim-treesitter-textobjects',
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
+  'nvim-treesitter/playground',
 
   -- Git
   'lewis6991/gitsigns.nvim',
