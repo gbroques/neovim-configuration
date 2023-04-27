@@ -15,7 +15,7 @@ require("better_escape").setup { mapping = { "dh" } }
 
 -- Normal --
 
-vim.keymap.set('n', '<leader>w', ':update<CR>', { desc = '(w)rite' })
+vim.keymap.set('n', '<leader>w', ':silent update<CR>', { desc = 'Write', silent = true })
 
 -- Better window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -43,17 +43,17 @@ vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = 'Clear search h
 
 -- Telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'buffers' })
-vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'commands' })
-vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'diagnostics' })
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'grep' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'help' })
-vim.keymap.set('n', '<leader>fj', builtin.jumplist, { desc = 'jumplist' })
-vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'keymaps' })
-vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'marks' })
-vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'quickfix' })
-vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'registers' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Buffers' })
+vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'Commands' })
+vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Diagnostics' })
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Grep' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help' })
+vim.keymap.set('n', '<leader>fj', builtin.jumplist, { desc = 'Jumplist' })
+vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps' })
+vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Marks' })
+vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'Quickfix' })
+vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'Registers' })
 
 -- LSP
 -- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
@@ -89,13 +89,13 @@ vim.keymap.set('n', '<leader>ut', function()
   vim.opt.showtabline = vim.o.showtabline == 2 and 0 or 2
 end, { desc = 'Toggle tabline' })
 -- NvimTree
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'explorer' })
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'Explorer' })
 
 -- Git
-vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'branches' })
-vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'commits' })
-vim.keymap.set('n', '<leader>gC', builtin.git_bcommits, { desc = 'commits for buffer' })
-vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'status' })
+vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Branches' })
+vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Commits' })
+vim.keymap.set('n', '<leader>gC', builtin.git_bcommits, { desc = 'Commits for buffer' })
+vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Status' })
 
 -- Visual --
 -- Stay in indent mode
