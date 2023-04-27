@@ -14,6 +14,7 @@ gitsigns.setup {
     local function map(mode, l, r, opts)
       opts = opts or {}
       opts.buffer = bufnr
+      -- TODO: Should this be in keymaps?
       vim.keymap.set(mode, l, r, opts)
     end
 
