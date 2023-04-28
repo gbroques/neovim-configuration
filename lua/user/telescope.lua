@@ -6,7 +6,8 @@ telescope.setup {
       "^.git/"
     },
     layout_config = {
-      width = 0.95,
+      width = 0.99,
+      height = 0.99
     },
   }
 }
