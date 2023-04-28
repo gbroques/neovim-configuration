@@ -94,7 +94,6 @@ return require('lazy').setup({
     end
   },
   -- TODO:
-  -- 'ray-x/lsp_signature.nvim'
   -- 'simrat39/symbols-outline.nvim'
   -- 'kosayoda/nvim-lightbulb'
 
