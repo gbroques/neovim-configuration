@@ -54,6 +54,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help' })
 vim.keymap.set('n', '<leader>fj', builtin.jumplist, { desc = 'Jumplist' })
 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps' })
 vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Marks' })
+vim.keymap.set('n', '<leader>fp', ':Telescope projects<cr>', { desc = 'Projects' })
 vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'Quickfix' })
 vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'Registers' })
 

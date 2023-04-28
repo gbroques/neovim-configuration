@@ -17,3 +17,6 @@ require('user.incremental-rename')
 require('user.indent-guide')
 require('user.illuminate')
 require('user.scrollbar')
+require('user.project')
+require('user.start-screen')
+
