@@ -14,6 +14,7 @@
 -- - fileformat & encoding if not unix or utf-8
 -- - nvim-dap status - whether there's an active debugging sessios
 -- - column number
+local icons = require('icons')
 
 require("lualine").setup {
   options = {
@@ -35,8 +36,10 @@ require("lualine").setup {
         "diagnostics",
         sources = { "nvim_diagnostic" },
         sections = { "error", "warn" },
-        -- icons duplicated in explorer
-        symbols = { error = " ", warn = " " },
+        symbols = {
+          error = icons.diagnostics.error .. ' ',
+          warn = icons.diagnostics.warning .. ' '
+        },
         colored = true,
         always_visible = false,
       }

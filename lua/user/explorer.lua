@@ -1,3 +1,5 @@
+local icons = require('icons')
+
 -- Disable netrw
 -- TODO: This breaks opening URLs from Neovim via 'gx'.
 vim.g.loaded_netrw = 1
@@ -18,6 +20,7 @@ require('nvim-tree').setup {
 
     -- Group empty directories for Java development
     group_empty = true,
+    -- TODO: Should these come from icons module?
     icons = {
       glyphs = {
         default = "",
@@ -47,14 +50,6 @@ require('nvim-tree').setup {
   diagnostics = {
     enable = true,
     show_on_dirs = true,
-    -- TODO: Create icons file like LunarVim?
-    -- https://github.com/LunarVim/LunarVim/blob/1.2.0/lua/lvim/icons.lua#L131-L144
-    -- warning & error duplicated in statusline
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
+    icons = icons.diagnostics
   },
 }
