@@ -36,13 +36,11 @@ return require('lazy').setup({
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
+  -- Startup screen
   {
-    'akinsho/bufferline.nvim',
-    version = "v3.*",
+    'goolord/alpha-nvim',
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
-  -- Startup screen
-  'goolord/alpha-nvim',
   -- Project management
   'ahmedkhalf/project.nvim',
 

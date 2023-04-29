@@ -89,9 +89,6 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 vim.keymap.set('n', '<leader>us', function()
   vim.opt.laststatus = vim.o.laststatus == 3 and 0 or 3
 end, { desc = 'Toggle statusline' })
-vim.keymap.set('n', '<leader>ut', function()
-  vim.opt.showtabline = vim.o.showtabline == 2 and 0 or 2
-end, { desc = 'Toggle tabline' })
 vim.keymap.set('n', '<leader>uw', function()
   vim.wo.wrap = not vim.wo.wrap -- local to window
 end, { desc = 'Toggle wrap' })
