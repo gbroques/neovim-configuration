@@ -46,10 +46,6 @@ return require('lazy').setup({
 
   -- Miscellaneous
   'max397574/better-escape.nvim',
-  -- TODO: The following "replace with register" plugin uses 'gr' to 'go replace'.
-  -- We don't want to use this mapping because it conflicts with "goto references" for LSP.
-  -- https://github.com/inkarkat/vim-ReplaceWithRegister
-  -- See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
   'windwp/nvim-autopairs',
   -- TODO:
   -- Try a new surround plugin like echasnovski/mini.surround or
@@ -71,6 +67,10 @@ return require('lazy').setup({
   --       Indent, Entire, Line
   --       wellle/targets.vim
   --       echasnovski/mini.ai
+  -- TODO: The following "replace with register" plugin uses 'gr' to 'go replace'.
+  -- We don't want to use this mapping because it conflicts with "goto references" for LSP.
+  -- https://github.com/inkarkat/vim-ReplaceWithRegister
+  -- See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
 
   -- Comment
   { "numToStr/Comment.nvim" },
