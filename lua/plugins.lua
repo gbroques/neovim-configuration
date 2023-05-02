@@ -32,6 +32,7 @@ return require('lazy').setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
+  'rebelot/heirline.nvim',
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
@@ -82,6 +83,7 @@ return require('lazy').setup({
   'neovim/nvim-lspconfig',           -- Configs for nvim LSP client
   'jose-elias-alvarez/null-ls.nvim', -- Adapts linters / formatters to Neovim's LSP client.
   'LuaLS/lua-language-server',
+  'doums/lsp_spinner.nvim',
   -- Java
   {
     -- Java Development Tools Language Server
@@ -90,17 +92,6 @@ return require('lazy').setup({
   },
   -- Lua (Neovim Plugin Development)
   'folke/neodev.nvim',
-  {
-    -- Display language server progress in bottom right corner
-    'j-hui/fidget.nvim',
-    config = function()
-      require('fidget').setup({
-        text = {
-          spinner = 'line'
-        }
-      })
-    end
-  },
   -- TODO:
   -- 'simrat39/symbols-outline.nvim'
   -- 'kosayoda/nvim-lightbulb'

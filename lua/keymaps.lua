@@ -86,9 +86,14 @@ vim.keymap.set('n', '<leader>rn', ':IncRename ', { desc = 'Rename' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 
 -- UI
+-- Inspired by AstroNvim
+-- https://astronvim.com/Basic%20Usage/mappings#ui-mappings
 vim.keymap.set('n', '<leader>us', function()
   vim.opt.laststatus = vim.o.laststatus == 3 and 0 or 3
 end, { desc = 'Toggle statusline' })
+vim.keymap.set('n', '<leader>ur', function()
+  vim.opt.relativenumber = not vim.o.relativenumber
+end, { desc = 'Toggle relative line numbers' })
 vim.keymap.set('n', '<leader>uw', function()
   vim.wo.wrap = not vim.wo.wrap -- local to window
 end, { desc = 'Toggle wrap' })

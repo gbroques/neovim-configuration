@@ -46,6 +46,7 @@ local kind_icons = {
   Value = "",
   Variable = "",
 }
+-- TODO: Add completion for :IncRename incremental rename?
 
 cmp.setup({
   view = {
