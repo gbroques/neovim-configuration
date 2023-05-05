@@ -15,9 +15,11 @@ local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = cmp_nvim_lsp.default_capabilities(client_capabilities)
 
 local function get_config_dir()
-  if vim.fn.has('linux') then
+  -- Unlike some other programming languages (e.g. JavaScript)
+  -- lua considers 0 truthy!
+  if vim.fn.has('linux') == 1 then
     return 'config_linux'
-  elseif vim.fn.has('mac') then
+  elseif vim.fn.has('mac') == 1 then
     return 'config_mac'
   else
     return 'config_win'
@@ -28,9 +30,9 @@ end
 local config = {
   capabilities = capabilities,
   cmd = {
-    -- TODO: Find another way without forcing java 17 to be in PATH.
-    -- java MUST be in PATH and version 17 or greater.
-    "java",
+    "cmd.exe",
+    "/c",
+    "C:/Program Files/Java/jdk-17.0.4.1/bin/java",
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -61,7 +63,8 @@ local config = {
     vim.keymap.set('n', "<leader>df", jdtls.test_class, opts)
     vim.keymap.set('n', "<leader>dn", jdtls.test_nearest_method, opts)
     vim.keymap.set('n', '<leader>rv', jdtls.extract_variable_all, { desc = 'Extract variable', buffer = bufnr })
-    vim.keymap.set('v', '<leader>rm', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]], { desc = 'Extract method', buffer = bufnr })
+    vim.keymap.set('v', '<leader>rm', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
+      { desc = 'Extract method', buffer = bufnr })
     vim.keymap.set('n', '<leader>rc', jdtls.extract_constant, { desc = 'Extract constant', buffer = bufnr })
   end
 }
