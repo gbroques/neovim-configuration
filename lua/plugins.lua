@@ -81,7 +81,11 @@ return require('lazy').setup({
   'jose-elias-alvarez/null-ls.nvim', -- Adapts linters / formatters to Neovim's LSP client.
   'LuaLS/lua-language-server',
   -- Java
-  'mfussenegger/nvim-jdtls', -- Java Development Tools Language Server
+  {
+    -- Java Development Tools Language Server
+    'mfussenegger/nvim-jdtls',
+    commit = '355de7458fd63ccef9c6485d952ea118ba2cb46a'
+  },
   -- Lua (Neovim Plugin Development)
   'folke/neodev.nvim',
   {

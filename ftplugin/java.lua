@@ -30,8 +30,6 @@ end
 local config = {
   capabilities = capabilities,
   cmd = {
-    "cmd.exe",
-    "/c",
     "C:/Program Files/Java/jdk-17.0.4.1/bin/java",
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
