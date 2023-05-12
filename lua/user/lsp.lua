@@ -4,17 +4,18 @@
 local null_ls = require("null-ls")
 local icons = require("icons")
 
+
+local eslint_config_path = os.getenv("ESLINT_CONFIG_PATH")
+
 null_ls.setup({
   debug = true,
   sources = {
-    -- TODO: Switch to eslint_d for performance.
-    null_ls.builtins.diagnostics.eslint.with({
-      timeout = 10000,
+    -- Pass --debug in extra_args to troubleshoot issues.
+    null_ls.builtins.diagnostics.eslint_d.with({
+      extra_args = { '--config', eslint_config_path }
     }),
-    -- TODO: Switch to eslint_d for performance.
-    null_ls.builtins.formatting.eslint.with({
-      timeout = 10000,
-      -- extra_args = { '--debug' }
+    null_ls.builtins.formatting.eslint_d.with({
+      extra_args = { '--config', eslint_config_path }
     }),
   },
 })

@@ -53,6 +53,18 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
        :TSInstall javascript
 
+3. Setup ESLint for formatting and diagnostics.
+
+`eslint` and `eslint_d` MUST be in the `PATH`.
+
+[`eslint_d`](https://github.com/mantoni/eslint_d.js/) speeds up ESLint and can be installed globally:
+
+    npm install -g eslint_d
+
+An enviroment variable, `ESLINT_CONFIG_PATH`, containing the path to the ESLint configuration file MUST be set.
+
+This is passed to `eslint`'s CLI `--config` option.
+
 ### Lua
 
 Install [lua-language-server](https://github.com/luals/lua-language-server/wiki/Getting-Started#command-line).
