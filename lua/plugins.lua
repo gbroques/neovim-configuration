@@ -65,6 +65,8 @@ return require('lazy').setup({
   -- TODO: Add custom text objects
   --       https://youtu.be/wlR5gYd6um0?t=1793
   --       Indent, Entire, Line
+  -- TODO: This plugin errors.
+  -- { "kana/vim-textobj-entire" },
   --       wellle/targets.vim
   --       echasnovski/mini.ai
   -- TODO: The following "replace with register" plugin uses 'gr' to 'go replace'.
