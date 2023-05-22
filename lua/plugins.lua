@@ -55,6 +55,7 @@ return require('lazy').setup({
   'tpope/vim-repeat',
   'folke/which-key.nvim',
   'smjonas/inc-rename.nvim',
+  'nvim-pack/nvim-spectre',
   -- TODO:
   -- 'andymass/vim-matchup'
   -- Editor Pane

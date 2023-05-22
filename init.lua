@@ -21,4 +21,4 @@ require('user.illuminate')
 require('user.scrollbar')
 require('user.project')
 require('user.start-screen')
-
+require('user.spectre')
