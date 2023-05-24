@@ -6,16 +6,8 @@
 -- https://nihilistkitten.me/nvim-lua-statusline/
 -- Ideas of things to include from the above articles:
 -- - mode - possibly shortened to 1 or 3 letters.
--- - filename
---   - with containing directories
---   - relative to current working directory
---   - should shorten path based on max length
---   - work with JDT URIs and other buffer names
--- - whether the file is modified or read only
--- - diagnostics - warnings & errors
 -- - fileformat & encoding if not unix or utf-8
 -- - nvim-dap status - whether there's an active debugging sessios
--- - column number
 --
 local colors = require('tokyonight.colors').setup()
 local icons = require('icons')
