@@ -84,7 +84,7 @@ return require('lazy').setup({
   'neovim/nvim-lspconfig',           -- Configs for nvim LSP client
   'jose-elias-alvarez/null-ls.nvim', -- Adapts linters / formatters to Neovim's LSP client.
   'LuaLS/lua-language-server',
-  'doums/lsp_spinner.nvim',
+  'doums/lswip.nvim',
   -- Java
   {
     -- Java Development Tools Language Server

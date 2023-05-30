@@ -221,10 +221,11 @@ local Diagnostics = {
 }
 
 local LSPMessages = {
-  provider = require('lsp_spinner').status,
+  provider = require('lswip').get,
   hl = function(self)
     return { fg = self:mode_color() }
-  end
+  end,
+  -- update = { "LswipUpdate" }
 }
 
 local ColumnNumber = {

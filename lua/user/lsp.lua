@@ -27,17 +27,12 @@ require("neodev").setup { -- for Lua Neovim Plugin development
 --       https://github.com/LunarVim/nvim-basic-ide/blob/master/lua/user/lsp.lua#L65
 local lspconfig = require('lspconfig')
 local client_capabilities = vim.lsp.protocol.make_client_capabilities()
--- turn on `window/workDoneProgress` capability
-local lsp_spinner = require('lsp_spinner')
-lsp_spinner.init_capabilities(client_capabilities)
+-- client_capabilities.window.workDoneProgress = true
 local capabilities = require('cmp_nvim_lsp').default_capabilities(client_capabilities)
-
-lsp_spinner.setup({
-  -- add space between spinner and LSP client name
-  spinner = { ' -', ' \\', ' |', ' /' },
-  -- placeholder displayed in place of the spinner when there is
-  -- no activity for a given LSP client
-  placeholder = '  ',
+local lswip = require('lswip')
+lswip.setup({
+  frames = { '-', '\\', '|', '/' },
+  redrawstatus = true
 })
 
 -- JavaScript
@@ -52,7 +47,7 @@ lspconfig.tsserver.setup {
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
     end
-    lsp_spinner.on_attach(client, bufnr)
+    -- lsp_spinner.on_attach(client, bufnr)
     -- TODO: Bind keymaps to bufnr.
   end
 }
@@ -74,7 +69,7 @@ lspconfig.lua_ls.setup {
     },
   },
   on_attach = function(client, bufnr)
-    lsp_spinner.on_attach(client, bufnr)
+    -- lsp_spinner.on_attach(client, bufnr)
   end
 }
 
