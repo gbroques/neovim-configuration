@@ -38,6 +38,8 @@ end
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+-- https://github.com/microsoft/vscode-java-test/wiki/Run-with-Configuration#property-details
+local java_test_config = { vmArgs = { '-XX:+AllowRedefinitionToAddDeleteMethods' } }
 local config = {
   capabilities = capabilities,
   cmd = {
@@ -57,12 +59,6 @@ local config = {
   },
   settings = {
     ['java.format.settings.url'] = vim.fn.expand("~/.vscode/formatter.xml"),
-    -- TODO: The follwing doesn't seem to work:
-    -- ['java.test.config'] = {
-    --     vmArgs = {
-    --       '-XX:+AllowRedefinitionToAddDeleteMethods'
-    --     }
-    --   }
   },
   root_dir = vim.fs.dirname(vim.fs.find({ 'pom.xml', '.git' }, { upward = true })[1]),
   init_options = {
@@ -82,8 +78,8 @@ local config = {
     local opts = { silent = true, buffer = bufnr }
     vim.keymap.set('n', "<leader>lo", jdtls.organize_imports, { desc = 'Organize imports', buffer = bufnr })
     -- Should 'd' be reserved for debug?
-    vim.keymap.set('n', "<leader>df", jdtls.test_class, opts)
-    vim.keymap.set('n', "<leader>dn", jdtls.test_nearest_method, opts)
+    vim.keymap.set('n', "<leader>df", function() jdtls.test_class({ config_overrides = java_test_config }) end, opts)
+    vim.keymap.set('n', "<leader>dn", function() jdtls.test_nearest_method({ config_overrides = java_test_config }) end, opts)
     vim.keymap.set('n', '<leader>rv', jdtls.extract_variable_all, { desc = 'Extract variable', buffer = bufnr })
     vim.keymap.set('v', '<leader>rm', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]], { desc = 'Extract method', buffer = bufnr })
     vim.keymap.set('n', '<leader>rc', jdtls.extract_constant, { desc = 'Extract constant', buffer = bufnr })
