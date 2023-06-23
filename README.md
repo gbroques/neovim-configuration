@@ -24,18 +24,26 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 ### Java
 
-1. Install [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) in a subdirectory `language-servers/jdt-language-server` within the standard data directory for your operating system.
+1. Install Java 17 in the following directory:
 
-| Operating System | Data Directory |
-| ---------------- | -------------- |
-| Linux / MacOS    | `~/.local/share/nvim` |
-| Windows          | `~/AppData/Local/nvim-data` |
+       C:/Program Files/Java/jdk-17.0.4.1
 
-`:help standard-path`
+2. Save formatter settings at `~/.vscode/formatter.xml`.
 
-`java` version 17 or greater must be in the `PATH`.
+3. Install the following projects in a subdirectory within the standard data directory for your operating system:
 
-2. Install tree-sitter Java parser from inside Neovim:
+    1. [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) - `language-servers/jdt-language-server`
+    2. [java-debug](https://github.com/microsoft/java-debug) - `java-debug`
+    3. [vscode-java-test](https://github.com/microsoft/vscode-java-test) - `vscode-java-test`
+
+    | Operating System | Data Directory |
+    | ---------------- | -------------- |
+    | Linux / MacOS    | `~/.local/share/nvim` |
+    | Windows          | `~/AppData/Local/nvim-data` |
+
+    `:help standard-path`
+
+4. Install the tree-sitter Java parser from inside Neovim:
 
        :TSInstall java
 
@@ -49,7 +57,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 **Reference:** https://github.com/neovim/nvim-lspconfig/blob/v0.1.6/lua/lspconfig/server_configurations/tsserver.lua#L34
 
-2. Install tree-sitter JavaScript parser from inside Neovim:
+2. Install the tree-sitter JavaScript parser from inside Neovim:
 
        :TSInstall javascript
 
@@ -75,7 +83,7 @@ Install [lua-language-server](https://github.com/luals/lua-language-server/wiki/
 
 ### Tree-sitter
 
-Install Tree-sitter query parser for [query editor highlighting](https://github.com/nvim-treesitter/playground):
+Install the Tree-sitter query parser for [query editor highlighting](https://github.com/nvim-treesitter/playground):
 
     :TSInstall query
 

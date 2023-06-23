@@ -85,6 +85,10 @@ return require('lazy').setup({
   'jose-elias-alvarez/null-ls.nvim', -- Adapts linters / formatters to Neovim's LSP client.
   'LuaLS/lua-language-server',
   'doums/lsp_spinner.nvim',
+  {
+    'mfussenegger/nvim-dap',
+    tag = '0.6.0'
+  },
   -- Java
   {
     -- Java Development Tools Language Server
