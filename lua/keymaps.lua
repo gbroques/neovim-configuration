@@ -76,6 +76,7 @@ vim.keymap.set('n', 'gl', function()
 end, { desc = 'Show line diagnostics' })
 -- TODO: Write function that goes to reference automatically if there's only 1,
 -- and open Telescope if there's more than 1 reference.
+-- https://matrix.to/#/!cxlVvaAjYkBpQTKumW:gitter.im/$XuhOCs-CBTyGDT5cSSrwFvDUVlxbtlSISmztUEbG1Bo?via=matrix.org&via=gitter.im
 vim.keymap.set('n', 'gr', function()
   builtin.lsp_references({ include_declaration = false })
 end, { desc = 'Goto references' })
