@@ -154,6 +154,7 @@ return require('lazy').setup({
     'rcarriga/nvim-dap-ui',
     tag = 'v3.8.3'
   },
+  -- TODO LiadOz/nvim-dap-repl-highlights
   -- Java
   {
     -- Java Development Tools Language Server
