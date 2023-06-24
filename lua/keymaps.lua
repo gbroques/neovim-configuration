@@ -11,38 +11,38 @@
 -- ------------
 
 -- 'dh' is a convenient escape from Insert mode in Colemak.
-require("better_escape").setup { mapping = { "dh" } }
+require('better_escape').setup { mapping = { 'dh' } }
 
 -- Normal --
 
 vim.keymap.set('n', '<leader>w', ':silent update<CR>', { desc = 'Write', silent = true })
 
 -- Better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Resize with arrows
-vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
-vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+vim.keymap.set('n', '<C-Up>', ':resize -2<CR>')
+vim.keymap.set('n', '<C-Down>', ':resize +2<CR>')
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- Buffers
 -- TODO: Should these be more ergonomic? Helix uses gn and gp for next / pervious buffer.
 --       Square brackets are a bit of a stretch for such a commonly performed action.
 --       gnn used by treesitter for incremental selection
-vim.keymap.set("n", "]b", ":bnext<CR>", { desc = 'Next buffer' })
-vim.keymap.set("n", "[b", ":bprevious<CR>", { desc = 'Previous buffer' })
-vim.keymap.set("n", "<S-q>", "<cmd>bdelete!<CR>", { desc = 'Close buffer' })
+vim.keymap.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close buffer' })
 
 -- Diagnostics
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
 
 -- Clear highlights
-vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = 'Clear search highlighting' })
+vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
 
 -- Telescope
 local builtin = require('telescope.builtin')
@@ -108,5 +108,5 @@ vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Status' })
 
 -- Visual --
 -- Stay in indent mode
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
