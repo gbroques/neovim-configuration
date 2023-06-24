@@ -1,6 +1,9 @@
 local wk = require('which-key')
 wk.setup({})
 wk.register({
+  d = {
+    name = 'debug'
+  },
   f = {
     name = 'find',
   },
