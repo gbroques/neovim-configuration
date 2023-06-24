@@ -2,6 +2,7 @@ local telescope = require('telescope')
 telescope.setup {
   defaults = {
     wrap_results = true,
+    results_title = false,
     file_ignore_patterns = {
       "^.git/"
     },
@@ -13,15 +14,21 @@ telescope.setup {
   pickers = {
     lsp_references = {
       prompt_title = 'References',
-      results_title = false,
       preview_title = false,
       layout_strategy = 'vertical',
       layout_config = {
         prompt_position = 'top',
         preview_cutoff = 1,
-        preview_height = 0.70,
+        preview_height = 0.60,
         mirror = true
       },
+    },
+    find_files = {
+      preview_title = false
+    },
+    live_grep = {
+      preview_title = false,
+      prompt_title = 'Grep'
     }
   }
 }
