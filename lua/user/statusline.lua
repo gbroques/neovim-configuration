@@ -10,12 +10,11 @@
 -- - nvim-dap status - whether there's an active debugging sessios
 --
 local colors = require('tokyonight.colors').setup()
-local icons = require('icons')
 
-local conditions = require("heirline.conditions")
-local utils = require("heirline.utils")
-local Align = { provider = "%=" }
-local Space = { provider = " " }
+local conditions = require('heirline.conditions')
+local utils = require('heirline.utils')
+local Align = { provider = '%=' }
+local Space = { provider = ' ' }
 
 -- Mode colors copied from tokyonight lualine theme:
 -- https://github.com/folke/tokyonight.nvim/blob/v1.17.0/lua/lualine/themes/tokyonight.lua#L6-L41
@@ -36,18 +35,18 @@ local ModeAwareStatusLine = {
       i = mode_colors.insert,
       v = mode_colors.visual,
       V = mode_colors.visual,
-      ["\22"] = mode_colors.visual,
+      ['\22'] = mode_colors.visual,
       c = mode_colors.command,
       s = mode_colors.visual,
       S = mode_colors.visual,
-      ["\19"] = mode_colors.visual,
+      ['\19'] = mode_colors.visual,
       R = mode_colors.replace,
       r = mode_colors.replace,
-      ["!"] = mode_colors.terminal,
+      ['!'] = mode_colors.terminal,
       t = mode_colors.terminal,
     },
     mode_color = function(self)
-      local mode = conditions.is_active() and vim.fn.mode(1) or "n"
+      local mode = conditions.is_active() and vim.fn.mode(1) or 'n'
       return self.color_by_first_mode_character[mode]
     end
   },
@@ -107,17 +106,17 @@ local Mode = {
     return { fg = colors.black, bg = self:mode_color() }
   end,
   update = {
-    "ModeChanged",
-    pattern = "*:*",
+    'ModeChanged',
+    pattern = '*:*',
     callback = vim.schedule_wrap(function()
-      vim.cmd("redrawstatus")
+      vim.cmd('redrawstatus')
     end),
   },
 }
 
 --TODO: This is an internal module. Replace with copied functions.
 --it makes more sense for lighten to be 30% instead of the inverse 70%
-local colors_util = require("tokyonight.util")
+local colors_util = require('tokyonight.util')
 local file_modified_lighten_percentage = 0.70
 
 local function format_uri(uri)
@@ -139,7 +138,6 @@ local FileName = {
     -- trim the pattern relative to the current directory.
     -- For other options, see :h filename-modifers
     local filename = get_filename()
-    if filename == "" then return " [No Name] " end
     -- if the filename occupies more than 1/4th of the available
     -- space, then trim the filepath to its initials
     if not conditions.width_percent_below(#filename, 0.25) then
@@ -156,13 +154,12 @@ local FileName = {
   end,
 }
 
--- TODO: use background for file flags.
 local FileFlags = {
   {
     condition = function()
       return vim.bo.modified
     end,
-    provider = "● ",
+    provider = '● ',
     hl = function(self)
       return { fg = colors_util.lighten(self:mode_color(), file_modified_lighten_percentage) }
     end
@@ -171,7 +168,7 @@ local FileFlags = {
     condition = function()
       return not vim.bo.modifiable or vim.bo.readonly
     end,
-    provider = " ",
+    provider = ' ',
     hl = { fg = colors.red },
   },
 }
@@ -192,29 +189,29 @@ FileNameBlock = utils.insert(
   FileName,
   FileFlags,
   -- Cut statusline here when there's not enough space
-  { provider = "%<" }
+  { provider = '%<' }
 )
 
 local Diagnostics = {
   condition = conditions.has_diagnostics,
   static = {
-    error_icon = vim.fn.sign_getdefined("DiagnosticSignError")[1].text,
-    warn_icon = vim.fn.sign_getdefined("DiagnosticSignWarn")[1].text,
+    error_icon = vim.fn.sign_getdefined('DiagnosticSignError')[1].text,
+    warn_icon = vim.fn.sign_getdefined('DiagnosticSignWarn')[1].text,
   },
   init = function(self)
     self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
     self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
   end,
-  update = { "DiagnosticChanged", "BufEnter" },
+  update = { 'DiagnosticChanged', 'BufEnter' },
   {
     provider = function(self)
-      return self.errors > 0 and (self.error_icon .. self.errors .. " ")
+      return self.errors > 0 and (self.error_icon .. self.errors .. ' ')
     end,
     hl = { fg = colors.error, bg = colors.bg_statusline },
   },
   {
     provider = function(self)
-      return self.warnings > 0 and (self.warn_icon .. self.warnings .. " ")
+      return self.warnings > 0 and (self.warn_icon .. self.warnings .. ' ')
     end,
     hl = { fg = colors.warning, bg = colors.bg_statusline },
   },
@@ -228,7 +225,7 @@ local LSPMessages = {
 }
 
 local ColumnNumber = {
-  provider = " %2(%c%) ",
+  provider = ' %2(%c%) ',
   hl = function(self)
     return { fg = self:mode_color(), bg = colors.fg_gutter }
   end,
@@ -247,6 +244,6 @@ local StatusLine = utils.insert(
   ColumnNumber
 )
 -- TODO: Add nvim-dap status for debugging.
-require("heirline").setup({
+require('heirline').setup({
   statusline = StatusLine
 })
