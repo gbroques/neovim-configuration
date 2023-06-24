@@ -74,6 +74,8 @@ vim.keymap.set('n', 'gl', function()
     header = '',
   })
 end, { desc = 'Show line diagnostics' })
+-- TODO: Write function that goes to reference automatically if there's only 1,
+-- and open Telescope if there's more than 1 reference.
 vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { desc = 'Goto references' })
 vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
 vim.keymap.set('n', 'gW', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>')
