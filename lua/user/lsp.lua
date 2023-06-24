@@ -1,10 +1,10 @@
 ---------------------------------------------------------------------
 -- Language Server Protocol Configuration
 ---------------------------------------------------------------------
-local null_ls = require("null-ls")
-local icons = require("icons")
+local null_ls = require('null-ls')
+local icons = require('icons')
 
-local eslint_config_path = os.getenv("ESLINT_CONFIG_PATH")
+local eslint_config_path = os.getenv('ESLINT_CONFIG_PATH')
 
 null_ls.setup({
   debug = true,
@@ -19,7 +19,7 @@ null_ls.setup({
   },
 })
 
-require("neodev").setup { -- for Lua Neovim Plugin development
+require('neodev').setup { -- for Lua Neovim Plugin development
 
 }
 
@@ -47,7 +47,7 @@ lsp_spinner.setup({
 lspconfig.tsserver.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
-    if client.name == "tsserver" then
+    if client.name == 'tsserver' then
       -- https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#serverCapabilities
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
