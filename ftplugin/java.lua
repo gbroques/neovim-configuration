@@ -1,5 +1,5 @@
 -- Eclipse Java development tools (JDT) Language Server downloaded from:
--- https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.21.0/jdt-language-server-1.21.0-202303161431.tar.gz
+-- https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.24.0/jdt-language-server-1.24.0-202306011728.tar.gz
 local jdtls = require('jdtls')
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
@@ -7,7 +7,7 @@ local cmp_nvim_lsp = require('cmp_nvim_lsp')
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------
 local java_path = 'C:/Program Files/Java/jdk-17.0.4.1/bin/java'
 local formatter_settings_path = '~/.vscode/formatter.xml'
-local jdtls_path = vim.fn.stdpath('data') .. '/language-servers/jdt-language-server'
+local jdtls_path = vim.fn.stdpath('data') .. '/language-servers/jdt-language-server-1.24'
 local java_debug_path = vim.fn.glob(vim.fn.stdpath('data') .. '/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
 local vscode_java_test_paths = vim.fn.glob(vim.fn.stdpath('data') .. '/vscode-java-test/server/*.jar', true)
 local launcher_jar_path = vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
@@ -39,7 +39,10 @@ end
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 -- https://github.com/microsoft/vscode-java-test/wiki/Run-with-Configuration#property-details
-local java_test_config = { vmArgs = { '-XX:+AllowRedefinitionToAddDeleteMethods' } }
+-- TODO: Pass vmArgs if Java 17 runs the tests to fix Blockhound error.
+-- Currently Java 11 runs the tests.
+-- local java_test_config = { vmArgs = '-XX:+AllowRedefinitionToAddDeleteMethods', shortenCommandLine = 'jarmanifest' }
+local java_test_config = {}
 local config = {
   capabilities = capabilities,
   cmd = {
@@ -58,7 +61,24 @@ local config = {
     "-data", vim.fn.expand('~/.cache/jdtls-workspace/') .. workspace_dir
   },
   settings = {
-    ['java.format.settings.url'] = vim.fn.expand("~/.vscode/formatter.xml"),
+    ['java.format.settings.url'] = formatter_settings_path,
+    java = {
+        configuration = {
+        -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
+        -- And search for `interface RuntimeOption`
+        -- The `name` is NOT arbitrary, but must match one of the elements from `enum ExecutionEnvironment` in the link above
+        runtimes = {
+          {
+            name = 'JavaSE-11',
+            path = 'C:/Program Files/AdoptOpenJDK/jdk-11.0.10.9-hotspot',
+          },
+          {
+            name = "JavaSE-17",
+            path = 'C:/Program Files/Java/jdk-17.0.4.1',
+          },
+        }
+      }
+    }
   },
   root_dir = vim.fs.dirname(vim.fs.find({ 'pom.xml', '.git' }, { upward = true })[1]),
   init_options = {

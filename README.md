@@ -32,7 +32,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 3. Install the following projects in a subdirectory within the standard data directory for your operating system:
 
-    1. [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) - `language-servers/jdt-language-server`
+    1. [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) - `language-servers/jdt-language-server-1.24`
     2. [java-debug](https://github.com/microsoft/java-debug) - `java-debug`
     3. [vscode-java-test](https://github.com/microsoft/vscode-java-test) - `vscode-java-test`
 

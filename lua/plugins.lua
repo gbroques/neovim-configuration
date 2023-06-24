@@ -89,6 +89,10 @@ return require('lazy').setup({
     'mfussenegger/nvim-dap',
     tag = '0.6.0'
   },
+  {
+    'rcarriga/nvim-dap-ui',
+    tag = 'v3.8.3'
+  },
   -- Java
   {
     -- Java Development Tools Language Server
