@@ -22,6 +22,8 @@ vim.g.mapleader = ' '
 -- See https://github.com/LazyVim/LazyVim/tree/main/lua/lazyvim/plugins
 -- require("lazy").setup("plugins")
 
+-- TODO: Better organize plugins into groups by concern like LazyVim.
+-- See https://www.lazyvim.org/plugins
 return require('lazy').setup({
 
   -- Theme
