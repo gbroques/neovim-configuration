@@ -106,6 +106,7 @@ return require('lazy').setup({
     'petertriho/nvim-scrollbar',
     commit = '35f99d559041c7c0eff3a41f9093581ceea534e8'
   },
+  -- TODO: karb94/neoscroll.nvim for smooth scrolling
   -- TODO: SmiteshP/nvim-navic
   -- TODO: chentoast/marks.nvim
   -- TODO: Add custom text objects
