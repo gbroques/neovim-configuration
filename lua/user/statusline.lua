@@ -135,6 +135,8 @@ end
 
 local FileName = {
   provider = function()
+    if vim.bo.filetype == 'alpha' then return '' end
+    if vim.api.nvim_buf_get_name(0) == '' then return '' end
     -- trim the pattern relative to the current directory.
     -- For other options, see :h filename-modifers
     local filename = get_filename()
@@ -159,7 +161,13 @@ local FileFlags = {
     condition = function()
       return vim.bo.modified
     end,
-    provider = '● ',
+    provider = function()
+      local modified_string = '● '
+      if vim.api.nvim_buf_get_name(0) == '' then
+        modified_string = ' ' .. modified_string
+      end
+      return modified_string
+    end,
     hl = function(self)
       return { fg = colors_util.lighten(self:mode_color(), file_modified_lighten_percentage) }
     end
@@ -168,7 +176,10 @@ local FileFlags = {
     condition = function()
       return not vim.bo.modifiable or vim.bo.readonly
     end,
-    provider = ' ',
+    provider = function()
+      if vim.bo.filetype == 'alpha' then return '' end
+      return ' '
+    end,
     hl = { fg = colors.red },
   },
 }
