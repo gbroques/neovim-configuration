@@ -65,6 +65,7 @@ vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'Registers' })
 -- https://github.com/LunarVim/nvim-basic-ide/blob/3d2b182a3cffe4d3a4490fd6b8b49e8aad023c4a/lua/user/lsp.lua#L19-L48
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
+-- TODO: Consider centering screen with zz after gd jump.
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Goto definition' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Goto declaration' })
 vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, { desc = 'Goto implementation' })
