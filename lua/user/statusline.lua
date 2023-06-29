@@ -255,6 +255,8 @@ local StatusLine = utils.insert(
   ColumnNumber
 )
 -- TODO: Add nvim-dap status for debugging.
+-- https://github.com/rebelot/heirline.nvim/blob/master/cookbook.md#debugger
+-- TODO: Add indicator of running tests.
 require('heirline').setup({
   statusline = StatusLine
 })
