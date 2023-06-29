@@ -1,3 +1,5 @@
+-- Inspired by LunarVim:
+-- https://github.com/LunarVim/LunarVim/blob/28dbec26c36a24669c95798b5949f1f48d3f32e0/lua/lvim/icons.lua
 return {
   kind = {
     Array = "",
@@ -40,5 +42,8 @@ return {
     info = "",
     warning = "",
     error = "",
+  },
+  ui = {
+    Breakpoint = "",
   }
 }
