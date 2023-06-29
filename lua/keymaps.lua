@@ -108,6 +108,24 @@ end, { desc = 'Toggle wrap' })
 -- NvimTree
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'Explorer' })
 
+-- Debugging & DAP
+-- Inspired by AstroNvim, LazyVIM, and mfussenegger's config
+-- https://astronvim.com/Basic%20Usage/mappings#debugger-mappings
+-- https://www.lazyvim.org/keymaps#nvim-dap
+-- https://github.com/mfussenegger/dotfiles/blob/833d634251ebf3bf7e9899ed06ac710735d392da/vim/.config/nvim/lua/me/dap.lua#L118-L136
+local dap = require('dap')
+vim.keymap.set('n', '<F5>', dap.continue)
+vim.keymap.set('n', '<F10>', dap.step_over)
+vim.keymap.set('n', '<F11>', dap.step_into)
+vim.keymap.set('n', '<F12>', dap.step_out)
+vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Toggle breakpoint' })
+vim.keymap.set('n', '<leader>dB', function()
+  dap.toggle_breakpoint(vim.fn.input('Breakpoint Condition: '), nil, nil, true)
+end, { desc = 'Toggle conditional breakpoint' })
+vim.keymap.set('n', '<leader>dr', function()
+  dap.repl.toggle({ height = 15 })
+end, { desc = 'Toggle DAP repl' })
+
 -- Git
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Branches' })
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Commits' })
