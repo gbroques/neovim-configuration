@@ -95,6 +95,12 @@ local config = {
           "org.springframework.test.web.servlet.result.MockMvcResultHandlers.*",
           "org.springframework.test.web.servlet.result.MockMvcResultMatchers.*",
           "org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*"
+        },
+        importOrder = {
+          "java",
+          "javax",
+          "org",
+          "com"
         }
       }
     }
