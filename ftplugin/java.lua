@@ -8,7 +8,8 @@ local cmp_nvim_lsp = require('cmp_nvim_lsp')
 local java_path = 'C:/Program Files/Java/jdk-17.0.4.1/bin/java'
 local formatter_settings_path = '~/.vscode/formatter.xml'
 local jdtls_path = vim.fn.stdpath('data') .. '/language-servers/jdt-language-server-1.24'
-local java_debug_path = vim.fn.glob(vim.fn.stdpath('data') .. '/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
+local java_debug_path = vim.fn.glob(vim.fn.stdpath('data') ..
+  '/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
 local vscode_java_test_paths = vim.fn.glob(vim.fn.stdpath('data') .. '/vscode-java-test/server/*.jar', true)
 local launcher_jar_path = vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,7 +64,7 @@ local config = {
   settings = {
     ['java.format.settings.url'] = formatter_settings_path,
     java = {
-        configuration = {
+      configuration = {
         -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
         -- And search for `interface RuntimeOption`
         -- The `name` is NOT arbitrary, but must match one of the elements from `enum ExecutionEnvironment` in the link above
@@ -76,6 +77,24 @@ local config = {
             name = "JavaSE-17",
             path = 'C:/Program Files/Java/jdk-17.0.4.1',
           },
+        }
+      },
+      completion = {
+        favoriteStaticMembers = {
+          "org.junit.Assert.*",
+          "org.junit.Assume.*",
+          "org.junit.jupiter.api.Assertions.*",
+          "org.junit.jupiter.api.Assumptions.*",
+          "org.junit.jupiter.api.DynamicContainer.*",
+          "org.junit.jupiter.api.DynamicTest.*",
+          "org.mockito.Mockito.*",
+          "org.mockito.ArgumentMatchers.*",
+          "org.mockito.Answers.*",
+          "org.hamcrest.MatcherAssert.*",
+          "org.hamcrest.Matchers.*",
+          "org.springframework.test.web.servlet.result.MockMvcResultHandlers.*",
+          "org.springframework.test.web.servlet.result.MockMvcResultMatchers.*",
+          "org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*"
         }
       }
     }
@@ -104,7 +123,8 @@ local config = {
       jdtls.test_nearest_method({ config_overrides = java_test_config })
     end, { desc = 'Test method (debug nearest)' })
     vim.keymap.set('n', '<leader>rv', jdtls.extract_variable_all, { desc = 'Extract variable', buffer = bufnr })
-    vim.keymap.set('v', '<leader>rm', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]], { desc = 'Extract method', buffer = bufnr })
+    vim.keymap.set('v', '<leader>rm', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
+      { desc = 'Extract method', buffer = bufnr })
     vim.keymap.set('n', '<leader>rc', jdtls.extract_constant, { desc = 'Extract constant', buffer = bufnr })
   end
 }
