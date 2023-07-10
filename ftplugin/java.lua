@@ -105,7 +105,7 @@ local config = {
       }
     }
   },
-  root_dir = vim.fs.dirname(vim.fs.find({ 'pom.xml', '.git' }, { upward = true })[1]),
+  root_dir = require('jdtls.setup').find_root({ 'pom.xml' }),
   init_options = {
     -- https://github.com/eclipse/eclipse.jdt.ls/wiki/Language-Server-Settings-&-Capabilities#extended-client-capabilities
     extendedClientCapabilities = jdtls.extendedClientCapabilities,
