@@ -90,7 +90,9 @@ vim.keymap.set({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Ac
 vim.keymap.set('n', '<leader>lf', function()
   vim.lsp.buf.format { async = true }
 end, { desc = 'Format' })
-vim.keymap.set('n', '<leader>rn', ':IncRename ', { desc = 'Rename' })
+vim.keymap.set("n", "<leader>rn", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true, desc = 'Rename' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 
 -- UI
