@@ -39,20 +39,29 @@ require 'nvim-treesitter.configs'.setup {
       enable = true,
       set_jumps = true, -- whether to set jumps in the jumplist
       goto_next_start = {
-        ["]m"] = "@function.outer",
+        ["]m"] = { query = "@function.outer", desc = "Next method start" },
         ["]]"] = { query = "@class.outer", desc = "Next class start" },
       },
       goto_next_end = {
-        ["]M"] = "@function.outer",
-        ["]["] = "@class.outer",
+        ["]M"] = { query = "@function.outer", desc = "Next method end" },
+        ["]["] = { query = "@class.outer", desc = "Next class end" },
       },
       goto_previous_start = {
-        ["[m"] = "@function.outer",
-        ["[["] = "@class.outer",
+        ["[m"] = { query = "@function.outer", desc = "Previous method start" },
+        ["[["] = { query = "@class.outer", desc = "Previous class start" },
       },
       goto_previous_end = {
-        ["[M"] = "@function.outer",
-        ["[]"] = "@class.outer",
+        ["[M"] = { query = "@function.outer", desc = "Previous method end" },
+        ["[]"] = { query = "@class.outer", desc = "Previous class end" },
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>rs"] = { query = "@parameter.inner", desc = "Swap next" },
+      },
+      swap_previous = {
+        ["<leader>rS"] = { query = "@parameter.inner", desc = "Swap previous" },
       },
     },
   },
