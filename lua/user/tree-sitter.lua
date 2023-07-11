@@ -31,12 +31,16 @@ require 'nvim-treesitter.configs'.setup {
       -- Automatically jump forward to textobj, similar to targets.vim
       lookahead = true,
       keymaps = {
-        ["af"] = { query = "@function.outer", desc = 'a function' },
-        ["if"] = { query = "@function.inner", desc = "inner function" },
-        ["ac"] = { query = "@class.outer", desc = "a class" },
-        ["ic"] = { query = "@class.inner", desc = "inner class" },
         ["aa"] = { query = "@parameter.outer", desc = "an argument" },
         ["ia"] = { query = "@parameter.inner", desc = "inner argument" },
+        ["ac"] = { query = "@class.outer", desc = "a class" },
+        ["ic"] = { query = "@class.inner", desc = "inner class" },
+        ["ad"] = { query = "@conditional.outer", desc = "a con(d)itional" },
+        ["id"] = { query = "@conditional.inner", desc = "inner con(d)itional" },
+        ["af"] = { query = "@function.outer", desc = "a function" },
+        ["if"] = { query = "@function.inner", desc = "inner function" },
+        ["al"] = { query = "@loop.outer", desc = "a loop" },
+        ["il"] = { query = "@loop.inner", desc = "inner loop" },
       },
       include_surrounding_whitespace = function(table)
         if ends_with(table.query_string, "outer") then
