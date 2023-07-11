@@ -1,3 +1,7 @@
+local function ends_with(str, ending)
+   return ending == "" or str:sub(-#ending) == ending
+end
+
 require 'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -34,6 +38,12 @@ require 'nvim-treesitter.configs'.setup {
         ["aa"] = { query = "@parameter.outer", desc = "an argument" },
         ["ia"] = { query = "@parameter.inner", desc = "inner argument" },
       },
+      include_surrounding_whitespace = function(table)
+        if ends_with(table.query_string, "outer") then
+          return true
+        end
+        return false
+      end
     },
     move = {
       enable = true,
