@@ -28,7 +28,7 @@ telescope.setup {
     },
     live_grep = {
       preview_title = false,
-      prompt_title = 'Grep'
+      prompt_title = 'Search'
     }
   }
 }

@@ -46,18 +46,22 @@ vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search h
 
 -- Telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Buffers' })
-vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'Commands' })
-vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Diagnostics' })
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Grep' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help' })
-vim.keymap.set('n', '<leader>fj', builtin.jumplist, { desc = 'Jumplist' })
-vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps' })
-vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'Marks' })
-vim.keymap.set('n', '<leader>fp', ':Telescope projects<cr>', { desc = 'Projects' })
-vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'Quickfix' })
-vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'Registers' })
+vim.keymap.set('n', '<leader>f', function()
+  -- find_root duplicated in ftplugin/java.lua
+  local cwd = require('jdtls.setup').find_root({ 'pom.xml', '.git' })
+  builtin.find_files({ cwd = cwd })
+end, { desc = 'Files' })
+vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Buffers' })
+vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = 'Commands' })
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Diagnostics' })
+vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = 'Search' })
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Help' })
+vim.keymap.set('n', '<leader>sj', builtin.jumplist, { desc = 'Jumplist' })
+vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Keymaps' })
+vim.keymap.set('n', '<leader>sm', builtin.marks, { desc = 'Marks' })
+vim.keymap.set('n', '<leader>sp', ':Telescope projects<cr>', { desc = 'Projects' })
+vim.keymap.set('n', '<leader>sq', builtin.quickfix, { desc = 'Quickfix' })
+vim.keymap.set('n', '<leader>sr', builtin.registers, { desc = 'Registers' })
 
 -- LSP
 -- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration

@@ -105,7 +105,8 @@ local config = {
       }
     }
   },
-  root_dir = require('jdtls.setup').find_root({ 'pom.xml' }),
+  -- find_root duplicated in keymaps.lua
+  root_dir = require('jdtls.setup').find_root({ 'pom.xml', '.git' }),
   init_options = {
     -- https://github.com/eclipse/eclipse.jdt.ls/wiki/Language-Server-Settings-&-Capabilities#extended-client-capabilities
     extendedClientCapabilities = jdtls.extendedClientCapabilities,
