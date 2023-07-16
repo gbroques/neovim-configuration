@@ -156,6 +156,8 @@ end, { desc = 'Toggle DAP repl' })
 vim.keymap.set('n', '<leader>ds', dap.terminate, { desc = 'Stop' })
 vim.keymap.set('n', '<leader>du', dapui.toggle, { desc = 'Toggle UI' })
 
+vim.keymap.set('n', '<leader>x', '<cmd>source %<CR>', { desc = 'Execute / source file (vim)' })
+
 -- Git
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Branches' })
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Commits' })
