@@ -167,9 +167,15 @@ return require('lazy').setup({
     'folke/neodev.nvim',
     tag = 'v2.5.2'
   },
+  -- Lua Debug Adapter
   {
     'jbyuki/one-small-step-for-vimkind',
     commit = '5cacc816153c66a50de92c9cee29077b4a380254'
+  },
+  -- Lua 5.1 Reference Manual converted to Vim help docs
+  {
+    'milisims/nvim-luaref',
+    commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127'
   },
   -- TODO:
   -- 'simrat39/symbols-outline.nvim'
