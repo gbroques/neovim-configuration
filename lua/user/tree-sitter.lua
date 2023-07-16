@@ -1,5 +1,5 @@
 local function ends_with(str, ending)
-   return ending == "" or str:sub(-#ending) == ending
+  return ending == "" or str:sub(- #ending) == ending
 end
 
 require 'nvim-treesitter.configs'.setup {
@@ -86,5 +86,6 @@ require 'nvim-treesitter.configs'.setup {
 -- TODO: Renable folding once telescope bug is fixed.
 -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1337#issuecomment-864442660
 -- https://github.com/nvim-treesitter/nvim-treesitter#folding
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldenable = false -- Disable folding upon startup.

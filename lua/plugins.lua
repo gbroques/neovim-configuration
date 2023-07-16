@@ -1,11 +1,11 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
     lazypath,
   })
 end
@@ -24,6 +24,13 @@ vim.g.mapleader = ' '
 
 -- TODO: Better organize plugins into groups by concern like LazyVim.
 -- See https://www.lazyvim.org/plugins
+local lazy_opts = {
+  git = { timeout = 600 },
+  ui = {
+    -- Fullscreen
+    size = { height = vim.o.lines - 1, width = vim.o.columns }
+  }
+}
 return require('lazy').setup({
 
   -- Theme
@@ -133,7 +140,7 @@ return require('lazy').setup({
 
   -- LSP
   {
-     -- Configs for nvim LSP client
+    -- Configs for nvim LSP client
     'neovim/nvim-lspconfig',
     commit = 'b6b34b9acf84949f0ac1c00747765e62b81fb38d'
   },
@@ -185,7 +192,7 @@ return require('lazy').setup({
   -- Telescope
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.2',
+    commit = '2ea8dcd17b4f9b7714354965a28ae4fef4139c71',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
   -- for nvim-jdtls
@@ -245,7 +252,7 @@ return require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     -- Update installed parsers when upgrading plugin
     build = ':TSUpdate',
-    tag = 'v0.9.0'
+    commit = '51ea343f705a89326cff8dd7a0542d7fe0e6699a'
   },
   {
     'windwp/nvim-ts-autotag',
@@ -272,4 +279,4 @@ return require('lazy').setup({
   },
   -- TODO:
   -- { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' }
-}, { git = { timeout = 600 } })
+}, lazy_opts)

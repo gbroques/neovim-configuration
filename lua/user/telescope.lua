@@ -7,6 +7,7 @@ telescope.setup {
       "^.git/"
     },
     layout_config = {
+      -- Fullscreen
       width = { padding = 0 },
       height = { padding = 0 },
     },

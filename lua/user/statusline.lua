@@ -140,7 +140,11 @@ local function contains(tab, val)
   end
 end
 local only_show_mode = function()
-  local filetypes_to_only_show_mode = { 'alpha', 'lazy' }
+  local filetypes_to_only_show_mode = {
+    'alpha',
+    'lazy',
+    'TelescopePrompt'
+  }
   return contains(filetypes_to_only_show_mode, vim.bo.filetype)
 end
 local FileName = {
@@ -166,17 +170,22 @@ local FileName = {
   end,
 }
 
+local get_file_flag = function(icon)
+  if only_show_mode() then return '' end
+  local display_string = icon .. ' '
+  if vim.api.nvim_buf_get_name(0) == '' then
+    display_string = ' ' .. display_string
+  end
+  return display_string
+end
+
 local FileFlags = {
   {
     condition = function()
       return vim.bo.modified
     end,
     provider = function()
-      local modified_string = '● '
-      if vim.api.nvim_buf_get_name(0) == '' then
-        modified_string = ' ' .. modified_string
-      end
-      return modified_string
+      return get_file_flag('●')
     end,
     hl = function(self)
       return { fg = colors_util.lighten(self:mode_color(), file_modified_lighten_percentage) }
@@ -187,8 +196,7 @@ local FileFlags = {
       return not vim.bo.modifiable or vim.bo.readonly
     end,
     provider = function()
-      if only_show_mode() then return '' end
-      return ' '
+      return get_file_flag('')
     end,
     hl = { fg = colors.red },
   },
