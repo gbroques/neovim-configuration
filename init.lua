@@ -7,7 +7,6 @@ require('user.autopairs')
 require('user.completion')
 require('user.colorscheme')
 require('user.explorer')
-require('user.tabline')
 require('user.lsp')
 -- statusline must be required after lsp module
 -- since it defines diagnostic signs
