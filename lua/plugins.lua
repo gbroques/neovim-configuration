@@ -163,13 +163,13 @@ return require('lazy').setup({
     commit = 'c6a3c47a0c57c6c0c9b5fb92d3770bb59e92d9c6'
   },
   -- Lua (Neovim Plugin Development)
-  -- {
-  --   'luals/lua-language-server',
-  --   tag = '3.6.22'
-  -- },
   {
     'folke/neodev.nvim',
     tag = 'v2.5.2'
+  },
+  {
+    'jbyuki/one-small-step-for-vimkind',
+    commit = '5cacc816153c66a50de92c9cee29077b4a380254'
   },
   -- TODO:
   -- 'simrat39/symbols-outline.nvim'

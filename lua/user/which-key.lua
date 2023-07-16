@@ -4,6 +4,9 @@ wk.register({
   d = {
     name = 'debug'
   },
+  da = {
+    name = 'debug adapters'
+  },
   f = {
     name = 'find',
   },
