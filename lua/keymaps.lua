@@ -70,6 +70,7 @@ vim.keymap.set('n', '<leader>sr', builtin.registers, { desc = 'Registers' })
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 -- TODO: Consider centering screen with zz after gd jump.
+-- https://www.reddit.com/r/neovim/comments/r756ur/comment/hmz7nrf/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Goto definition' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Goto declaration' })
 vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, { desc = 'Goto implementation' })
