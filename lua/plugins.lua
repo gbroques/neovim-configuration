@@ -75,6 +75,11 @@ return require('lazy').setup({
     'windwp/nvim-autopairs',
     commit = 'e8f7dd7a72de3e7b6626c050a802000e69d53ff0'
   },
+  {
+    -- Reopen files at last edit position.
+    'farmergreg/vim-lastplace',
+    commit = 'cef9d62165cd26c3c2b881528a5290a84347059e'
+  },
   -- TODO:
   -- Try a new surround plugin like echasnovski/mini.surround or
   -- kylechui/nvim-surround with dot repeat builtin?
