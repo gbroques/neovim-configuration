@@ -83,9 +83,4 @@ require 'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
--- TODO: Renable folding once telescope bug is fixed.
--- https://github.com/nvim-treesitter/nvim-treesitter/issues/1337#issuecomment-864442660
--- https://github.com/nvim-treesitter/nvim-treesitter#folding
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldenable = false -- Disable folding upon startup.
+

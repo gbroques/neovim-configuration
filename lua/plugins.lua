@@ -127,7 +127,18 @@ return require('lazy').setup({
   -- We don't want to use this mapping because it conflicts with "goto references" for LSP.
   -- https://github.com/inkarkat/vim-ReplaceWithRegister
   -- See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
-  -- TODO: kevinhwang91/nvim-ufo for modern VS Code like folding
+
+  -- For modern folding
+  {
+    'kevinhwang91/nvim-ufo',
+    commit = '43e39ec74cd57c45ca9d8229a796750f6083b850',
+    dependencies = {
+      {
+        'kevinhwang91/promise-async',
+        commit = 'e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e'
+      }
+    }
+  },
 
   -- Comment
   {
@@ -194,7 +205,12 @@ return require('lazy').setup({
   {
     'nvim-telescope/telescope.nvim',
     commit = '2ea8dcd17b4f9b7714354965a28ae4fef4139c71',
-    dependencies = { { 'nvim-lua/plenary.nvim' } }
+    dependencies = {
+      {
+        'nvim-lua/plenary.nvim',
+        commit = '1a6a7c929628566cf406aa7da1d048a1ddc7e9a8'
+      }
+    }
   },
   -- for nvim-jdtls
   -- https://github.com/mfussenegger/nvim-jdtls/wiki/UI-Extensions

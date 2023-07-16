@@ -44,6 +44,10 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnosti
 -- Clear highlights
 vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
 
+-- Folding
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', function()

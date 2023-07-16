@@ -31,6 +31,14 @@ local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 local lsp_spinner = require('lsp_spinner')
 lsp_spinner.init_capabilities(client_capabilities)
 local capabilities = require('cmp_nvim_lsp').default_capabilities(client_capabilities)
+-- Folding
+-- Advertise foldingRange client capability to server.
+-- Neovim hasn't added foldingRange to default capabilities.
+-- https://github.com/kevinhwang91/nvim-ufo
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true
+}
 
 lsp_spinner.setup({
   -- add space between spinner and LSP client name
