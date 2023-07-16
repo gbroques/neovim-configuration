@@ -38,8 +38,10 @@ vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close buffer' })
 
 -- Diagnostics
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
+local next_diagnostic_repeat, prev_diagnostic_repeat = ts_repeat_move.make_repeatable_move_pair(vim.diagnostic.goto_next, vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', next_diagnostic_repeat, { desc = 'Next diagnostic' })
+vim.keymap.set('n', '[d', prev_diagnostic_repeat, { desc = 'Previous diagnostic' })
 
 -- Clear highlights
 vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
