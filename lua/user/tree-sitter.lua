@@ -53,7 +53,8 @@ require 'nvim-treesitter.configs'.setup {
       enable = true,
       set_jumps = true, -- whether to set jumps in the jumplist
       goto_next_start = {
-        ["]m"] = { query = "@function.outer", desc = "Next method start" },
+        -- Override builtin gf 'goto file' as it's more ergonomic than ]m
+        ["gf"] = { query = "@function.outer", desc = "Goto next function" },
         ["]]"] = { query = "@class.outer", desc = "Next class start" },
       },
       goto_next_end = {
@@ -61,7 +62,8 @@ require 'nvim-treesitter.configs'.setup {
         ["]["] = { query = "@class.outer", desc = "Next class end" },
       },
       goto_previous_start = {
-        ["[m"] = { query = "@function.outer", desc = "Previous method start" },
+        -- Override builtin gF 'goto file' as it's more ergonomic than [m
+        ["gF"] = { query = "@function.outer", desc = "Goto previous function" },
         ["[["] = { query = "@class.outer", desc = "Previous class start" },
       },
       goto_previous_end = {
@@ -83,4 +85,14 @@ require 'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
+-- Repeat movement with ; and ,
+-- ensure ; goes forward and , goes backward regardless of the last direction
+vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+-- Make builtin f, F, t, T repeatable with ; and ,
+vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
+vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
+vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
+vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
 

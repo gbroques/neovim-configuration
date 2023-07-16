@@ -18,19 +18,6 @@ gitsigns.setup {
       vim.keymap.set(mode, l, r, opts)
     end
 
-    -- Navigation
-    map('n', ']h', function()
-      if vim.wo.diff then return ']h' end
-      vim.schedule(function() gs.next_hunk() end)
-      return '<Ignore>'
-    end, { expr = true, desc = 'Next hunk' })
-
-    map('n', '[h', function()
-      if vim.wo.diff then return '[h' end
-      vim.schedule(function() gs.prev_hunk() end)
-      return '<Ignore>'
-    end, { expr = true, desc = 'Previous hunk' })
-
     -- Actions
     map('n', '<leader>hs', gs.stage_hunk, { desc = 'stage hunk' })
     map('n', '<leader>hr', gs.reset_hunk, { desc = 'reset hunk' })
@@ -46,4 +33,10 @@ gitsigns.setup {
     map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
+
+local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
+local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gitsigns.next_hunk, gitsigns.prev_hunk)
+vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat, { desc = 'Next hunk' })
+vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat, { desc = 'Previous hunk' })
+
 require("scrollbar.handlers.gitsigns").setup()
