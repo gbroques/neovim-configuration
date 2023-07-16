@@ -127,6 +127,7 @@ return require('lazy').setup({
   -- We don't want to use this mapping because it conflicts with "goto references" for LSP.
   -- https://github.com/inkarkat/vim-ReplaceWithRegister
   -- See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
+  -- TODO: kevinhwang91/nvim-ufo for modern VS Code like folding
 
   -- Comment
   {
