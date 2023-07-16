@@ -50,11 +50,13 @@ vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
 -- Telescope
 local builtin = require('telescope.builtin')
+-- TODO Try telescope-frecency
+-- nvim-telescope/telescope-frecency.nvim
 vim.keymap.set('n', '<leader>f', function()
   -- find_root duplicated in ftplugin/java.lua
   local cwd = require('jdtls.setup').find_root({ 'pom.xml', '.git' })
   builtin.find_files({ cwd = cwd })
-end, { desc = 'Files' })
+end, { desc = 'Find files' })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Buffers' })
 vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = 'Commands' })
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Diagnostics' })
