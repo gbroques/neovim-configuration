@@ -121,7 +121,6 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 -- Inspired by AstroNvim
 -- https://astronvim.com/Basic%20Usage/mappings#ui-mappings
 -- TODO: us for toggle spell?
--- https://github.com/folke/zen-mode.nvim/blob/68f554702de63f4b7b6b6d4bcb10178f41a0acc7/lua/zen-mode/plugins.lua#L3-L19
 local toggle_statusline = function()
   vim.opt.laststatus = vim.o.laststatus == 3 and 0 or 3
   vim.opt.showmode = not vim.o.showmode
@@ -138,6 +137,7 @@ end, { desc = 'Toggle wrap' })
 local toggle_zen_mode = function()
   toggle_statusline()
   gitsigns.toggle_signs()
+  vim.cmd('echo') -- clear any text in the last line
 end
 vim.keymap.set('n', '<leader>uz', toggle_zen_mode, { desc = 'Toggle zen mode' })
 
