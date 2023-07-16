@@ -121,15 +121,26 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 -- Inspired by AstroNvim
 -- https://astronvim.com/Basic%20Usage/mappings#ui-mappings
 -- TODO: us for toggle spell?
-vim.keymap.set('n', '<leader>us', function()
+-- https://github.com/folke/zen-mode.nvim/blob/68f554702de63f4b7b6b6d4bcb10178f41a0acc7/lua/zen-mode/plugins.lua#L3-L19
+local toggle_statusline = function()
   vim.opt.laststatus = vim.o.laststatus == 3 and 0 or 3
-end, { desc = 'Toggle statusline' })
+  vim.opt.showmode = not vim.o.showmode
+end
+vim.keymap.set('n', '<leader>us', toggle_statusline, { desc = 'Toggle statusline' })
+local gitsigns = require('gitsigns')
+vim.keymap.set('n', '<leader>ug', gitsigns.toggle_signs, { desc = 'Toggle gitsigns' })
 vim.keymap.set('n', '<leader>ur', function()
   vim.opt.relativenumber = not vim.o.relativenumber
 end, { desc = 'Toggle relative line numbers' })
 vim.keymap.set('n', '<leader>uw', function()
   vim.wo.wrap = not vim.wo.wrap -- local to window
 end, { desc = 'Toggle wrap' })
+local toggle_zen_mode = function()
+  toggle_statusline()
+  gitsigns.toggle_signs()
+end
+vim.keymap.set('n', '<leader>uz', toggle_zen_mode, { desc = 'Toggle zen mode' })
+
 -- NvimTree
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'Explorer' })
 
@@ -148,12 +159,12 @@ vim.keymap.set('n', '<leader>dB', function()
 end, { desc = 'Toggle conditional breakpoint' })
 vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Continue (or start) (F5)' })
 vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debugger: Continue (or start)' })
-vim.keymap.set('n', '<leader>di', dap.step_into, {desc = 'Step into (F11)' })
-vim.keymap.set('n', '<F11>', dap.step_into, {desc = 'Debugger: Step into' })
-vim.keymap.set('n', '<leader>do', dap.step_over, {desc = 'Step over (F10)' })
-vim.keymap.set('n', '<F10>', dap.step_over, {desc = 'Debugger: Step over' })
-vim.keymap.set('n', '<leader>dO', dap.step_out, {desc = 'Step out (F12)' })
-vim.keymap.set('n', '<F12>', dap.step_out, {desc = 'Debugger: Step out' })
+vim.keymap.set('n', '<leader>di', dap.step_into, { desc = 'Step into (F11)' })
+vim.keymap.set('n', '<F11>', dap.step_into, { desc = 'Debugger: Step into' })
+vim.keymap.set('n', '<leader>do', dap.step_over, { desc = 'Step over (F10)' })
+vim.keymap.set('n', '<F10>', dap.step_over, { desc = 'Debugger: Step over' })
+vim.keymap.set('n', '<leader>dO', dap.step_out, { desc = 'Step out (F12)' })
+vim.keymap.set('n', '<F12>', dap.step_out, { desc = 'Debugger: Step out' })
 vim.keymap.set('n', '<leader>dr', function()
   dap.repl.toggle({ height = 15 })
 end, { desc = 'Toggle DAP repl' })
