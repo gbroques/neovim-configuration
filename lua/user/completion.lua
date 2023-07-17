@@ -61,7 +61,11 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'nvim_lsp_signature_help' },
-    { name = 'buffer',  option = { keyword_length = 5 } }, -- increase from default of 3
+    {
+      name = 'buffer',
+      -- increase from default of 3
+      option = { keyword_length = 5 }
+    },
     { name = 'path' }
   }),
   -- TODO: Should this be in keymaps?
@@ -118,7 +122,8 @@ cmp.setup({
         luasnip = "Snippet",
         buffer = "Buffer",
         path = "Path",
-        cmdline = 'CMD'
+        cmdline = 'CMD',
+        cmdline_history = 'History'
       })[entry.source.name]
       return vim_item
     end,
@@ -128,18 +133,32 @@ cmp.setup({
   }
 })
 
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
+      { name = 'path' }
+    },
     {
-      name = 'cmdline',
-      option = {
-        ignore_cmds = { 'Man', '!' }
+      {
+        name = 'cmdline',
+        option = {
+          ignore_cmds = { 'Man', '!' }
+        },
+        priority = 100
+      },
+      {
+        name = 'cmdline_history',
+        priority = 90
       }
     }
-  })
+  )
 })
 
 -- for friendly snippets

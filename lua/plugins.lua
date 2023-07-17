@@ -251,6 +251,10 @@ return require('lazy').setup({
     commit = '8ee981b4a91f536f52add291594e89fb6645e451'
   },
   {
+    'dmitmel/cmp-cmdline-history',
+    commit = '003573b72d4635ce636234a826fa8c4ba2895ffe'
+  },
+  {
     'hrsh7th/cmp-nvim-lsp-signature-help',
     commit = '3d8912ebeb56e5ae08ef0906e3a54de1c66b92f1'
   },
