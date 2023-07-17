@@ -121,13 +121,17 @@ return require('lazy').setup({
   -- TODO: karb94/neoscroll.nvim for smooth scrolling
   -- TODO: SmiteshP/nvim-navic
   -- TODO: chentoast/marks.nvim
+  -- TODO: chrisgrieser/nvim-spider - camel case / snake case motions
   -- TODO: Add custom text objects
+  -- TODO: Read https://thevaluable.dev/vim-create-text-objects/
+  --       Julian/vim-textobj-variable-segment
+  --       chrisgrieser/nvim-various-textobjs
+  --       wellle/targets.vim
+  --       echasnovski/mini.ai
   --       https://youtu.be/wlR5gYd6um0?t=1793
   --       Indent, Entire, Line
   -- TODO: This plugin errors.
   -- { "kana/vim-textobj-entire" },
-  --       wellle/targets.vim
-  --       echasnovski/mini.ai
   -- TODO: The following "replace with register" plugin uses 'gr' to 'go replace'.
   -- We don't want to use this mapping because it conflicts with "goto references" for LSP.
   -- https://github.com/inkarkat/vim-ReplaceWithRegister
