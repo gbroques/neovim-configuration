@@ -44,7 +44,7 @@ require 'nvim-treesitter.configs'.setup {
       },
       include_surrounding_whitespace = function(table)
         if ends_with(table.query_string, "outer") then
-          return true
+          return false
         end
         return false
       end
