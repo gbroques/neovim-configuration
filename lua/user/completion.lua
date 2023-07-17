@@ -135,9 +135,14 @@ cmp.setup({
 
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
+  sources = cmp.config.sources({
+      -- Need to type '/@' as a trigger character.
+      -- https://www.reddit.com/r/neovim/comments/z91dzb/nvim_lsp_document_symbol_doesnt_quite_work/
+      { name = 'nvim_lsp_document_symbol' }
+    },
+    {
+      { name = 'buffer' }
+    })
 })
 
 cmp.setup.cmdline(':', {

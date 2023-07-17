@@ -259,6 +259,10 @@ return require('lazy').setup({
     commit = '3d8912ebeb56e5ae08ef0906e3a54de1c66b92f1'
   },
   {
+    'hrsh7th/cmp-nvim-lsp-document-symbol',
+    commit = 'f0f53f704c08ea501f9d222b23491b0d354644b0'
+  },
+  {
     'saadparwaiz1/cmp_luasnip',
     commit = '18095520391186d634a0045dacaa346291096566'
   },
