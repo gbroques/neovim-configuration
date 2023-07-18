@@ -1,4 +1,5 @@
 require('globals')
+require('autocmd')
 require('plugins')
 require('keymaps')
 require('options')
