@@ -167,6 +167,9 @@ return require('lazy').setup({
   },
   {
     -- Adapts linters / formatters to Neovim's LSP client.
+    -- TODO: null-ls will be archived
+    -- need to figure out eslint_d alternative
+    -- See lsp.lua
     'jose-elias-alvarez/null-ls.nvim',
     commit = 'bbaf5a96913aa92281f154b08732be2f57021c45'
   },
