@@ -46,7 +46,6 @@ local kind_icons = {
   Value = "",
   Variable = "",
 }
--- TODO: Add completion for :IncRename incremental rename?
 
 cmp.setup({
   view = {
@@ -141,7 +140,11 @@ cmp.setup.cmdline('/', {
       { name = 'nvim_lsp_document_symbol' }
     },
     {
-      { name = 'buffer' }
+      {
+        name = 'buffer',
+        -- increase from default of 3
+        option = { keyword_length = 5 }
+      }
     })
 })
 
