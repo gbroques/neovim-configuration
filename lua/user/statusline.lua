@@ -30,15 +30,18 @@ local mode_colors = {
 -- Base component for other components to inherit mode_color method from.
 local ModeAwareStatusLine = {
   static = {
+    -- :h mode()
     color_by_first_mode_character = {
       n = mode_colors.normal,
       i = mode_colors.insert,
       v = mode_colors.visual,
       V = mode_colors.visual,
+      -- CTRL-V
       ['\22'] = mode_colors.visual,
       c = mode_colors.command,
       s = mode_colors.visual,
       S = mode_colors.visual,
+      -- CTRL-S
       ['\19'] = mode_colors.visual,
       R = mode_colors.replace,
       r = mode_colors.replace,
