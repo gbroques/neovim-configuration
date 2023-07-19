@@ -5,19 +5,36 @@ local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 -- Paths
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------
-local java_path = 'C:/Program Files/Java/jdk-17.0.4.1/bin/java'
-local formatter_settings_path = '~/.vscode/formatter.xml'
-local jdtls_path = vim.fn.stdpath('data') .. '/language-servers/jdt-language-server-1.24'
-local java_debug_path = vim.fn.glob(vim.fn.stdpath('data') ..
-  '/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
-local vscode_java_test_paths = vim.fn.glob(vim.fn.stdpath('data') .. '/vscode-java-test/server/*.jar', true)
-local launcher_jar_path = vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
+local function join_path(...)
+  local segments = { ... }
+  -- TODO: Get different path separator by OS.
+  local sep = '\\'
+  local path = ''
+  for i, segment in ipairs(segments) do
+    if i == 1 then -- first index starts at 1
+      path = segment
+    else
+      path = path .. sep .. segment
+    end
+  end
+  return path
+end
+local java_path = join_path('C:', 'Program Files', 'Java', 'jdk-17.0.4.1', 'bin', 'java')
+local formatter_settings_path = vim.fn.expand(join_path('~', '.vscode', 'formatter.xml'))
+local jdtls_path = join_path(vim.fn.stdpath('data'), 'language-servers', 'jdt-language-server-1.24')
+local java_debug_path = vim.fn.glob(join_path(vim.fn.stdpath('data'),
+  'java-debug', 'com.microsoft.java.debug.plugin', 'target', 'com.microsoft.java.debug.plugin-*.jar'))
+local vscode_java_test_paths = vim.fn.glob(join_path(vim.fn.stdpath('data'), 'vscode-java-test', 'server', '*.jar'), true)
+local launcher_jar_path = vim.fn.glob(join_path(jdtls_path, 'plugins', 'org.eclipse.equinox.launcher_*.jar'))
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 local bundles = {
   java_debug_path
 }
-vim.list_extend(bundles, vim.split(vscode_java_test_paths, "\n"))
+vim.list_extend(bundles, vim.split(vscode_java_test_paths, '\n'))
+
+-- Neovim tabstop & shiftwidth have higher priority than Java Eclipse formatter settings.
+-- https://github.com/mfussenegger/nvim-jdtls#indentation-settings-from-eclipse-formatting-configuration-are-not-recognized
 vim.o.tabstop = 4
 vim.o.shiftwidth = 0
 
@@ -58,12 +75,16 @@ local config = {
     "--add-opens", "java.base/java.util=ALL-UNNAMED",
     "--add-opens", "java.base/java.lang=ALL-UNNAMED",
     "-jar", launcher_jar_path,
-    "-configuration", vim.fs.normalize(jdtls_path .. '/' .. get_config_dir()),
-    "-data", vim.fn.expand('~/.cache/jdtls-workspace/') .. workspace_dir
+    "-configuration", join_path(jdtls_path, get_config_dir()),
+    "-data", vim.fn.expand(join_path('~', '.cache', 'jdtls-workspace', workspace_dir))
   },
   settings = {
-    ['java.format.settings.url'] = formatter_settings_path,
     java = {
+      format = {
+        settings = {
+          url = formatter_settings_path
+        }
+      },
       configuration = {
         -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
         -- And search for `interface RuntimeOption`
@@ -71,11 +92,11 @@ local config = {
         runtimes = {
           {
             name = 'JavaSE-11',
-            path = 'C:/Program Files/AdoptOpenJDK/jdk-11.0.10.9-hotspot',
+            path = 'C:\\Program Files\\AdoptOpenJDK\\jdk-11.0.10.9-hotspot',
           },
           {
             name = "JavaSE-17",
-            path = 'C:/Program Files/Java/jdk-17.0.4.1',
+            path = 'C:\\Program Files\\Java\\jdk-17.0.4.1',
           },
         }
       },
