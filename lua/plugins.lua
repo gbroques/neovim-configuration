@@ -65,46 +65,21 @@ return require('lazy').setup({
     'ahmedkhalf/project.nvim',
     commit = '8c6bad7d22eef1b71144b401c9f74ed01526a4fb'
   },
-
-  -- Miscellaneous
+  -- UI element to remember keymaps
   {
-    'max397574/better-escape.nvim',
-    commit = '7031dc734add47bb71c010e0551829fa5799375f'
+    'folke/which-key.nvim',
+    tag = 'v1.4.3'
   },
+  -- Project-wide find and replace
   {
-    'windwp/nvim-autopairs',
-    commit = 'e8f7dd7a72de3e7b6626c050a802000e69d53ff0'
+    'nvim-pack/nvim-spectre',
+    commit = 'f4dc98ec45ecded2344aa3aac2d7cc43ad236858'
   },
   {
     -- Reopen files at last edit position.
     'farmergreg/vim-lastplace',
     commit = 'cef9d62165cd26c3c2b881528a5290a84347059e'
   },
-  -- TODO:
-  -- Try a new surround plugin like echasnovski/mini.surround or
-  -- kylechui/nvim-surround with dot repeat builtin?
-  {
-    'tpope/vim-surround',
-    tag = 'v2.2'
-  },
-  {
-    'tpope/vim-repeat',
-    tag = 'v1.2'
-  },
-  {
-    'folke/which-key.nvim',
-    tag = 'v1.4.3'
-  },
-  {
-    'smjonas/inc-rename.nvim',
-    commit = 'ed0f6f2b917cac4eb3259f907da0a481b27a3b7e'
-  },
-  {
-    'nvim-pack/nvim-spectre',
-    commit = 'f4dc98ec45ecded2344aa3aac2d7cc43ad236858'
-  },
-  -- TODO:
-  -- 'andymass/vim-matchup'
   -- Editor Pane
   {
     'lukas-reineke/indent-blankline.nvim',
@@ -118,26 +93,51 @@ return require('lazy').setup({
     'petertriho/nvim-scrollbar',
     commit = '35f99d559041c7c0eff3a41f9093581ceea534e8'
   },
-  -- TODO: karb94/neoscroll.nvim for smooth scrolling
-  -- TODO: SmiteshP/nvim-navic
-  -- TODO: chentoast/marks.nvim
-  -- TODO: chrisgrieser/nvim-spider - camel case / snake case motions
-  -- TODO: Add custom text objects
-  -- TODO: Read https://thevaluable.dev/vim-create-text-objects/
-  --       Julian/vim-textobj-variable-segment
-  --       chrisgrieser/nvim-various-textobjs
-  --       wellle/targets.vim
-  --       echasnovski/mini.ai
-  --       https://youtu.be/wlR5gYd6um0?t=1793
-  --       Indent, Entire, Line
-  -- TODO: This plugin errors.
-  -- { "kana/vim-textobj-entire" },
-  -- TODO: The following "replace with register" plugin uses 'gr' to 'go replace'.
-  -- We don't want to use this mapping because it conflicts with "goto references" for LSP.
-  -- https://github.com/inkarkat/vim-ReplaceWithRegister
-  -- See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
+  -- Editing
+  {
+    'max397574/better-escape.nvim',
+    commit = '7031dc734add47bb71c010e0551829fa5799375f'
+  },
+  {
+    'windwp/nvim-autopairs',
+    commit = 'e8f7dd7a72de3e7b6626c050a802000e69d53ff0'
+  },
+  -- TODO:
+  -- Try a new surround plugin like echasnovski/mini.surround or
+  -- kylechui/nvim-surround with dot repeat builtin?
+  {
+    'tpope/vim-surround',
+    tag = 'v2.2'
+  },
+  {
+    'tpope/vim-repeat',
+    tag = 'v1.2'
+  },
+  {
+    'smjonas/inc-rename.nvim',
+    commit = 'ed0f6f2b917cac4eb3259f907da0a481b27a3b7e'
+  },
+  -- TODO: Plugins under consideration:
+  --       * andymas/vim-matchup
+  --       * karb94/neoscroll.nvim - smooth scrolling
+  --       * SmiteshP/nvim-navic
+  --       * chentoast/marks.nvim
+  --       * chrisgrieser/nvim-spider - camel case / snake case motions
+  --       * Add custom text objects
+  --         * Read https://thevaluable.dev/vim-create-text-objects/
+  --         * Julian/vim-textobj-variable-segment
+  --         * chrisgrieser/nvim-various-textobjs
+  --         * wellle/targets.vim
+  --         * echasnovski/mini.ai
+  --         * Watch https://youtu.be/wlR5gYd6um0?t=1793
+  --           * Indent, Entire, Line
+  --           * TODO: kana/vim-textobj-entire errors.
+  --           * TODO: inkarkat/vim-ReplaceWithRegister
+  --           * The above "replace with register" plugin uses 'gr' to 'go replace'.
+  --           * We don't want to use this mapping because it conflicts with "goto references" for LSP.
+  --           * See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
 
-  -- For modern folding
+  -- Folding
   {
     'kevinhwang91/nvim-ufo',
     commit = '43e39ec74cd57c45ca9d8229a796750f6083b850',
@@ -161,12 +161,12 @@ return require('lazy').setup({
 
   -- LSP
   {
-    -- Configs for nvim LSP client
+    -- Configuration for Neovim's LSP client.
     'neovim/nvim-lspconfig',
     commit = 'b6b34b9acf84949f0ac1c00747765e62b81fb38d'
   },
   {
-    -- Adapts linters / formatters to Neovim's LSP client.
+    -- Adapts linters & formatters to Neovim's LSP client.
     -- TODO: null-ls will be archived
     -- need to figure out eslint_d alternative
     -- See lsp.lua
@@ -178,6 +178,7 @@ return require('lazy').setup({
     'doums/lsp_spinner.nvim',
     commit = '172be3f5570c06ccaf82ebb67ed233bf07647cc4'
   },
+  -- Debugging
   {
     'mfussenegger/nvim-dap',
     tag = '0.6.0'
@@ -209,9 +210,9 @@ return require('lazy').setup({
     'milisims/nvim-luaref',
     commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127'
   },
-  -- TODO:
-  -- 'simrat39/symbols-outline.nvim'
-  -- 'kosayoda/nvim-lightbulb'
+  -- TODO: Plugins under consideration:
+  --       * simrat39/symbols-outline.nvim
+  --       * kosayoda/nvim-lightbulb
 
   -- Telescope
   {
