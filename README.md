@@ -26,7 +26,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 1. Install Java 17 in the following directory:
 
-       C:/Program Files/Java/jdk-17.0.4.1
+       C:\Program Files\Java\jdk-17.0.4.1
 
 2. Save formatter settings at `~/.vscode/formatter.xml`.
 
