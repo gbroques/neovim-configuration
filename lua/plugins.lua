@@ -128,6 +128,7 @@ return require('lazy').setup({
   --         * Julian/vim-textobj-variable-segment
   --         * chrisgrieser/nvim-various-textobjs
   --         * wellle/targets.vim
+  --         * ciq - change in quotes "" '' or ``
   --         * echasnovski/mini.ai
   --         * Watch https://youtu.be/wlR5gYd6um0?t=1793
   --           * Indent, Entire, Line
