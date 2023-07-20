@@ -113,6 +113,7 @@ return require('lazy').setup({
     'tpope/vim-repeat',
     tag = 'v1.2'
   },
+  -- TODO: lspsaga or dressing.nvim for rename popup
   {
     'smjonas/inc-rename.nvim',
     commit = 'ed0f6f2b917cac4eb3259f907da0a481b27a3b7e'
