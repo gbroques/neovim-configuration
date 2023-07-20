@@ -90,4 +90,11 @@ local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
 -- ensure ; goes forward and , goes backward regardless of the last direction
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
 vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
-
+-- These override default ; and , behavior for builtin f, F, t, and T.
+-- The following mappings break with operator pending mode (e.g. press ct or dt).
+-- Seem to conflict with my statusline and whichkey somehow.
+-- vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
+-- vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
+-- vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
+-- vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
+-- TODO: Try ghostbuster91/nvim-next
