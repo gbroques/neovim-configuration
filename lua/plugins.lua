@@ -310,6 +310,9 @@ return require('lazy').setup({
     'nvim-treesitter/playground',
     commit = '2b81a018a49f8e476341dfcb228b7b808baba68b'
   },
+  -- TODO: nvim-treesitter/nvim-treesitter-context for easier function navigation
+  --       with relative line numbers.
+  --       See https://youtu.be/uL9oOZStezw?t=291
 
   -- Git
   {
