@@ -50,6 +50,10 @@ vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search h
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
+-- Replace currently selected text with default register without yanking it
+-- " is blackhole register
+vim.keymap.set('v', '<leader>p', '"_dP')
+
 -- Telescope
 local builtin = require('telescope.builtin')
 -- TODO Try telescope-frecency
