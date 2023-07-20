@@ -36,12 +36,13 @@ local conditional_breakpoint = {
 vim.fn.sign_define('DapBreakpointCondition', conditional_breakpoint)
 
 -- Open and close dapui automatically.
-dap.listeners.after.event_initialized['dapui_config'] = function()
-  dapui.open()
-end
-dap.listeners.before.event_terminated['dapui_config'] = function()
-  dapui.close()
-end
-dap.listeners.before.event_exited['dapui_config'] = function()
-  dapui.close()
-end
+-- Comment out because DAP UI briefly shows up when running JDTLS tests.
+-- dap.listeners.after.event_initialized['dapui_config'] = function()
+--   dapui.open()
+-- end
+-- dap.listeners.before.event_terminated['dapui_config'] = function()
+--   dapui.close()
+-- end
+-- dap.listeners.before.event_exited['dapui_config'] = function()
+--   dapui.close()
+-- end
