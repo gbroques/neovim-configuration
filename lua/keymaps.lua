@@ -39,7 +39,8 @@ vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close buffer' })
 
 -- Diagnostics
 local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
-local next_diagnostic_repeat, prev_diagnostic_repeat = ts_repeat_move.make_repeatable_move_pair(vim.diagnostic.goto_next, vim.diagnostic.goto_prev)
+local next_diagnostic_repeat, prev_diagnostic_repeat = ts_repeat_move.make_repeatable_move_pair(vim.diagnostic.goto_next,
+  vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', next_diagnostic_repeat, { desc = 'Next diagnostic' })
 vim.keymap.set('n', '[d', prev_diagnostic_repeat, { desc = 'Previous diagnostic' })
 
@@ -55,14 +56,19 @@ vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 vim.keymap.set('v', '<leader>p', '"_dP')
 
 -- Telescope
+local telescope = require('telescope')
 local builtin = require('telescope.builtin')
--- TODO Try telescope-frecency
--- nvim-telescope/telescope-frecency.nvim
-vim.keymap.set('n', '<leader>f', function()
-  -- find_root duplicated in ftplugin/java.lua
-  local cwd = require('jdtls.setup').find_root({ 'pom.xml', '.git' })
-  builtin.find_files({ cwd = cwd })
-end, { desc = 'Find files' })
+local function handle_find_files()
+  local active_clients = vim.lsp.get_active_clients()
+  local workspace = #active_clients == 0 and 'root' or 'LSP'
+  telescope.extensions.frecency.frecency({ workspace = workspace })
+end
+-- local handle_find_files = function()
+--   -- find_root duplicated in ftplugin/java.lua
+--   local cwd = require('jdtls.setup').find_root({ 'pom.xml', '.git' })
+--   builtin.find_files({ cwd = cwd })
+-- end
+vim.keymap.set('n', '<leader>f', handle_find_files, { desc = 'Find files' })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Buffers' })
 vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = 'Commands' })
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Diagnostics' })

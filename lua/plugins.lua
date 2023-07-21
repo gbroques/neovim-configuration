@@ -198,19 +198,20 @@ return require('lazy').setup({
   },
   -- Lua (Neovim Plugin Development)
   {
+    -- Setup for init.lua and plugin development with signature help, docs, and completion for the nvim lua API.
     'folke/neodev.nvim',
     tag = 'v2.5.2'
-  },
-  -- Lua Debug Adapter
-  {
-    'jbyuki/one-small-step-for-vimkind',
-    commit = '5cacc816153c66a50de92c9cee29077b4a380254'
   },
   -- Lua 5.1 Reference Manual converted to Vim help docs
   -- https://www.lua.org/manual/5.1/manual.html
   {
     'milisims/nvim-luaref',
     commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127'
+  },
+  -- Lua Debug Adapter
+  {
+    'jbyuki/one-small-step-for-vimkind',
+    commit = '5cacc816153c66a50de92c9cee29077b4a380254'
   },
   -- TODO: Plugins under consideration:
   --       * simrat39/symbols-outline.nvim
@@ -237,6 +238,10 @@ return require('lazy').setup({
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
     commit = '9bc8237565ded606e6c366a71c64c0af25cd7a50'
+  },
+  {
+    'nvim-telescope/telescope-frecency.nvim',
+    dependencies = { 'kkharji/sqlite.lua' }
   },
 
   -- Completion

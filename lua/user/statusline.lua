@@ -146,7 +146,9 @@ local only_show_mode = function()
   local filetypes_to_only_show_mode = {
     'alpha',
     'lazy',
-    'TelescopePrompt'
+    'TelescopePrompt',
+    -- https://github.com/nvim-telescope/telescope-frecency.nvim/issues/37
+    'frecency'
   }
   return contains(filetypes_to_only_show_mode, vim.bo.filetype)
 end
