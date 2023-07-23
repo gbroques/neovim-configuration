@@ -56,7 +56,8 @@ vim.keymap.set('v', '<leader>p', '"_dP')
 
 -- Telescope
 local builtin = require('telescope.builtin')
--- TODO Try telescope-frecency
+-- TODO Sort files by recently opened.
+-- https://github.com/nvim-telescope/telescope.nvim/issues/2109
 -- nvim-telescope/telescope-frecency.nvim
 vim.keymap.set('n', '<leader>f', function()
   -- find_root duplicated in ftplugin/java.lua
