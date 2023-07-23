@@ -58,7 +58,11 @@ vim.keymap.set('v', '<leader>p', '"_dP')
 local builtin = require('telescope.builtin')
 -- TODO Sort files by recently opened.
 -- https://github.com/nvim-telescope/telescope.nvim/issues/2109
+-- smartpde/telescope-recent-files
+-- The following all require sqlite:
+-- danielfalk/smart-open.nvim
 -- nvim-telescope/telescope-frecency.nvim
+-- prochri/telescope-all-recent.nvim
 vim.keymap.set('n', '<leader>f', function()
   -- find_root duplicated in ftplugin/java.lua
   local cwd = require('jdtls.setup').find_root({ 'pom.xml', '.git' })
