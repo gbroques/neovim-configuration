@@ -76,6 +76,7 @@ local config = {
     "--add-opens", "java.base/java.lang=ALL-UNNAMED",
     "-jar", launcher_jar_path,
     "-configuration", join_path(jdtls_path, get_config_dir()),
+    -- TODO Should this be in stdpath('data')?
     "-data", vim.fn.expand(join_path('~', '.cache', 'jdtls-workspace', workspace_dir))
   },
   settings = {
