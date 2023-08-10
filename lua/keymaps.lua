@@ -29,6 +29,9 @@ vim.keymap.set('n', '<C-Down>', ':resize +2<CR>')
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
+-- Map Y to y$ for consistency with C and D.
+vim.keymap.set('n', 'Y', 'y$')
+
 -- Buffers
 -- TODO: Should these be more ergonomic? Helix uses gn and gp for next / pervious buffer.
 --       Square brackets are a bit of a stretch for such a commonly performed action.
