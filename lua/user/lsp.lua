@@ -86,6 +86,20 @@ lspconfig.lua_ls.setup {
   end
 }
 
+-- YAML
+-- TODO: Get OpenAPI workflow for Neovim working.
+-- See plugins.lua. Need a swagger ui previewer.
+-- require('lspconfig').yamlls.setup {
+--   capabilities = capabilities,
+--   settings = {
+--     yaml = {
+--       schemas = {
+--         ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "/*.yaml",
+--       },
+--     },
+--   }
+-- }
+
 ---------------------------------------------------------------------
 -- Diagnostics
 ---------------------------------------------------------------------

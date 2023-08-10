@@ -87,6 +87,12 @@ Install the Tree-sitter query parser for [query editor highlighting](https://git
 
     :TSInstall query
 
+### YAML
+
+Install the [YAML language server](https://github.com/redhat-developer/yaml-language-server):
+
+    npm install -g yaml-language-server
+
 ## Setup
 
 Clone to Neovim configuration directory depending on operating system:

@@ -212,6 +212,25 @@ return require('lazy').setup({
     'milisims/nvim-luaref',
     commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127'
   },
+  -- YAML & JSON
+  -- TODO:
+  -- YAML Language Server doesn't work with openapi 3.0
+  -- See: https://github.com/redhat-developer/yaml-language-server/issues/7
+  -- swagger-ui-watcher needs to bump swagger-editor-dist to 5.x for openapi 3.1:
+  -- See: https://github.com/swagger-api/swagger-editor/releases/tag/v4.10.0
+  -- {
+  --   'vinnymeller/swagger-preview.nvim',
+  --   commit = '4e1db32e7934c57d653846d5d297f7ea9ddb6ee8',
+  --   build = 'npm install -g swagger-ui-watcher',
+  --   config = function()
+  --     require("swagger-preview").setup({
+  --       -- The port to run the preview server on
+  --       port = 8000,
+  --       -- The host to run the preview server on
+  --       host = "localhost",
+  --     })
+  --   end
+  -- },
   -- TODO: Plugins under consideration:
   --       * simrat39/symbols-outline.nvim
   --       * kosayoda/nvim-lightbulb
