@@ -6,7 +6,6 @@ require('options')
 require('user.telescope')
 require('user.autopairs')
 require('user.completion')
-require('user.colorscheme')
 require('user.explorer')
 require('user.lsp')
 -- statusline must be required after lsp module

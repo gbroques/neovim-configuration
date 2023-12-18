@@ -1,13 +1,6 @@
 -- TODO: Better organize plugins into groups by concern like LazyVim.
 -- See https://www.lazyvim.org/plugins
 return {
-
-  -- Theme
-  {
-    'folke/tokyonight.nvim',
-    tag = 'v2.0.0'
-  },
-
   {
     'nvim-tree/nvim-web-devicons',
     commit = '14b3a5ba63b82b60cde98d0a40319d80f25e8301'
