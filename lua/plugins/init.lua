@@ -138,7 +138,9 @@ return {
   },
   {
     -- Adapts linters & formatters to Neovim's LSP client.
-    -- TODO: null-ls will be archived
+    -- TODO: null-ls is archived
+    -- none-ls is a drop-in replacement
+    -- conform.nvim is also suggested
     -- need to figure out eslint_d alternative
     -- See lsp.lua
     'jose-elias-alvarez/null-ls.nvim',
