@@ -135,7 +135,7 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 
 -- UI
 -- Inspired by AstroNvim
--- https://astronvim.com/Basic%20Usage/mappings#ui-mappings
+-- https://docs.astronvim.com/basic-usage/mappings/
 -- TODO: us for toggle spell?
 local toggle_statusline = function()
   vim.opt.laststatus = vim.o.laststatus == 3 and 0 or 3
