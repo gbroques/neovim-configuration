@@ -71,6 +71,13 @@ return {
     'windwp/nvim-autopairs',
     commit = 'e8f7dd7a72de3e7b6626c050a802000e69d53ff0'
   },
+  {
+    'chrishrb/gx.nvim',
+    commit = '38d776a0b35b9daee5020bf3336564571dc785af',
+    event = { 'BufEnter' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = true
+  },
   -- TODO:
   -- Try a new surround plugin like echasnovski/mini.surround or
   -- kylechui/nvim-surround with dot repeat builtin?
