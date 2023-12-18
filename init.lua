@@ -1,6 +1,6 @@
 require('globals')
 require('autocmd')
-require('plugins')
+require('plugin-manager')
 require('keymaps')
 require('options')
 require('user.telescope')
