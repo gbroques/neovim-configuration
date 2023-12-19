@@ -1,5 +1,6 @@
 -- TODO: Better organize plugins into groups by concern like LazyVim.
 -- See https://www.lazyvim.org/plugins
+-- See also https://www.reddit.com/r/neovim/comments/zow2u9/which_structure_of_neovim_config_files_do_you/
 return {
   {
     'nvim-tree/nvim-web-devicons',
