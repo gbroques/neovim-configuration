@@ -1,6 +1,11 @@
 -- Overview of categorized default Vim keymaps:
 -- https://devhints.io/vim
 
+-- TODO: Thoughts on a single keymaps module, or defining keymaps
+-- for each plugin
+-- https://www.reddit.com/r/neovim/comments/13p5m5h/how_do_you_structure_keymappings/
+-- https://www.reddit.com/r/neovim/comments/11m3575/howwhere_to_set_plugin_keymaps_with_lazynvim/
+
 -- TODO: Consider slient remap for commands like (u)ndo / (R)edo
 -- which display messages in the last command line.
 
