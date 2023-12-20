@@ -48,6 +48,7 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     tag = 'v2.20.6'
+    -- TODO: Lazy-load on event = { 'BufReadPre', 'BufNewFile' }
   },
   {
     'RRethy/vim-illuminate',
@@ -124,6 +125,7 @@ return {
     -- Configuration for Neovim's LSP client.
     'neovim/nvim-lspconfig',
     commit = 'b6b34b9acf84949f0ac1c00747765e62b81fb38d'
+    -- TODO: Lazy-load on event = { 'BufReadPre', 'BufNewFile' }
   },
   {
     -- Adapts linters & formatters to Neovim's LSP client.
@@ -134,6 +136,7 @@ return {
     -- See lsp.lua
     'jose-elias-alvarez/null-ls.nvim',
     commit = 'bbaf5a96913aa92281f154b08732be2f57021c45'
+    -- TODO: Lazy-load on event = { 'BufReadPre', 'BufNewFile' }
   },
   {
     -- TODO: Migrate to doums/lswip.nvim
@@ -224,6 +227,7 @@ return {
 
 
   -- Tree-sitter
+  -- TODO: Lazy-load tree-sitter plugins on event = { 'BufReadPre', 'BufNewFile' }
   {
     'nvim-treesitter/nvim-treesitter',
     -- Update installed parsers when upgrading plugin
