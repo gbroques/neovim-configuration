@@ -23,7 +23,7 @@ return {
   -- Startup screen
   {
     'goolord/alpha-nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     commit = '9e33db324b8bb7a147bce9ea5496686ee859461d'
   },
   -- Project management
