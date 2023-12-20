@@ -1,0 +1,53 @@
+Comment.nvim editing-support, comment
+LuaSnip coding snippet
+alpha-nvim ui startup
+better-escape.nvim keybinding
+cmp-buffer coding
+cmp-cmdline
+cmp-cmdline-history
+cmp-nvim-lsp coding
+cmp-nvim-lsp-document-symbol
+cmp-nvim-lsp-signature-help
+cmp-path coding
+cmp_luasnip coding
+friendly-snippets coding snippet
+gitsigns.nvim editor git
+gx.nvim
+heirline.nvim bars-and-lines, statusline
+inc-rename.nvim lsp, neovim-0.5
+indent-blankline.nvim formatting, indent
+lazy.nvim plugin-manager
+lsp_spinner.nvim
+neodev.nvim lsp neovim-lua-development
+null-ls.nvim
+nvim-autopairs editing-support
+nvim-cmp coding completion
+nvim-dap debugging
+nvim-dap-ui debugging
+nvim-jdtls lsp, neovim-0.5
+nvim-lspconfig lsp lsp, neovim-0.5
+nvim-luaref neovim-lua-development
+nvim-scrollbar scrolling, scrollbar
+nvim-spectre search
+nvim-tree.lua file-explorer
+nvim-treesitter syntax
+nvim-treesitter-textobjects syntax
+nvim-ts-autotag treesitter editing-support
+nvim-ts-context-commentstring coding editing-support, comment
+nvim-ts-rainbow2
+nvim-ufo utility
+nvim-web-devicons icon
+one-small-step-for-vimkind neovim-lua-development
+playground
+plenary.nvim neovim-lua-development
+project.nvim project
+promise-async
+telescope-fzf-native.nvim
+telescope-ui-select.nvim
+telescope.nvim fuzzy-finder
+tokyonight.nvim colorscheme colorscheme, treesitter-colorschemes
+vim-illuminate editor bars-and-lines, cursorline
+vim-lastplace
+vim-repeat
+vim-surround
+which-key.nvim ui keybinding
