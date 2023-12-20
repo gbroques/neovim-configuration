@@ -5,7 +5,6 @@ require('keymaps')
 require('options')
 require('user.telescope')
 require('user.autopairs')
-require('user.completion')
 require('user.explorer')
 require('user.lsp')
 -- statusline must be required after lsp module

@@ -230,53 +230,6 @@ return {
     commit = '9bc8237565ded606e6c366a71c64c0af25cd7a50'
   },
 
-  -- Completion
-  {
-    'hrsh7th/nvim-cmp',
-    commit = 'e1f1b40790a8cb7e64091fb12cc5ffe350363aa0'
-  },
-  {
-    'hrsh7th/cmp-nvim-lsp',
-    commit = '44b16d11215dce86f253ce0c30949813c0a90765'
-  },
-  {
-    'hrsh7th/cmp-buffer',
-    commit = '3022dbc9166796b644a841a02de8dd1cc1d311fa'
-  },
-  {
-    'hrsh7th/cmp-path',
-    commit = '91ff86cd9c29299a64f968ebb45846c485725f23'
-  },
-  {
-    'hrsh7th/cmp-cmdline',
-    commit = '8ee981b4a91f536f52add291594e89fb6645e451'
-  },
-  {
-    'dmitmel/cmp-cmdline-history',
-    commit = '003573b72d4635ce636234a826fa8c4ba2895ffe'
-  },
-  {
-    'hrsh7th/cmp-nvim-lsp-signature-help',
-    commit = '3d8912ebeb56e5ae08ef0906e3a54de1c66b92f1'
-  },
-  {
-    'hrsh7th/cmp-nvim-lsp-document-symbol',
-    commit = 'f0f53f704c08ea501f9d222b23491b0d354644b0'
-  },
-  {
-    'saadparwaiz1/cmp_luasnip',
-    commit = '18095520391186d634a0045dacaa346291096566'
-  },
-
-  -- Snippets
-  {
-    'L3MON4D3/LuaSnip',
-    tag = "v1.2.1"
-  },
-  {
-    'rafamadriz/friendly-snippets',
-    commit = '5749f093759c29e3694053d048ceb940fe12c3d3'
-  },
 
   -- Tree-sitter
   {
