@@ -56,10 +56,6 @@ return {
     'RRethy/vim-illuminate',
     commit = 'a2907275a6899c570d16e95b9db5fd921c167502'
   },
-  {
-    'petertriho/nvim-scrollbar',
-    commit = '35f99d559041c7c0eff3a41f9093581ceea534e8'
-  },
   -- Editing
   {
     'max397574/better-escape.nvim',
