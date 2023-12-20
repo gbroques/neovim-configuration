@@ -19,11 +19,11 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 -------------------------------------------------------
 
-local lazy_opts = {
+require('lazy').setup('plugins', {
   git = { timeout = 600 },
   ui = {
     -- Fullscreen
     size = { height = vim.o.lines - 1, width = vim.o.columns }
-  }
-}
-require('lazy').setup('plugins', lazy_opts)
+  },
+  change_detection = { notify = false }
+})
