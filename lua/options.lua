@@ -1,5 +1,5 @@
 -- :help options
-vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+vim.opt.clipboard = 'unnamedplus' -- allows neovim to access the system clipboard
 vim.opt.expandtab = true          -- convert tabs to spaces in Insert mode
 vim.opt.shiftwidth = 0            -- number of spaces for each step of (auto)indent
 vim.opt.tabstop = 2               -- Number of spaces that a <Tab> in the file countsr for.
