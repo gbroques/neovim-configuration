@@ -1,6 +1,8 @@
 -- TODO: Better organize plugins into groups by concern like LazyVim.
 -- See https://www.lazyvim.org/plugins
 -- See also https://www.reddit.com/r/neovim/comments/zow2u9/which_structure_of_neovim_config_files_do_you/
+-- TODO: See the following link for a reference of how to lazy-load various plugins
+-- https://github.com/2KAbhishek/nvim2k/blob/main/lua/plugins/list.lua
 return {
   {
     'nvim-tree/nvim-web-devicons',
