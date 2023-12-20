@@ -13,6 +13,7 @@ return {
   },
   -- Explorer
   {
+    -- TODO: Lazy-load on NvimTreeToggle command
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     commit = 'c3c6544ee00333b0f1d6a13735d0dd302dba4f70'
@@ -193,8 +194,9 @@ return {
   --       * simrat39/symbols-outline.nvim
   --       * kosayoda/nvim-lightbulb
 
-  -- Telescope
+  -- Fuzzy finder
   {
+    -- TODO: Lazy-load on Telescope command
     'nvim-telescope/telescope.nvim',
     commit = '2ea8dcd17b4f9b7714354965a28ae4fef4139c71',
     dependencies = {
