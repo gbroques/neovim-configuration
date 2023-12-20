@@ -62,10 +62,6 @@ return {
     commit = '7031dc734add47bb71c010e0551829fa5799375f'
   },
   {
-    'windwp/nvim-autopairs',
-    commit = 'e8f7dd7a72de3e7b6626c050a802000e69d53ff0'
-  },
-  {
     'chrishrb/gx.nvim',
     commit = '38d776a0b35b9daee5020bf3336564571dc785af',
     event = { 'BufEnter' },
