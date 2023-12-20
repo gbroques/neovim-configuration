@@ -13,7 +13,7 @@ return {
   },
   -- Explorer
   {
-    -- TODO: Lazy-load on NvimTreeToggle command
+    -- TODO: Lazy-load on cmd = 'NvimTreeToggle'
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     commit = 'c3c6544ee00333b0f1d6a13735d0dd302dba4f70'
@@ -72,6 +72,7 @@ return {
   -- TODO:
   -- Try a new surround plugin like echasnovski/mini.surround or
   -- kylechui/nvim-surround with dot repeat builtin?
+  -- TODO: Lazy-load on keys = { 'cs', 'ds', 'ys' }
   {
     'tpope/vim-surround',
     tag = 'v2.2'
@@ -196,7 +197,7 @@ return {
 
   -- Fuzzy finder
   {
-    -- TODO: Lazy-load on Telescope command
+    -- TODO: Lazy-load on cmd = 'Telescope'
     'nvim-telescope/telescope.nvim',
     commit = '2ea8dcd17b4f9b7714354965a28ae4fef4139c71',
     dependencies = {
