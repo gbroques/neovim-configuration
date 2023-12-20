@@ -10,7 +10,6 @@ require('user.lsp')
 -- since it defines diagnostic signs
 require('user.statusline')
 require('user.tree-sitter')
-require('user.comment')
 require('user.git')
 require('user.which-key')
 require('user.incremental-rename')

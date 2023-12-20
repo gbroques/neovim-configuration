@@ -117,16 +117,6 @@ return {
     }
   },
 
-  -- Comment
-  {
-    'numToStr/Comment.nvim',
-    tag = 'v0.8.0'
-  },
-  {
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    commit = '7f625207f225eea97ef7a6abe7611e556c396d2f'
-  },
-
   -- LSP
   {
     -- Configuration for Neovim's LSP client.
