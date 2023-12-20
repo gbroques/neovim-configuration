@@ -245,11 +245,4 @@ return {
   --       with relative line numbers.
   --       See https://youtu.be/uL9oOZStezw?t=291
 
-  -- Git
-  {
-    'lewis6991/gitsigns.nvim',
-    commit = 'a36bc3360d584d39b4fb076d855c4180842d4444'
-  },
-  -- TODO:
-  -- { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' }
 }

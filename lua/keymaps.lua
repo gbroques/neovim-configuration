@@ -142,25 +142,12 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
 -- Inspired by AstroNvim
 -- https://docs.astronvim.com/basic-usage/mappings/
 -- TODO: us for toggle spell?
-local toggle_statusline = function()
-  vim.opt.laststatus = vim.o.laststatus == 3 and 0 or 3
-  vim.opt.showmode = not vim.o.showmode
-end
-vim.keymap.set('n', '<leader>us', toggle_statusline, { desc = 'Toggle statusline' })
-local gitsigns = require('gitsigns')
-vim.keymap.set('n', '<leader>ug', gitsigns.toggle_signs, { desc = 'Toggle gitsigns' })
 vim.keymap.set('n', '<leader>ur', function()
   vim.opt.relativenumber = not vim.o.relativenumber
 end, { desc = 'Toggle relative line numbers' })
 vim.keymap.set('n', '<leader>uw', function()
   vim.wo.wrap = not vim.wo.wrap -- local to window
 end, { desc = 'Toggle wrap' })
-local toggle_zen_mode = function()
-  toggle_statusline()
-  gitsigns.toggle_signs()
-  vim.cmd('echo') -- clear any text in the last line
-end
-vim.keymap.set('n', '<leader>uz', toggle_zen_mode, { desc = 'Toggle zen mode' })
 
 -- NvimTree
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'Explorer' })
