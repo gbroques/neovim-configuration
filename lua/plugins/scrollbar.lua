@@ -7,9 +7,9 @@ return {
       'folke/tokyonight.nvim'
     },
     config = function()
-      local colors = require("tokyonight.colors").setup()
+      local colors = require('tokyonight.colors').setup()
 
-      require("scrollbar").setup({
+      require('scrollbar').setup({
         hide_if_all_visible = true,
         handlers = {
           cursor = false,
@@ -35,10 +35,10 @@ return {
           }
         },
         excluded_filetypes = {
-          "prompt",
-          "TelescopePrompt",
-          "noice",
-          "NvimTree"
+          'prompt',
+          'TelescopePrompt',
+          'noice',
+          'NvimTree'
         },
       })
     end
