@@ -33,3 +33,4 @@ vim.opt.smartcase = true          -- perform case-sensitive search upon uppercas
 vim.opt.signcolumn = 'yes'        -- always show sign column to avoid layout shift.
 vim.opt.ruler = false             -- Don't show the line and column number of the cursor position
 vim.opt.laststatus = 3            -- Enable 'global' statusline; https://www.youtube.com/watch?v=jH5PNvJIa6o
+vim.opt.splitright = true         -- Put new buffer on the right for vertical splits
