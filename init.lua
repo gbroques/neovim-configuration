@@ -3,7 +3,6 @@ require('autocmd')
 require('plugin-manager')
 require('keymaps')
 require('options')
-require('user.telescope')
 require('user.explorer')
 require('user.lsp')
 -- statusline must be required after lsp module
