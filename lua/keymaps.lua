@@ -63,7 +63,6 @@ vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 vim.keymap.set('v', '<leader>p', '"_dP')
 
 -- Telescope
-local builtin = require('telescope.builtin')
 -- TODO Sort files by recently opened.
 -- https://github.com/nvim-telescope/telescope.nvim/issues/2109
 -- smartpde/telescope-recent-files
@@ -74,19 +73,34 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', function()
   -- find_root duplicated in ftplugin/java.lua
   local cwd = require('jdtls.setup').find_root({ 'pom.xml', '.git' })
-  builtin.find_files({ cwd = cwd })
+  require('telescope.builtin').find_files({ cwd = cwd })
 end, { desc = 'Find files' })
-vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Buffers' })
-vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = 'Commands' })
-vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Diagnostics' })
-vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = 'Search' })
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Help' })
-vim.keymap.set('n', '<leader>sj', builtin.jumplist, { desc = 'Jumplist' })
-vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Keymaps' })
-vim.keymap.set('n', '<leader>sm', builtin.marks, { desc = 'Marks' })
-vim.keymap.set('n', '<leader>sp', ':Telescope projects<cr>', { desc = 'Projects' })
-vim.keymap.set('n', '<leader>sq', builtin.quickfix, { desc = 'Quickfix' })
-vim.keymap.set('n', '<leader>sr', builtin.registers, { desc = 'Registers' })
+vim.keymap.set('n', '<leader>sb', ':Telescope buffers<CR>', { desc = 'Buffers' })
+vim.keymap.set('n', '<leader>sc', ':Telescope commands<CR>', { desc = 'Commands' })
+vim.keymap.set('n', '<leader>sd', ':Telescope diagnostics<CR>', { desc = 'Diagnostics' })
+vim.keymap.set('n', '<leader>ss', ':Telescope live_grep<CR>', { desc = 'Search' })
+vim.keymap.set('n', '<leader>sh', ':Telescope help_tags<CR>', { desc = 'Help' })
+vim.keymap.set('n', '<leader>sj', ':Telescope jumplist<CR>', { desc = 'Jumplist' })
+vim.keymap.set('n', '<leader>sk', ':Telescope keymaps<CR>', { desc = 'Keymaps' })
+vim.keymap.set('n', '<leader>sm', ':Telescope marks<CR>', { desc = 'Marks' })
+vim.keymap.set('n', '<leader>sp', ':Telescope projects<CR>', { desc = 'Projects' })
+vim.keymap.set('n', '<leader>sq', ':Telescope quickfix<CR>', { desc = 'Quickfix' })
+vim.keymap.set('n', '<leader>sr', ':Telescope registers<CR>', { desc = 'Registers' })
+-- Git
+vim.keymap.set('n', '<leader>gb', ':Telescope git_branches<CR>', { desc = 'Branches' })
+vim.keymap.set('n', '<leader>gc', ':Telescope git_commits<CR>', { desc = 'Commits' })
+vim.keymap.set('n', '<leader>gC', ':Telescope git_bcommits<CR>', { desc = 'Commits for buffer' })
+vim.keymap.set('n', '<leader>gs', ':Telescope git_status<CR>', { desc = 'Status' })
+-- LSP
+-- TODO: Write function that goes to reference automatically if there's only 1,
+-- and open Telescope if there's more than 1 reference.
+-- https://matrix.to/#/!cxlVvaAjYkBpQTKumW:gitter.im/$XuhOCs-CBTyGDT5cSSrwFvDUVlxbtlSISmztUEbG1Bo?via=matrix.org&via=gitter.im
+-- This appears to be a bug, with a neglected / stale PR to fix it:
+-- https://github.com/nvim-telescope/telescope.nvim/pull/2281
+vim.keymap.set('n', 'gr', function()
+  require('telescope.builtin').lsp_references({ include_declaration = false })
+end, { desc = 'Goto references' })
+vim.keymap.set('n', 'gW', ':Telescope lsp_dynamic_workspace_symbols<CR>')
 
 -- LSP
 -- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
@@ -118,16 +132,7 @@ vim.keymap.set('n', 'gl', function()
     header = '',
   })
 end, { desc = 'Show line diagnostics' })
--- TODO: Write function that goes to reference automatically if there's only 1,
--- and open Telescope if there's more than 1 reference.
--- https://matrix.to/#/!cxlVvaAjYkBpQTKumW:gitter.im/$XuhOCs-CBTyGDT5cSSrwFvDUVlxbtlSISmztUEbG1Bo?via=matrix.org&via=gitter.im
--- This appears to be a bug, with a neglected / stale PR to fix it:
--- https://github.com/nvim-telescope/telescope.nvim/pull/2281
-vim.keymap.set('n', 'gr', function()
-  builtin.lsp_references({ include_declaration = false })
-end, { desc = 'Goto references' })
 vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
-vim.keymap.set('n', 'gW', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>')
 vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Goto t(y)pe definition' })
 vim.keymap.set({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Actions' })
 vim.keymap.set('n', '<leader>lf', function()
@@ -180,12 +185,6 @@ vim.keymap.set('n', '<leader>ds', dap.terminate, { desc = 'Stop' })
 vim.keymap.set('n', '<leader>du', dapui.toggle, { desc = 'Toggle UI' })
 
 vim.keymap.set('n', '<leader>x', '<cmd>source %<CR>', { desc = 'Execute / source file (vim)' })
-
--- Git
-vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Branches' })
-vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Commits' })
-vim.keymap.set('n', '<leader>gC', builtin.git_bcommits, { desc = 'Commits for buffer' })
-vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Status' })
 
 -- Visual --
 -- Stay in indent mode
