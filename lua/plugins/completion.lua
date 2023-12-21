@@ -69,6 +69,7 @@ return {
         end
       },
     },
+    -- Consider adding ln CmdlineEnter since cmp is used for command-line completion too.
     event = 'InsertEnter',
     config = function()
       local cmp = require('cmp')
