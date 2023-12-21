@@ -5,6 +5,8 @@
 -- :help events
 -- TJ DeVries - [Demo] Lua Augroups - Why And How To Use?
 -- https://www.youtube.com/watch?v=F6GNPOXpfwU
+-- See also:
+-- https://itmecho.com/blog/neovim-lua-hooks-with-user-events
 
 
 -- highlight yanked selection
