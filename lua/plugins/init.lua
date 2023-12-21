@@ -196,8 +196,7 @@ return {
     commit = '2ea8dcd17b4f9b7714354965a28ae4fef4139c71',
     dependencies = {
       {
-        'nvim-lua/plenary.nvim',
-        commit = '1a6a7c929628566cf406aa7da1d048a1ddc7e9a8'
+        'nvim-lua/plenary.nvim'
       }
     }
   },
@@ -239,6 +238,13 @@ return {
     'nvim-treesitter/playground',
     commit = '2b81a018a49f8e476341dfcb228b7b808baba68b'
   },
+
+  -- Utility
+  {
+    'nvim-lua/plenary.nvim',
+    commit = '1a6a7c929628566cf406aa7da1d048a1ddc7e9a8'
+  },
+
   -- TODO: nvim-treesitter/nvim-treesitter-context for easier function navigation
   --       with relative line numbers.
   --       See https://youtu.be/uL9oOZStezw?t=291
