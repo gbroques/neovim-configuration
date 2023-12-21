@@ -13,14 +13,6 @@ return {
     'rebelot/heirline.nvim',
     commit = '2a151df2dc870e79b138a59ebaaaddf3d1b0d703'
   },
-  -- Explorer
-  {
-    -- TODO: Lazy-load on cmd = 'NvimTreeToggle'
-    'nvim-tree/nvim-tree.lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    commit = 'c3c6544ee00333b0f1d6a13735d0dd302dba4f70'
-  },
-  -- Startup screen
   {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
