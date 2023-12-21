@@ -9,8 +9,9 @@ return {
       -- smartpde/telescope-recent-files
       -- The following all require sqlite:
       -- danielfalk/smart-open.nvim
-      -- nvim-telescope/telescope-frecency.nvim
       -- prochri/telescope-all-recent.nvim
+      -- telescope-frecency no longer requires sqlite, we should try it again:
+      -- nvim-telescope/telescope-frecency.nvim
       { '<leader>f', function()
         -- find_root duplicated in ftplugin/java.lua
         local cwd = require('jdtls.setup').find_root({ 'pom.xml', '.git' })
