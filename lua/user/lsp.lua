@@ -39,8 +39,8 @@ capabilities.textDocument.foldingRange = {
 }
 
 -- JavaScript
--- TODO: Should we replace this with typescript.nvim to support tsserver's off-spec features?
---       https://github.com/jose-elias-alvarez/typescript.nvim
+-- TODO: Should we replace this with typescript-tools.nvim to support tsserver's off-spec features?
+--       https://github.com/pmizio/typescript-tools.nvim
 --       https://github.com/neovim/nvim-lspconfig/wiki/Language-specific-plugins
 lspconfig.tsserver.setup {
   capabilities = capabilities,
