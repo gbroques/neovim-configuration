@@ -225,6 +225,7 @@ return {
   --       with relative line numbers.
   --       See https://youtu.be/uL9oOZStezw?t=291
   {
-    'dstein64/vim-startuptime'
+    'dstein64/vim-startuptime',
+    cmd = 'StartupTime'
   }
 }
