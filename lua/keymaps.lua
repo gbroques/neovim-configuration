@@ -94,8 +94,10 @@ vim.keymap.set('n', 'gl', function()
 end, { desc = 'Show line diagnostics' })
 vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
 vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Goto t(y)pe definition' })
+-- TODO
 -- Consider lspsaga https://nvimdev.github.io/lspsaga/codeaction/
 -- which offers a preview of the code action.
+-- Also consider https://github.com/aznhe21/actions-preview.nvim
 vim.keymap.set({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Actions' })
 vim.keymap.set('n', '<leader>lf', function()
   vim.lsp.buf.format { async = true }
