@@ -39,6 +39,8 @@ return {
       -- This appears to be a bug, with a neglected / stale PR to fix it:
       -- https://github.com/nvim-telescope/telescope.nvim/pull/2281
       { 'gr', function()
+        -- Consider LSP Saga for references instead:
+        -- https://nvimdev.github.io/lspsaga/finder/
         require('telescope.builtin').lsp_references({ include_declaration = false })
       end, { desc = 'Goto references' } },
       { 'gW', ':Telescope lsp_dynamic_workspace_symbols<CR>', desc = 'Workplace symbols' },
