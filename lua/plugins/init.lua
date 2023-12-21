@@ -31,11 +31,6 @@ return {
     'ahmedkhalf/project.nvim',
     commit = '8c6bad7d22eef1b71144b401c9f74ed01526a4fb'
   },
-  -- Project-wide find and replace
-  {
-    'nvim-pack/nvim-spectre',
-    commit = 'f4dc98ec45ecded2344aa3aac2d7cc43ad236858'
-  },
   {
     -- Reopen files at last edit position.
     'farmergreg/vim-lastplace',
