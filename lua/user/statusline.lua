@@ -249,11 +249,54 @@ local Diagnostics = {
   },
 }
 
-local LSPMessages = {
-  provider = require('lsp_spinner').status,
+require('lsp-progress').setup({
+  -- TODO: Consider simpler spinner
+  -- spinner = { ' -', ' \\', ' |', ' /' },
+  -- Format client message.
+  --
+  --- @param client_name string
+  ---     Client name.
+  --- @param spinner string
+  ---     Spinner icon.
+  --- @param series_messages string[]|table[]
+  ---     Messages array.
+  --- @return ClientFormatResult
+  ---     The returned value will be passed to function `format` as one of the
+  ---     `client_messages` array, or ignored if return nil.
+  client_format = function(client_name, spinner, series_messages)
+    return #series_messages > 0
+        and spinner .. ' ' .. client_name
+        or client_name
+  end,
+  -- Format (final) message.
+  --
+  --- @param client_messages string[]|table[]
+  ---     Client messages array.
+  --- @return string
+  ---     The returned value will be returned as the result of `progress` API.
+  format = function(client_messages)
+    if #client_messages > 0 then
+      return table.concat(client_messages, " ")
+    else
+      return table.concat(vim.tbl_map(function(client)
+        return client.config.name
+      end, vim.lsp.get_active_clients()), " ")
+    end
+  end,
+})
+local LspSpinner = {
+  condition = conditions.lsp_attached,
+  provider = require('lsp-progress').progress,
   hl = function(self)
-    return { fg = self:mode_color() }
-  end
+    return { fg = self:mode_color(), bg = colors.bg_statusline }
+  end,
+  update = {
+    'User',
+    pattern = 'LspProgressStatusUpdated',
+    callback = vim.schedule_wrap(function()
+      vim.cmd('redrawstatus')
+    end),
+  }
 }
 
 local ColumnNumber = {
@@ -271,7 +314,7 @@ local StatusLine = utils.insert(
   Space,
   Diagnostics,
   Align,
-  LSPMessages,
+  LspSpinner,
   Space,
   ColumnNumber
 )

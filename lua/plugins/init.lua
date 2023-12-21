@@ -89,6 +89,7 @@ return {
   --           * The above "replace with register" plugin uses 'gr' to 'go replace'.
   --           * We don't want to use this mapping because it conflicts with "goto references" for LSP.
   --           * See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
+  --           * There's also https://github.com/gbprod/substitute.nvim
 
   -- Folding
   {
@@ -121,10 +122,8 @@ return {
     -- TODO: Lazy-load on event = { 'BufReadPre', 'BufNewFile' }
   },
   {
-    -- TODO: Migrate to doums/lswip.nvim
-    -- TODO: Try linrongbin16/lsp-progress.nvim instead
-    'doums/lsp_spinner.nvim',
-    commit = '172be3f5570c06ccaf82ebb67ed233bf07647cc4'
+    'linrongbin16/lsp-progress.nvim',
+    commit = 'cabf7fde50cc0dad367a03a1542d9670d1118bd0'
   },
   -- Debugging
   {

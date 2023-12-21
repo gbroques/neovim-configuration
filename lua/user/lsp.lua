@@ -28,8 +28,6 @@ require('neodev').setup { -- for Lua Neovim Plugin development
 local lspconfig = require('lspconfig')
 local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 -- turn on `window/workDoneProgress` capability
-local lsp_spinner = require('lsp_spinner')
-lsp_spinner.init_capabilities(client_capabilities)
 local capabilities = require('cmp_nvim_lsp').default_capabilities(client_capabilities)
 -- Folding
 -- Advertise foldingRange client capability to server.
@@ -39,14 +37,6 @@ capabilities.textDocument.foldingRange = {
   dynamicRegistration = false,
   lineFoldingOnly = true
 }
-
-lsp_spinner.setup({
-  -- add space between spinner and LSP client name
-  spinner = { ' -', ' \\', ' |', ' /' },
-  -- placeholder displayed in place of the spinner when there is
-  -- no activity for a given LSP client
-  placeholder = '  ',
-})
 
 -- JavaScript
 -- TODO: Should we replace this with typescript.nvim to support tsserver's off-spec features?
@@ -60,7 +50,6 @@ lspconfig.tsserver.setup {
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
     end
-    lsp_spinner.on_attach(client, bufnr)
     -- TODO: Bind keymaps to bufnr.
   end
 }
@@ -81,9 +70,6 @@ lspconfig.lua_ls.setup {
       },
     },
   },
-  on_attach = function(client, bufnr)
-    lsp_spinner.on_attach(client, bufnr)
-  end
 }
 
 -- YAML
