@@ -69,8 +69,7 @@ return {
         end
       },
     },
-    -- Consider adding ln CmdlineEnter since cmp is used for command-line completion too.
-    event = 'InsertEnter',
+    event = { 'InsertEnter', 'CmdlineEnter' },
     config = function()
       local cmp = require('cmp')
       local luasnip = require('luasnip')
