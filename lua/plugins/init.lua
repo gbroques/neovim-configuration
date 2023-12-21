@@ -63,6 +63,8 @@ return {
     tag = 'v1.2'
   },
   -- TODO: lspsaga or dressing.nvim for rename popup
+  -- TODO: Also consider https://github.com/smjonas/live-command.nvim
+  --       for live preview of commands like norm & g.
   {
     'smjonas/inc-rename.nvim',
     commit = 'ed0f6f2b917cac4eb3259f907da0a481b27a3b7e'
