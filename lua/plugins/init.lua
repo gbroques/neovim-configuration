@@ -122,6 +122,7 @@ return {
   },
   {
     -- TODO: Migrate to doums/lswip.nvim
+    -- TODO: Try linrongbin16/lsp-progress.nvim instead
     'doums/lsp_spinner.nvim',
     commit = '172be3f5570c06ccaf82ebb67ed233bf07647cc4'
   },
