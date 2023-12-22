@@ -34,10 +34,6 @@ return {
     tag = 'v2.20.6'
     -- TODO: Lazy-load on event = { 'BufReadPre', 'BufNewFile' }
   },
-  {
-    'RRethy/vim-illuminate',
-    commit = 'a2907275a6899c570d16e95b9db5fd921c167502'
-  },
   -- Editing
   {
     'max397574/better-escape.nvim',
