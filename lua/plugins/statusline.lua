@@ -3,6 +3,12 @@ return {
     'rebelot/heirline.nvim',
     commit = '2a151df2dc870e79b138a59ebaaaddf3d1b0d703',
     event = 'VeryLazy',
+    dependencies = {
+      {
+        'linrongbin16/lsp-progress.nvim',
+        commit = 'cabf7fde50cc0dad367a03a1542d9670d1118bd0'
+      },
+    },
     config = function()
       -- TODO:
       -- Build my own statusline.

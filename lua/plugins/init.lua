@@ -80,11 +80,6 @@ return {
   --           * See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
   --           * There's also https://github.com/gbprod/substitute.nvim
 
-  -- LSP
-  {
-    'linrongbin16/lsp-progress.nvim',
-    commit = 'cabf7fde50cc0dad367a03a1542d9670d1118bd0'
-  },
   -- Java
   {
     -- Java Development Tools Language Server
