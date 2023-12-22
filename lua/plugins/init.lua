@@ -80,30 +80,7 @@ return {
   --           * See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
   --           * There's also https://github.com/gbprod/substitute.nvim
 
-  -- Folding
-  {
-    'kevinhwang91/nvim-ufo',
-    commit = '43e39ec74cd57c45ca9d8229a796750f6083b850',
-    dependencies = {
-      {
-        'kevinhwang91/promise-async',
-        commit = 'e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e'
-      }
-    }
-  },
-
   -- LSP
-  {
-    -- Adapts linters & formatters to Neovim's LSP client.
-    -- TODO: null-ls is archived
-    -- none-ls is a drop-in replacement
-    -- conform.nvim is also suggested
-    -- need to figure out eslint_d alternative
-    -- See lsp.lua
-    'jose-elias-alvarez/null-ls.nvim',
-    commit = 'bbaf5a96913aa92281f154b08732be2f57021c45'
-    -- TODO: Lazy-load on event = { 'BufReadPre', 'BufNewFile' }
-  },
   {
     'linrongbin16/lsp-progress.nvim',
     commit = 'cabf7fde50cc0dad367a03a1542d9670d1118bd0'

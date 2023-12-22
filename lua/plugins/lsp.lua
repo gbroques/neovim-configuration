@@ -63,4 +63,33 @@ return {
       -- }
     end
   },
+  {
+    -- Adapts linters & formatters to Neovim's LSP client.
+    -- TODO: null-ls is archived
+    -- none-ls is a drop-in replacement
+    -- conform.nvim is also suggested
+    -- need to figure out eslint_d alternative
+    -- See lsp.lua
+    'jose-elias-alvarez/null-ls.nvim',
+    commit = 'bbaf5a96913aa92281f154b08732be2f57021c45',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      local null_ls = require('null-ls')
+
+      local eslint_config_path = os.getenv('ESLINT_CONFIG_PATH')
+
+      null_ls.setup({
+        debug = true,
+        sources = {
+          -- Pass --debug in extra_args to troubleshoot issues.
+          null_ls.builtins.diagnostics.eslint_d.with({
+            extra_args = { '--config', eslint_config_path }
+          }),
+          null_ls.builtins.formatting.eslint_d.with({
+            extra_args = { '--config', eslint_config_path }
+          }),
+        },
+      })
+    end
+  },
 }
