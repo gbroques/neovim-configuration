@@ -87,13 +87,6 @@ return {
     commit = 'c6a3c47a0c57c6c0c9b5fb92d3770bb59e92d9c6',
     ft = { 'java ' }
   },
-  -- Lua 5.1 Reference Manual converted to Vim help docs
-  -- https://www.lua.org/manual/5.1/manual.html
-  {
-    'milisims/nvim-luaref',
-    commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127',
-    ft = { 'lua', 'vim' }
-  },
   -- YAML & JSON
   -- TODO:
   -- YAML Language Server doesn't work with openapi 3.0

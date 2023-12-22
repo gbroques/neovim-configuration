@@ -6,12 +6,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
-      {
-        -- Lua (Neovim Plugin Development)
-        'folke/neodev.nvim',
-        tag = 'v2.5.2',
-        config = true -- IMPORTANT: setup neodev BEFORE lspconfig.lua_ls
-      },
+      { 'folke/neodev.nvim' }, -- IMPORTANT: setup neodev BEFORE lspconfig.lua_ls
     },
     config = function()
       local lspconfig = require('lspconfig')
