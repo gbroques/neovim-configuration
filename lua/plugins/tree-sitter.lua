@@ -10,6 +10,10 @@ return {
         commit = '6be1192965df35f94b8ea6d323354f7dc7a557e4'
       },
       {
+        -- TODO: This is deprecated
+        -- Migrate to https://gitlab.com/HiPhish/rainbow-delimiters.nvim
+        -- See also clarification on why this is deprecated:
+        -- https://gitlab.com/HiPhish/rainbow-delimiters.nvim/-/issues/12
         'HiPhish/nvim-ts-rainbow2',
         tag = 'v2.2.0'
       },
