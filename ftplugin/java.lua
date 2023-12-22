@@ -1,3 +1,4 @@
+-- TODO: Consider moving this to config function of nvim-jdtls
 -- Eclipse Java development tools (JDT) Language Server downloaded from:
 -- https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.24.0/jdt-language-server-1.24.0-202306011728.tar.gz
 local jdtls = require('jdtls')
