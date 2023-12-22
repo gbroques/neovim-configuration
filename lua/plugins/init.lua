@@ -52,10 +52,10 @@ return {
   -- TODO:
   -- Try a new surround plugin like echasnovski/mini.surround or
   -- kylechui/nvim-surround with dot repeat builtin?
-  -- TODO: Lazy-load on keys = { 'cs', 'ds', 'ys' }
   {
     'tpope/vim-surround',
-    tag = 'v2.2'
+    tag = 'v2.2',
+    keys = { 'cs', 'ds', 'ys' }
   },
   {
     'tpope/vim-repeat',
