@@ -1,6 +1,6 @@
 return {
+  -- Neovim Plugin Development
   {
-    -- Lua (Neovim Plugin Development)
     'folke/neodev.nvim',
     tag = 'v2.5.2',
     config = true,
