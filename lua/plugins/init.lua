@@ -85,27 +85,12 @@ return {
     'linrongbin16/lsp-progress.nvim',
     commit = 'cabf7fde50cc0dad367a03a1542d9670d1118bd0'
   },
-  -- Debugging
-  {
-    'mfussenegger/nvim-dap',
-    tag = '0.6.0'
-  },
-  {
-    'rcarriga/nvim-dap-ui',
-    tag = 'v3.8.3'
-  },
-  -- TODO LiadOz/nvim-dap-repl-highlights
   -- Java
   {
     -- Java Development Tools Language Server
     'mfussenegger/nvim-jdtls',
-    commit = 'c6a3c47a0c57c6c0c9b5fb92d3770bb59e92d9c6'
-  },
-  -- Lua Debug Adapter
-  {
-    'jbyuki/one-small-step-for-vimkind',
-    commit = '5cacc816153c66a50de92c9cee29077b4a380254',
-    ft = { 'lua', 'vim' }
+    commit = 'c6a3c47a0c57c6c0c9b5fb92d3770bb59e92d9c6',
+    ft = { 'java ' }
   },
   -- Lua 5.1 Reference Manual converted to Vim help docs
   -- https://www.lua.org/manual/5.1/manual.html

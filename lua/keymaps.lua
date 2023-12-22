@@ -120,33 +120,6 @@ end, { desc = 'Toggle wrap' })
 -- NvimTree
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'Explorer' })
 
--- Debugging & DAP
--- Inspired by AstroNvim, LazyVIM, and mfussenegger's config
--- https://astronvim.com/Basic%20Usage/mappings#debugger-mappings
--- https://www.lazyvim.org/keymaps#nvim-dap
--- https://github.com/mfussenegger/dotfiles/blob/833d634251ebf3bf7e9899ed06ac710735d392da/vim/.config/nvim/lua/me/dap.lua#L118-L136
-local dap = require('dap')
-local dapui = require('dapui')
-local osv = require('osv')
-vim.keymap.set('n', '<leader>dal', osv.run_this, { desc = 'Debug lua' })
-vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Toggle breakpoint' })
-vim.keymap.set('n', '<leader>dB', function()
-  dap.toggle_breakpoint(vim.fn.input('Breakpoint condition: '), nil, nil, true)
-end, { desc = 'Toggle conditional breakpoint' })
-vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Continue (or start) (F5)' })
-vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debugger: Continue (or start)' })
-vim.keymap.set('n', '<leader>di', dap.step_into, { desc = 'Step into (F11)' })
-vim.keymap.set('n', '<F11>', dap.step_into, { desc = 'Debugger: Step into' })
-vim.keymap.set('n', '<leader>do', dap.step_over, { desc = 'Step over (F10)' })
-vim.keymap.set('n', '<F10>', dap.step_over, { desc = 'Debugger: Step over' })
-vim.keymap.set('n', '<leader>dO', dap.step_out, { desc = 'Step out (F12)' })
-vim.keymap.set('n', '<F12>', dap.step_out, { desc = 'Debugger: Step out' })
-vim.keymap.set('n', '<leader>dr', function()
-  dap.repl.toggle({ height = 15 })
-end, { desc = 'Toggle DAP repl' })
-vim.keymap.set('n', '<leader>ds', dap.terminate, { desc = 'Stop' })
-vim.keymap.set('n', '<leader>du', dapui.toggle, { desc = 'Toggle UI' })
-
 vim.keymap.set('n', '<leader>x', '<cmd>source %<CR>', { desc = 'Execute / source file (vim)' })
 
 -- Visual --
