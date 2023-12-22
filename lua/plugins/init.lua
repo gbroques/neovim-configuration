@@ -4,15 +4,6 @@
 -- TODO: See the following link for a reference of how to lazy-load various plugins
 -- https://github.com/2KAbhishek/nvim2k/blob/main/lua/plugins/list.lua
 return {
-  -- Statusline
-  {
-    'rebelot/heirline.nvim',
-    commit = '2a151df2dc870e79b138a59ebaaaddf3d1b0d703'
-    -- TODO
-    -- Lazy load like LazyVim does lualine
-    -- https://www.lazyvim.org/plugins/ui#lualinenvim
-    -- event = 'VeryLazy'
-  },
   -- Project management
   {
     'ahmedkhalf/project.nvim',
