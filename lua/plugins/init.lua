@@ -13,11 +13,6 @@ return {
     'rebelot/heirline.nvim',
     commit = '2a151df2dc870e79b138a59ebaaaddf3d1b0d703'
   },
-  {
-    'goolord/alpha-nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    commit = '9e33db324b8bb7a147bce9ea5496686ee859461d'
-  },
   -- Project management
   {
     'ahmedkhalf/project.nvim',
