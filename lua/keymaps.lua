@@ -49,10 +49,6 @@ vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close buffer' })
 -- Clear highlights
 vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
 
--- Folding
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
-
 -- Replace currently selected text with default register without yanking it
 -- " is blackhole register
 vim.keymap.set('v', '<leader>p', '"_dP')
