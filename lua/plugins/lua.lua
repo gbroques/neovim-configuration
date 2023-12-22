@@ -1,11 +1,4 @@
 return {
-  -- Neovim Plugin Development
-  {
-    'folke/neodev.nvim',
-    tag = 'v2.5.2',
-    config = true,
-    event = { 'BufReadPre', 'BufNewFile' },
-  },
   -- Debug Adapter
   {
     'jbyuki/one-small-step-for-vimkind',
