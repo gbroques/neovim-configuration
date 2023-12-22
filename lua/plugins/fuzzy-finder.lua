@@ -2,6 +2,7 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     commit = '2ea8dcd17b4f9b7714354965a28ae4fef4139c71',
+    event = { 'LspAttach' }, -- telescope used as vim.ui.select for code actions
     keys = {
 
       -- TODO Sort files by recently opened.
@@ -21,7 +22,7 @@ return {
       { '<leader>sc', ':Telescope commands<CR>',     desc = 'Commands' },
       { '<leader>sd', ':Telescope diagnostics<CR>',  desc = 'Diagnostics' },
       { '<leader>ss', ':Telescope live_grep<CR>',    desc = 'Search' },
-      { '<leader>S',  '<leader>ss',                  desc = 'Search', remap = true },
+      { '<leader>S',  '<leader>ss',                  desc = 'Search',            remap = true },
       { '<leader>sh', ':Telescope help_tags<CR>',    desc = 'Help' },
       { '<leader>sj', ':Telescope jumplist<CR>',     desc = 'Jumplist' },
       { '<leader>sk', ':Telescope keymaps<CR>',      desc = 'Keymaps' },
