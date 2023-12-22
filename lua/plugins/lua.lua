@@ -36,7 +36,6 @@ return {
   -- https://www.lua.org/manual/5.1/manual.html
   {
     'milisims/nvim-luaref',
-    commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127',
-    ft = { 'lua', 'vim' }
+    commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127'
   },
 }
