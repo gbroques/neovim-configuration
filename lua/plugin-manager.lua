@@ -19,8 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 -------------------------------------------------------
 
--- Adding subdirectory under "plugins"
--- https://youtu.be/6mxWayq-s9I?t=1225
 require('lazy').setup('plugins', {
   git = { timeout = 600 },
   ui = {

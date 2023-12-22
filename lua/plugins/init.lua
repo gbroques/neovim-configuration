@@ -105,12 +105,6 @@ return {
 
   -- LSP
   {
-    -- Configuration for Neovim's LSP client.
-    'neovim/nvim-lspconfig',
-    commit = 'b6b34b9acf84949f0ac1c00747765e62b81fb38d'
-    -- TODO: Lazy-load on event = { 'BufReadPre', 'BufNewFile' }
-  },
-  {
     -- Adapts linters & formatters to Neovim's LSP client.
     -- TODO: null-ls is archived
     -- none-ls is a drop-in replacement
@@ -141,24 +135,18 @@ return {
     'mfussenegger/nvim-jdtls',
     commit = 'c6a3c47a0c57c6c0c9b5fb92d3770bb59e92d9c6'
   },
-  -- Lua (Neovim Plugin Development)
-  {
-    'folke/neodev.nvim',
-    tag = 'v2.5.2'
-    -- TODO: Lazy load on ft = { 'lua', 'vim' }
-  },
   -- Lua Debug Adapter
   {
     'jbyuki/one-small-step-for-vimkind',
-    commit = '5cacc816153c66a50de92c9cee29077b4a380254'
-    -- TODO: Lazy load on ft = { 'lua', 'vim' }
+    commit = '5cacc816153c66a50de92c9cee29077b4a380254',
+    ft = { 'lua', 'vim' }
   },
   -- Lua 5.1 Reference Manual converted to Vim help docs
   -- https://www.lua.org/manual/5.1/manual.html
   {
     'milisims/nvim-luaref',
-    commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127'
-    -- TODO: Lazy load on ft = { 'lua', 'vim' }
+    commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127',
+    ft = { 'lua', 'vim' }
   },
   -- YAML & JSON
   -- TODO:
