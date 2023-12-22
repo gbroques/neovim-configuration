@@ -20,7 +20,12 @@ return {
   -- Project management
   {
     'ahmedkhalf/project.nvim',
-    commit = '8c6bad7d22eef1b71144b401c9f74ed01526a4fb'
+    commit = '8c6bad7d22eef1b71144b401c9f74ed01526a4fb',
+    event = 'VimEnter',
+    cmd = 'Telescope projects',
+    config = function()
+      require("project_nvim").setup({})
+    end
   },
   {
     -- Reopen files at last edit position.
