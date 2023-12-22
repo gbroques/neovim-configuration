@@ -35,7 +35,12 @@ return {
   -- Editing
   {
     'max397574/better-escape.nvim',
-    commit = '7031dc734add47bb71c010e0551829fa5799375f'
+    commit = '7031dc734add47bb71c010e0551829fa5799375f',
+    event = 'InsertEnter',
+    config = function()
+      -- 'dh' is a convenient escape from Insert mode in Colemak.
+      require('better_escape').setup({ mapping = { 'dh' } })
+    end
   },
   {
     'chrishrb/gx.nvim',

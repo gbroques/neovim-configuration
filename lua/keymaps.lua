@@ -15,9 +15,6 @@
 -- 'v' - Visual
 -- ------------
 
--- 'dh' is a convenient escape from Insert mode in Colemak.
-require('better_escape').setup { mapping = { 'dh' } }
-
 -- Normal --
 
 vim.keymap.set('n', '<leader>w', ':silent update<CR>', { desc = 'Write', silent = true })
