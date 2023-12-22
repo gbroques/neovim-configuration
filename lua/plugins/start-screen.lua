@@ -7,8 +7,30 @@ return {
     config = function()
       local alpha = require('alpha')
       local startify = require('alpha.themes.startify')
-      startify.section.header.val = {} -- Remove default 'neovim header'
+      -- disable MRU
+      startify.section.mru.val = { { type = "padding", val = 0 } }
+      -- startify.section.header.val = {} -- Remove default 'neovim header'
+      local stats = require("lazy").stats()
+      local setFooter = function()
+        local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+        local footer = "⚡ Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. " ms"
+        startify.section.footer.val = {
+          { type = 'padding', val = 1 },
+          { type = 'text',    val = footer, opts = { position = 'left' } }
+        }
+      end
+      setFooter()
       alpha.setup(startify.config)
+      -- autocmd adapted from LazyVim:
+      -- https://github.com/LazyVim/LazyVim/blob/53e1637a864cb7e8f21af107b8073bc8b24acd11/lua/lazyvim/plugins/extras/ui/alpha.lua#L61-L76
+      vim.api.nvim_create_autocmd("User", {
+        once = true,
+        pattern = "LazyVimStarted",
+        callback = function()
+          setFooter()
+          pcall(vim.cmd.AlphaRedraw)
+        end,
+      })
     end
   },
 }
