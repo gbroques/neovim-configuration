@@ -7,9 +7,7 @@ require('user.lsp')
 -- statusline must be required after lsp module
 -- since it defines diagnostic signs
 require('user.statusline')
-require('user.tree-sitter')
 require('user.incremental-rename')
-require('user.indent-guide')
 require('user.project')
 require('user.dap')
 require('user.fold')

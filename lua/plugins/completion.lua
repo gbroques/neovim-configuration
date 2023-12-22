@@ -57,6 +57,9 @@ return {
       {
         'windwp/nvim-autopairs',
         commit = 'e8f7dd7a72de3e7b6626c050a802000e69d53ff0',
+        dependencies = {
+          { 'nvim-treesitter/nvim-treesitter' }
+        },
         config = function()
           require('nvim-autopairs').setup {
             check_ts = true, -- treesitter integration
@@ -66,7 +69,7 @@ return {
           local cmp_autopairs = require('nvim-autopairs.completion.cmp')
           local cmp = require('cmp')
           cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done {})
-        end
+        end,
       },
     },
     event = { 'InsertEnter', 'CmdlineEnter' },

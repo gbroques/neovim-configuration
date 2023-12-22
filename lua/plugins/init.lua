@@ -23,12 +23,6 @@ return {
     'farmergreg/vim-lastplace',
     commit = 'cef9d62165cd26c3c2b881528a5290a84347059e'
   },
-  -- Editor Pane
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    tag = 'v2.20.6'
-    -- TODO: Lazy-load on event = { 'BufReadPre', 'BufNewFile' }
-  },
   -- Editing
   {
     'max397574/better-escape.nvim',
@@ -161,28 +155,6 @@ return {
   -- TODO: Plugins under consideration:
   --       * simrat39/symbols-outline.nvim
   --       * kosayoda/nvim-lightbulb
-
-  -- Tree-sitter
-  -- TODO: Lazy-load tree-sitter plugins on event = { 'BufReadPre', 'BufNewFile' }
-  {
-    'nvim-treesitter/nvim-treesitter',
-    -- Update installed parsers when upgrading plugin
-    build = ':TSUpdate',
-    commit = '51ea343f705a89326cff8dd7a0542d7fe0e6699a'
-  },
-  {
-    'windwp/nvim-ts-autotag',
-    commit = '6be1192965df35f94b8ea6d323354f7dc7a557e4'
-  },
-  {
-    'HiPhish/nvim-ts-rainbow2',
-    tag = 'v2.2.0'
-  },
-  {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    dependencies = 'nvim-treesitter/nvim-treesitter',
-    commit = '83c59ed1eeae70a55605990993cf4d208948fdf7'
-  },
 
   -- Utility
   {
