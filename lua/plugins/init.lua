@@ -4,10 +4,6 @@
 -- TODO: See the following link for a reference of how to lazy-load various plugins
 -- https://github.com/2KAbhishek/nvim2k/blob/main/lua/plugins/list.lua
 return {
-  {
-    'nvim-tree/nvim-web-devicons',
-    commit = '14b3a5ba63b82b60cde98d0a40319d80f25e8301'
-  },
   -- Statusline
   {
     'rebelot/heirline.nvim',
@@ -138,9 +134,14 @@ return {
   -- Utility
   {
     'nvim-lua/plenary.nvim',
-    commit = '1a6a7c929628566cf406aa7da1d048a1ddc7e9a8'
+    commit = '1a6a7c929628566cf406aa7da1d048a1ddc7e9a8',
+    lazy = true
   },
-
+  {
+    'nvim-tree/nvim-web-devicons',
+    commit = '14b3a5ba63b82b60cde98d0a40319d80f25e8301',
+    lazy = true
+  },
   -- TODO: nvim-treesitter/nvim-treesitter-context for easier function navigation
   --       with relative line numbers.
   --       See https://youtu.be/uL9oOZStezw?t=291
