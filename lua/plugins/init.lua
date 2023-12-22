@@ -171,6 +171,9 @@ return {
   --       See https://youtu.be/uL9oOZStezw?t=291
   {
     'dstein64/vim-startuptime',
-    cmd = 'StartupTime'
+    cmd = 'StartupTime',
+    config = function()
+      vim.g.startuptime_tries = 10
+    end,
   }
 }
