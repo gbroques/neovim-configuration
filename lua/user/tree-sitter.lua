@@ -8,7 +8,6 @@ require 'nvim-treesitter.configs'.setup {
   indent = { enable = true },
   autopairs = { enable = true },
   autotag = { enable = true },
-  playground = { enable = true },
   rainbow = { enable = true },
   context_commentstring = {
     enable = true,

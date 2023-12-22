@@ -183,10 +183,6 @@ return {
     dependencies = 'nvim-treesitter/nvim-treesitter',
     commit = '83c59ed1eeae70a55605990993cf4d208948fdf7'
   },
-  {
-    'nvim-treesitter/playground',
-    commit = '2b81a018a49f8e476341dfcb228b7b808baba68b'
-  },
 
   -- Utility
   {
