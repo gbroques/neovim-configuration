@@ -3,6 +3,7 @@ return {
     'nvim-telescope/telescope.nvim',
     commit = '2ea8dcd17b4f9b7714354965a28ae4fef4139c71',
     event = { 'LspAttach' }, -- telescope used as vim.ui.select for code actions
+    cmd = { 'Telescope' },
     keys = {
 
       -- TODO Sort files by recently opened.
