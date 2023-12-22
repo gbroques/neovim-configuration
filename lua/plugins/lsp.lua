@@ -10,6 +10,7 @@ return {
       {
         'folke/neodev.nvim',
         tag = 'v2.5.2',
+        config = true -- IMPORTANT: setup neodev BEFORE lspconfig.lua_ls
       },
     },
     config = function()
@@ -39,11 +40,6 @@ return {
         local require_ok, settings = pcall(require, 'plugins.language-server-settings.' .. server)
         if require_ok then
           opts = vim.tbl_deep_extend('force', settings, opts)
-        end
-
-        -- IMPORTANT: setup neodev BEFORE lspconfig.lua_ls
-        if server == 'lua_ls' then
-          require('neodev').setup({})
         end
 
         lspconfig[server].setup(opts)
