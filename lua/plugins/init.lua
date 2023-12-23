@@ -49,8 +49,20 @@ return {
     'tpope/vim-repeat',
     tag = 'v1.2'
   },
-  -- TODO: Consider https://github.com/smjonas/live-command.nvim
-  --       for live preview of commands like norm & g.
+  {
+    'smjonas/live-command.nvim',
+    commit = 'd460067d47948725a6f25b20f31ea8bbfdfe4622',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require('live-command').setup {
+        commands = {
+          Norm = { cmd = 'norm' },
+        },
+      }
+      -- https://vim.fandom.com/wiki/Unused_keys
+      vim.keymap.set('v', '<C-N>', ':Norm ', { desc = 'norm (live-preview)' })
+    end,
+  },
   {
     -- TODO: consider lspsaga instead of dressing.nvim for LSP rename input
     'stevearc/dressing.nvim',
