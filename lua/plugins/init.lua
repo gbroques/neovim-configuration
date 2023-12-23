@@ -17,7 +17,8 @@ return {
   {
     -- Reopen files at last edit position.
     'farmergreg/vim-lastplace',
-    commit = 'cef9d62165cd26c3c2b881528a5290a84347059e'
+    commit = 'cef9d62165cd26c3c2b881528a5290a84347059e',
+    event = { 'BufReadPre', 'BufNewFile' },
   },
   -- Editing
   {
