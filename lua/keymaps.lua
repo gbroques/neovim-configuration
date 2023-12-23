@@ -96,9 +96,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>lf', function()
       vim.lsp.buf.format { async = true }
     end, { buffer = ev.buf, desc = 'Format' })
-    vim.keymap.set('n', '<leader>rn', function()
-      return ':IncRename ' .. vim.fn.expand('<cword>')
-    end, { buffer = ev.buf, expr = true, desc = 'Rename' })
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = ev.buf, desc = 'Rename' });
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = 'Hover keyword' })
   end,
 })

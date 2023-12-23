@@ -48,15 +48,18 @@ return {
     'tpope/vim-repeat',
     tag = 'v1.2'
   },
-  -- TODO: lspsaga or dressing.nvim for rename popup
-  -- TODO: Also consider https://github.com/smjonas/live-command.nvim
+  -- TODO: Consider https://github.com/smjonas/live-command.nvim
   --       for live preview of commands like norm & g.
   {
-    'smjonas/inc-rename.nvim',
-    commit = 'ed0f6f2b917cac4eb3259f907da0a481b27a3b7e',
-    config = true,
-    event = 'LspAttach',
-    cmd = 'IncRename'
+    -- TODO: consider lspsaga instead of dressing.nvim for LSP rename input
+    'stevearc/dressing.nvim',
+    commit = '8b7ae53d7f04f33be3439a441db8071c96092d19',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require('dressing').setup({
+        select = { enabled = false }
+      })
+    end
   },
   -- TODO: Plugins under consideration:
   --       * andymas/vim-matchup
