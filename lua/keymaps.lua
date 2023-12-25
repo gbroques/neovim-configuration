@@ -55,11 +55,9 @@ vim.keymap.set('v', '<leader>p', '"_dP')
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
+  callback = function(event)
     -- LSP
     -- https://github.com/neovim/nvim-lspconfig/blob/master/README.md#suggested-configuration
-    -- TODO: Should we pass in buffer number like the following example shows?
-    -- https://github.com/LunarVim/nvim-basic-ide/blob/3d2b182a3cffe4d3a4490fd6b8b49e8aad023c4a/lua/user/lsp.lua#L19-L48
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
 
@@ -75,29 +73,33 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
     local goto_definition = function()
       local params = lsp_util.make_position_params()
-      vim.lsp.buf_request(0, 'textDocument/definition', params, handle_definition)
+      vim.lsp.buf_request(event.buf, 'textDocument/definition', params, handle_definition)
     end
-    vim.keymap.set('n', 'gd', goto_definition, { buffer = ev.buf, desc = 'Goto definition' })
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = ev.buf, desc = 'Goto declaration' })
-    vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, { buffer = ev.buf, desc = 'Goto implementation' })
-    vim.keymap.set('n', 'gl', function()
+    local set_lsp_keymap = function(mode, lhs, rhs, opts)
+      local keymap_opts = vim.tbl_extend('force', { buffer = event.buf }, opts)
+      vim.keymap.set( mode, lhs, rhs, keymap_opts)
+    end
+    set_lsp_keymap('n', 'gd', goto_definition, { desc = 'Goto definition' })
+    set_lsp_keymap('n', 'gD', vim.lsp.buf.declaration, { desc = 'Goto declaration' })
+    set_lsp_keymap('n', 'gI', vim.lsp.buf.implementation, { desc = 'Goto implementation' })
+    set_lsp_keymap('n', 'gl', function()
       vim.diagnostic.open_float({
         scope = 'line',
         header = '',
       })
-    end, { buffer = ev.buf, desc = 'Show line diagnostics' })
-    vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = 'Show signature help' })
-    vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = 'Goto t(y)pe definition' })
+    end, { buffer = event.buf, desc = 'Show line diagnostics' })
+    set_lsp_keymap('n', 'gs', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+    set_lsp_keymap('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Goto t(y)pe definition' })
     -- TODO
     -- Consider lspsaga https://nvimdev.github.io/lspsaga/codeaction/
     -- which offers a preview of the code action.
     -- Also consider https://github.com/aznhe21/actions-preview.nvim
-    vim.keymap.set({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, { buffer = ev.buf, desc = 'Actions' })
-    vim.keymap.set('n', '<leader>lf', function()
+    set_lsp_keymap({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Actions' })
+    set_lsp_keymap('n', '<leader>lf', function()
       vim.lsp.buf.format { async = true }
-    end, { buffer = ev.buf, desc = 'Format' })
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = ev.buf, desc = 'Rename' });
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf, desc = 'Hover keyword' })
+    end, { desc = 'Format' })
+    set_lsp_keymap('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename' });
+    set_lsp_keymap('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
   end,
 })
 
