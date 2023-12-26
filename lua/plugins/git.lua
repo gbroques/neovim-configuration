@@ -48,6 +48,9 @@ return {
           end
           map('n', '<leader>us', toggle_statusline, { desc = 'Toggle statusline' })
           map('n', '<leader>ug', gs.toggle_signs, { desc = 'Toggle gitsigns' })
+          -- Consider the following plugins for zen mode
+          -- https://github.com/koenverburg/peepsight.nvim
+          -- https://github.com/junegunn/limelight.vim
           local toggle_zen_mode = function()
             toggle_statusline()
             gs.toggle_signs()
