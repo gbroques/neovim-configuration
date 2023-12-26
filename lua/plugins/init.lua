@@ -11,7 +11,7 @@ return {
     event = 'VimEnter',
     cmd = 'Telescope projects',
     config = function()
-      require("project_nvim").setup({})
+      require('project_nvim').setup({})
     end
   },
   {
