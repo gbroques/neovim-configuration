@@ -17,6 +17,7 @@ return {
       { '<leader>sk', ':Telescope keymaps<CR>',      desc = 'Keymaps' },
       { '<leader>sm', ':Telescope marks<CR>',        desc = 'Marks' },
       -- TODO: Change to <leader> p if projects shortcut is common
+      --       this is a taken keymap in keymaps.lua
       { '<leader>sp', ':Telescope projects<CR>',     desc = 'Projects' },
       { '<leader>sq', ':Telescope quickfix<CR>',     desc = 'Quickfix' },
       { '<leader>sr', ':Telescope registers<CR>',    desc = 'Registers' },

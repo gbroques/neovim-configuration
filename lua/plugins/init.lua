@@ -97,6 +97,8 @@ return {
   --           * We don't want to use this mapping because it conflicts with "goto references" for LSP.
   --           * See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
   --           * There's also https://github.com/gbprod/substitute.nvim
+  --           * gs is taken by vim.lsp.buf.signature_help currently
+  --           * s will be used for leap
 
   -- Java
   {
