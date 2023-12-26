@@ -101,12 +101,14 @@ return {
         extensions = {
           frecency = {
             default_workspace = 'CWD',
-            prompt_title = 'Find Files'
+            prompt_title = 'Find Files',
+            sorter = require('telescope.config').values.file_sorter()
           }
         }
       })
       telescope.load_extension('ui-select')
       telescope.load_extension('projects')
+      telescope.load_extension('fzf')
       telescope.load_extension('frecency')
     end
   },
