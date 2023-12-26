@@ -14,9 +14,6 @@ return {
         da = {
           name = 'debug adapters'
         },
-        f = {
-          name = 'find',
-        },
         g = {
           name = 'git'
         },
