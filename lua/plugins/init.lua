@@ -138,9 +138,6 @@ return {
     commit = '14b3a5ba63b82b60cde98d0a40319d80f25e8301',
     lazy = true
   },
-  -- TODO: nvim-treesitter/nvim-treesitter-context for easier function navigation
-  --       with relative line numbers.
-  --       See https://youtu.be/uL9oOZStezw?t=291
   {
     'dstein64/vim-startuptime',
     cmd = 'StartupTime',

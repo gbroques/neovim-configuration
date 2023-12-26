@@ -25,6 +25,9 @@ return {
       {
         'JoosepAlviste/nvim-ts-context-commentstring'
       }
+      -- TODO: nvim-treesitter/nvim-treesitter-context for easier function navigation
+      --       with relative line numbers.
+      --       See https://youtu.be/uL9oOZStezw?t=291
     },
     config = function()
       local function ends_with(str, ending)
