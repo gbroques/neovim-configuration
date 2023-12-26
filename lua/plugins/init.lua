@@ -75,18 +75,19 @@ return {
     end
   },
   -- TODO: Plugins under consideration:
-  --       * andymas/vim-matchup
-  --       * karb94/neoscroll.nvim - smooth scrolling
-  --       * SmiteshP/nvim-navic
-  --       * chentoast/marks.nvim
-  --       * chrisgrieser/nvim-spider - camel case / snake case motions
+  --       * 'andymas/vim-matchup'
+  --       * 'karb94/neoscroll.nvim' - smooth scrolling
+  --       * 'SmiteshP/nvim-navic'
+  --       * 'chentoast/marks.nvim'
+  --       * 'chrisgrieser/nvim-alt-substitute'
+  --       * 'chrisgrieser/nvim-spider' - camel case / snake case motions
   --       * Add custom text objects
   --         * Read https://thevaluable.dev/vim-create-text-objects/
-  --         * Julian/vim-textobj-variable-segment
-  --         * chrisgrieser/nvim-various-textobjs
-  --         * wellle/targets.vim
+  --         * 'Julian/vim-textobj-variable-segment'
+  --         * 'chrisgrieser/nvim-various-textobjs'
+  --         * 'wellle/targets.vim'
   --         * ciq - change in quotes "" '' or ``
-  --         * echasnovski/mini.ai
+  --         * 'echasnovski/mini.ai'
   --         * Watch https://youtu.be/wlR5gYd6um0?t=1793
   --           * Indent, Entire, Line
   --           * TODO: kana/vim-textobj-entire errors.
