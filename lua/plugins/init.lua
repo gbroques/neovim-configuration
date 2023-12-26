@@ -75,6 +75,7 @@ return {
     end
   },
   -- TODO: Plugins under consideration:
+  --       * 'ggandor/leap.nvim'
   --       * 'andymas/vim-matchup'
   --       * 'karb94/neoscroll.nvim' - smooth scrolling
   --       * 'SmiteshP/nvim-navic'
