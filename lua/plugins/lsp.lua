@@ -90,7 +90,10 @@ return {
     -- Adapts linters & formatters to Neovim's LSP client.
     -- TODO: null-ls is archived
     -- none-ls is a drop-in replacement
-    -- conform.nvim is also suggested
+    -- Alternatives:
+    -- 'stevearc/conform.nvim' - Lightweight yet powerful formatter plugin for Neovim
+    -- 'mattn/efm-langserver' - General purpose Language Server that can use specified error message format generated from specified command.
+    -- 'iamcco/diagnostic-languageserver' - General purpose Language Server that integrate with linter to support diagnostic features
     -- need to figure out eslint_d alternative
     -- See lsp.lua
     'jose-elias-alvarez/null-ls.nvim',
