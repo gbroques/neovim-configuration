@@ -73,14 +73,6 @@ An enviroment variable, `ESLINT_CONFIG_PATH`, containing the path to the ESLint 
 
 This is passed to `eslint`'s CLI `--config` option.
 
-### Lua
-
-Install [lua-language-server](https://github.com/luals/lua-language-server/wiki/Getting-Started#command-line).
-
-`lua-language-server` MUST be in the `PATH`.
-
-**Reference:** https://github.com/neovim/nvim-lspconfig/blob/v0.1.6/lua/lspconfig/server_configurations/sumneko_lua.lua#L45
-
 ### Tree-sitter
 
 Install the Tree-sitter query parser for [query editor highlighting](https://github.com/nvim-treesitter/playground):

@@ -5,6 +5,29 @@ return {
     commit = 'b6b34b9acf84949f0ac1c00747765e62b81fb38d',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
+      {
+        'williamboman/mason.nvim',
+        commit = '41e75af1f578e55ba050c863587cffde3556ffa6',
+        config = function()
+          require('mason').setup({
+            -- Uncomment for troubleshooting:
+            -- log_level = vim.log.levels.DEBUG,
+            ui = {
+              -- Fullscreen
+              height = vim.o.lines - 1, width = vim.o.columns
+            },
+          })
+        end
+      },
+      {
+        'williamboman/mason-lspconfig.nvim',
+        commit = '56e435e09f8729af2d41973e81a0db440f8fe9c9',
+        config = function()
+          require('mason-lspconfig').setup({
+            ensure_installed = { 'lua_ls' },
+          })
+        end
+      },
       { 'hrsh7th/cmp-nvim-lsp' },
       {
         -- Neovim Plugin Development
