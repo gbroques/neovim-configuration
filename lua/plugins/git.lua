@@ -18,6 +18,7 @@ return {
           topdelete = { hl = 'GitSignsDelete', text = '契', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
           changedelete = { hl = 'GitSignsChange', text = '▎', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
         },
+        attach_to_untracked = false,
         on_attach = function(bufnr)
           local gs = package.loaded.gitsigns
 
