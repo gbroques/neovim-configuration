@@ -79,6 +79,12 @@ Install the Tree-sitter query parser for [query editor highlighting](https://git
 
     :TSInstall query
 
+### Python
+
+Install the following dependencies:
+
+    :MasonInstall jedi-language-server flake8 autopep8 isort mypy
+
 ### YAML
 
 Install the [YAML language server](https://github.com/redhat-developer/yaml-language-server):

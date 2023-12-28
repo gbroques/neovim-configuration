@@ -53,6 +53,7 @@ return {
       local servers = {
         'lua_ls',
         'tsserver',
+        'jedi_language_server'
       }
       for _, server in ipairs(servers) do
         local opts = {
@@ -88,15 +89,13 @@ return {
   },
   {
     -- Adapts linters & formatters to Neovim's LSP client.
-    -- TODO: null-ls is archived
-    -- none-ls is a drop-in replacement
     -- Alternatives:
     -- 'stevearc/conform.nvim' - Lightweight yet powerful formatter plugin for Neovim
     -- 'mattn/efm-langserver' - General purpose Language Server that can use specified error message format generated from specified command.
     -- 'iamcco/diagnostic-languageserver' - General purpose Language Server that integrate with linter to support diagnostic features
     -- need to figure out eslint_d alternative
     -- See lsp.lua
-    'jose-elias-alvarez/null-ls.nvim',
+    'nvimtools/none-ls.nvim',
     commit = 'bbaf5a96913aa92281f154b08732be2f57021c45',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
@@ -114,6 +113,12 @@ return {
           null_ls.builtins.formatting.eslint_d.with({
             extra_args = { '--config', eslint_config_path }
           }),
+
+          -- Python
+          null_ls.builtins.diagnostics.flake8,  -- linter
+          null_ls.builtins.diagnostics.mypy,    -- static type checker
+          null_ls.builtins.formatting.autopep8, -- formatter
+          null_ls.builtins.formatting.isort,    -- import sorter
         },
       })
     end
