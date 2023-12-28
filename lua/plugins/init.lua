@@ -27,6 +27,8 @@ return {
     event = 'InsertEnter',
     config = function()
       -- 'dh' is a convenient escape from Insert mode in Colemak.
+      -- Doesn't work with macros. See:
+      -- https://github.com/max397574/better-escape.nvim/issues/21
       require('better_escape').setup({ mapping = { 'dh' } })
     end
   },
