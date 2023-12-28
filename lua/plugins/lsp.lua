@@ -14,7 +14,8 @@ return {
             -- log_level = vim.log.levels.DEBUG,
             ui = {
               -- Fullscreen
-              height = vim.o.lines - 1, width = vim.o.columns
+              height = vim.o.lines - 1,
+              width = vim.o.columns
             },
           })
         end
@@ -106,6 +107,7 @@ return {
       null_ls.setup({
         debug = true,
         sources = {
+          -- JavaScript
           -- Pass --debug in extra_args to troubleshoot issues.
           null_ls.builtins.diagnostics.eslint_d.with({
             extra_args = { '--config', eslint_config_path }
