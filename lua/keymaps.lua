@@ -86,6 +86,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.diagnostic.open_float({
         scope = 'line',
         header = '',
+        source = true
       })
     end, { buffer = event.buf, desc = 'Show line diagnostics' })
     set_lsp_keymap('n', 'gs', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
