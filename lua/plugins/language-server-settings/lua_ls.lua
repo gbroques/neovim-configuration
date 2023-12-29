@@ -10,6 +10,10 @@ return {
       telemetry = {
         enable = false,
       },
+      -- https://github.com/LuaLS/lua-language-server/issues/2214
+      diagnostics = {
+        disable = { "missing-fields" },
+      }
     },
   }
 }
