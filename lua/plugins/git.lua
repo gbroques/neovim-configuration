@@ -39,6 +39,7 @@ return {
           map('n', '<leader>hR', gs.reset_buffer, { desc = 'reset buffer' })
           map('n', '<leader>hp', gs.preview_hunk, { desc = 'preview hunk' })
           map('n', '<leader>hb', function() gs.blame_line { full = true } end, { desc = 'blame' })
+          map('n', '<leader>gd', gs.diffthis, { desc = 'Diff' })
 
           -- Text object
           map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
