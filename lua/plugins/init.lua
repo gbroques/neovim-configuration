@@ -79,7 +79,11 @@ return {
   -- TODO: Plugins under consideration:
   -- { 'ggandor/leap.nvim' },
   -- { 'andymas/vim-matchup' },
-  -- { 'karb94/neoscroll.nvim' }, -- smooth scrolling
+  --
+  -- smooth scrolling
+  -- { 'karb94/neoscroll.nvim' },
+  -- { 'psliwka/vim-smoothie' },
+  --
   -- { 'SmiteshP/nvim-navic' },
   -- { 'chentoast/marks.nvim' },
   -- { 'chrisgrieser/nvim-alt-substitute' },
