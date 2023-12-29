@@ -77,7 +77,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
     local set_lsp_keymap = function(mode, lhs, rhs, opts)
       local keymap_opts = vim.tbl_extend('force', { buffer = event.buf }, opts)
-      vim.keymap.set( mode, lhs, rhs, keymap_opts)
+      vim.keymap.set(mode, lhs, rhs, keymap_opts)
     end
     set_lsp_keymap('n', 'gd', goto_definition, { desc = 'Goto definition' })
     set_lsp_keymap('n', 'gD', vim.lsp.buf.declaration, { desc = 'Goto declaration' })
