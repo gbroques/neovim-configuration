@@ -124,3 +124,5 @@ vim.keymap.set('n', '<leader>x', '<cmd>source %<CR>', { desc = 'Execute / source
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
+
+vim.keymap.set('n', '<leader>t', ':vnew term://fish<CR>', { desc = 'Terminal' })

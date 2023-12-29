@@ -21,9 +21,12 @@
 -- Open help window in a vertical split to the right.
 -- https://vi.stackexchange.com/a/39697
 vim.api.nvim_create_autocmd('BufWinEnter', {
-    group = vim.api.nvim_create_augroup('help_window_right', {}),
-    pattern = { '*.txt' },
-    callback = function()
-        if vim.o.filetype == 'help' then vim.cmd.wincmd('L') end
-    end
+  group = vim.api.nvim_create_augroup('help_window_right', {}),
+  pattern = { '*.txt' },
+  callback = function()
+    if vim.o.filetype == 'help' then vim.cmd.wincmd('L') end
+  end
 })
+
+-- https://vi.stackexchange.com/questions/3670/how-to-enter-insert-mode-when-entering-neovim-terminal-pane
+vim.api.nvim_create_autocmd({ 'TermOpen' }, { command = 'startinsert' })
