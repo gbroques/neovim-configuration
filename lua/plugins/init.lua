@@ -77,30 +77,25 @@ return {
     end
   },
   -- TODO: Plugins under consideration:
-  --       * 'ggandor/leap.nvim'
-  --       * 'andymas/vim-matchup'
-  --       * 'karb94/neoscroll.nvim' - smooth scrolling
-  --       * 'SmiteshP/nvim-navic'
-  --       * 'chentoast/marks.nvim'
-  --       * 'chrisgrieser/nvim-alt-substitute'
-  --       * 'chrisgrieser/nvim-spider' - camel case / snake case motions
-  --       * Add custom text objects
-  --         * Read https://thevaluable.dev/vim-create-text-objects/
-  --         * 'Julian/vim-textobj-variable-segment'
-  --         * 'chrisgrieser/nvim-various-textobjs'
-  --         * 'wellle/targets.vim'
-  --         * ciq - change in quotes "" '' or ``
-  --         * 'echasnovski/mini.ai'
-  --         * Watch https://youtu.be/wlR5gYd6um0?t=1793
-  --           * Indent, Entire, Line
-  --           * TODO: kana/vim-textobj-entire errors.
-  --           * TODO: inkarkat/vim-ReplaceWithRegister
-  --           * The above "replace with register" plugin uses 'gr' to 'go replace'.
-  --           * We don't want to use this mapping because it conflicts with "goto references" for LSP.
-  --           * See https://youtu.be/wlR5gYd6um0?t=1608 for an introduction.
-  --           * There's also https://github.com/gbprod/substitute.nvim
-  --           * gs is taken by vim.lsp.buf.signature_help currently
-  --           * s will be used for leap
+  -- { 'ggandor/leap.nvim' },
+  -- { 'andymas/vim-matchup' },
+  -- { 'karb94/neoscroll.nvim' }, -- smooth scrolling
+  -- { 'SmiteshP/nvim-navic' },
+  -- { 'chentoast/marks.nvim' },
+  -- { 'chrisgrieser/nvim-alt-substitute' },
+  -- { 'chrisgrieser/nvim-spider' }, -- camel case / snake case motions
+  -- Add custom text objects
+  -- Read https://thevaluable.dev/vim-create-text-objects/
+  -- { 'Julian/vim-textobj-variable-segment' },
+  -- { 'chrisgrieser/nvim-various-textobjs' },
+  -- { 'wellle/targets.vim' },
+  -- ciq - change in quotes "" '' or ``
+  -- { 'echasnovski/mini.ai' },
+  -- { 'gbprod/substitute.nvim' },
+  -- gs is taken by vim.lsp.buf.signature_help currently
+  -- s will be used for leap
+  -- { 'simrat39/symbols-outline.nvim' },
+  -- { 'kosayoda/nvim-lightbulb' },
 
   -- Java
   {
@@ -128,9 +123,6 @@ return {
   --     })
   --   end
   -- },
-  -- TODO: Plugins under consideration:
-  --       * simrat39/symbols-outline.nvim
-  --       * kosayoda/nvim-lightbulb
 
   -- Utility
   {
