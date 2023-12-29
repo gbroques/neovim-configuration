@@ -35,3 +35,4 @@ vim.opt.ruler = false             -- Don't show the line and column number of th
 vim.opt.laststatus = 3            -- Enable 'global' statusline; https://www.youtube.com/watch?v=jH5PNvJIa6o
 vim.opt.splitright = true         -- Put new buffer on the right for vertical splits
 vim.opt.fillchars:append { diff = " " }
+vim.opt.guifont = 'JetBrainsMono Nerd Font Mono'
