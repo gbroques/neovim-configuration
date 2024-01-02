@@ -4,18 +4,38 @@
 -- https://www.reddit.com/r/neovim/comments/17ieyn2/comment/k6tpk8a/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 -- For xsel options, see:
 -- https://github.com/neovim/neovim/blob/v0.9.4/runtime/autoload/provider/clipboard.vim#L107-L112
-vim.g.clipboard = {
-  name = 'xsel',
-  copy = {
-    ['+'] = 'xsel --nodetach -i -b',
-    ['*'] = 'xsel --nodetach -i -p',
-  },
-  paste = {
-    ['+'] = 'xsel -o -b',
-    ['*'] = 'xsel -o -p',
-  },
-  cache_enabled = 1
-}
+-- Returns TRUE if `cmd` exits with success, else FALSE.
+local function cmd_ok(cmd)
+  -- https://stackoverflow.com/questions/26142177/disable-cmd-output-in-lua
+  return os.execute(cmd .. ' &> /dev/null') == 0
+end
+if vim.fn.empty(os.getenv('DISPLAY')) and vim.fn.executable('sel') and cmd_ok('xsel -o -b') then
+  vim.g.clipboard = {
+    name = 'xsel',
+    copy = {
+      ['+'] = 'xsel --nodetach -i -b',
+      ['*'] = 'xsel --nodetach -i -p',
+    },
+    paste = {
+      ['+'] = 'xsel -o -b',
+      ['*'] = 'xsel -o -p',
+    },
+    cache_enabled = 1
+  }
+elseif vim.fn.executable('win32yank') then
+  vim.g.clipboard = {
+    name = 'win32yank',
+    copy = {
+      ['+'] = 'win32yank.exe -i --crlf',
+      ['*'] = 'win32yank.exe -i --crlf',
+    },
+    paste = {
+      ['+'] = 'win32yank.exe -o --lf',
+      ['*'] = 'win32yank.exe -o --lf',
+    },
+    cache_enabled = 1
+  }
+end
 vim.opt.clipboard = 'unnamedplus' -- allow Neovim to access system clipboard
 vim.opt.expandtab = true          -- convert tabs to spaces in Insert mode
 vim.opt.shiftwidth = 0            -- number of spaces for each step of (auto)indent
