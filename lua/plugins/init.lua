@@ -29,6 +29,8 @@ return {
       -- 'dh' is a convenient escape from Insert mode in Colemak.
       -- Doesn't work with macros. See:
       -- https://github.com/max397574/better-escape.nvim/issues/21
+      -- Retest macros upon 0.10.0 Neovim upgrade:
+      -- https://github.com/max397574/better-escape.nvim/pull/52#issuecomment-1875488264
       require('better_escape').setup({ mapping = { 'dh' } })
     end
   },
