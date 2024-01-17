@@ -23,14 +23,10 @@ return {
   -- Editing
   {
     'max397574/better-escape.nvim',
-    commit = '7031dc734add47bb71c010e0551829fa5799375f',
+    commit = 'd62cf3c04163a46f3895c70cc807f5ae68dd8ca1',
     event = 'InsertEnter',
     config = function()
       -- 'dh' is a convenient escape from Insert mode in Colemak.
-      -- Doesn't work with macros. See:
-      -- https://github.com/max397574/better-escape.nvim/issues/21
-      -- Retest macros upon 0.10.0 Neovim upgrade:
-      -- https://github.com/max397574/better-escape.nvim/pull/52#issuecomment-1875488264
       require('better_escape').setup({ mapping = { 'dh' } })
     end
   },
