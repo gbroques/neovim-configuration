@@ -1,7 +1,7 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    commit = '2ea8dcd17b4f9b7714354965a28ae4fef4139c71',
+    commit = '36dce6261ae3660bb57ba942361067b2028aec31',
     event = { 'LspAttach' }, -- telescope used as vim.ui.select for code actions
     cmd = { 'Telescope' },
     keys = {
@@ -60,7 +60,7 @@ return {
         -- * prochri/telescope-all-recent.nvim
         -- * smartpde/telescope-recent-files
         'nvim-telescope/telescope-frecency.nvim',
-        commit = 'de410701811f4142315ce89183256a969a08ff9d'
+        commit = '9c18474d0a4b82435ce141c2a21d9bd7b9189272'
       }
     },
     config = function()
