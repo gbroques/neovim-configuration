@@ -33,6 +33,7 @@ return {
       local function ends_with(str, ending)
         return ending == '' or str:sub(- #ending) == ending
       end
+      -- https://github.com/nvim-treesitter/nvim-treesitter/issues/3232#issuecomment-1198882715
       require('nvim-treesitter.install').prefer_git = true
       require('nvim-treesitter.configs').setup({
         highlight = { enable = true },
