@@ -85,6 +85,10 @@ Install the following dependencies:
 
     :MasonInstall jedi-language-server flake8 autopep8 isort mypy
 
+Install the tree-sitter Python parser from inside Neovim:
+
+    :TSInstall python
+
 ### YAML
 
 Install the [YAML language server](https://github.com/redhat-developer/yaml-language-server):
