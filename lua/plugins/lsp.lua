@@ -7,7 +7,7 @@ return {
     dependencies = {
       {
         'williamboman/mason.nvim',
-        commit = '41e75af1f578e55ba050c863587cffde3556ffa6',
+        commit = '751b1fcbf3d3b783fcf8d48865264a9bcd8f9b10',
         config = function()
           require('mason').setup({
             -- Uncomment for troubleshooting:
