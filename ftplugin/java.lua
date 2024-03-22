@@ -23,16 +23,22 @@ end
 local java_path = join_path('C:', 'Program Files', 'Java', 'jdk-17.0.4.1', 'bin', 'java')
 local formatter_settings_path = vim.fn.expand(join_path('~', '.vscode', 'formatter.xml'))
 local jdtls_path = join_path(vim.fn.stdpath('data'), 'language-servers', 'jdt-language-server-1.24')
-local java_debug_path = vim.fn.glob(join_path(vim.fn.stdpath('data'),
-  'java-debug', 'com.microsoft.java.debug.plugin', 'target', 'com.microsoft.java.debug.plugin-*.jar'))
-local vscode_java_test_paths = vim.fn.glob(join_path(vim.fn.stdpath('data'), 'vscode-java-test', 'server', '*.jar'), true)
+local mason_packages_path = join_path(vim.fn.stdpath('data'), 'mason', 'packages')
+local java_debug_path = vim.fn.glob(join_path(mason_packages_path,
+  'java-debug-adapter', 'extension', 'server', 'com.microsoft.java.debug.plugin-*.jar'))
+local vscode_java_test_paths = vim.fn.glob(join_path(mason_packages_path,
+  'java-test', 'extension', 'server', '*.jar'), true)
+vscode_java_test_paths = vim.split(vscode_java_test_paths, '\n')
+vscode_java_test_paths = vim.tbl_filter(function(path)
+  return not vim.endswith(path, 'com.microsoft.java.test.runner-jar-with-dependencies.jar')
+end, vscode_java_test_paths)
 local launcher_jar_path = vim.fn.glob(join_path(jdtls_path, 'plugins', 'org.eclipse.equinox.launcher_*.jar'))
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 local bundles = {
   java_debug_path
 }
-vim.list_extend(bundles, vim.split(vscode_java_test_paths, '\n'))
+vim.list_extend(bundles, vscode_java_test_paths)
 
 -- Neovim tabstop & shiftwidth have higher priority than Java Eclipse formatter settings.
 -- https://github.com/mfussenegger/nvim-jdtls#indentation-settings-from-eclipse-formatting-configuration-are-not-recognized
