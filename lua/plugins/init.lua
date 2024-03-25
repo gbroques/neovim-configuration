@@ -103,7 +103,7 @@ return {
   {
     -- Java Development Tools Language Server
     'mfussenegger/nvim-jdtls',
-    commit = 'c6a3c47a0c57c6c0c9b5fb92d3770bb59e92d9c6',
+    commit = '8eb5f0dbe6e126b392ddcaf45893358619893e45',
     ft = { 'java ' }
   },
   -- YAML & JSON
