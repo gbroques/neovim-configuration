@@ -58,10 +58,7 @@ end
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 -- https://github.com/microsoft/vscode-java-test/wiki/Run-with-Configuration#property-details
--- TODO: Pass vmArgs if Java 17 runs the tests to fix Blockhound error.
--- Currently Java 11 runs the tests.
--- local java_test_config = { vmArgs = '-XX:+AllowRedefinitionToAddDeleteMethods', shortenCommandLine = 'jarmanifest' }
-local java_test_config = {}
+local java_test_config = { vmArgs = '-XX:+AllowRedefinitionToAddDeleteMethods', shortenCommandLine = 'jarmanifest' }
 local config = {
   capabilities = capabilities,
   cmd = {
