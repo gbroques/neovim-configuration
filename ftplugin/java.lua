@@ -22,8 +22,8 @@ local function join_path(...)
 end
 local java_path = join_path('C:', 'Program Files', 'Java', 'jdk-17.0.4.1', 'bin', 'java')
 local formatter_settings_path = vim.fn.expand(join_path('~', '.vscode', 'formatter.xml'))
-local jdtls_path = join_path(vim.fn.stdpath('data'), 'language-servers', 'jdt-language-server-1.24')
 local mason_packages_path = join_path(vim.fn.stdpath('data'), 'mason', 'packages')
+local jdtls_path = join_path(mason_packages_path, 'jdtls')
 local java_debug_path = vim.fn.glob(join_path(mason_packages_path,
   'java-debug-adapter', 'extension', 'server', 'com.microsoft.java.debug.plugin-*.jar'))
 local vscode_java_test_paths = vim.fn.glob(join_path(mason_packages_path,

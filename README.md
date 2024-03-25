@@ -32,7 +32,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 3. Install the following projects in a subdirectory within the standard data directory for your operating system:
 
-    1. [eclipse.jdt.ls](https://github.com/eclipse/eclipse.jdt.ls#installation) - `language-servers/jdt-language-server-1.24`
+    1. Extract [jdt-language-server-1.24.0-202306011728.tar.gz](https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.24.0/jdt-language-server-1.24.0-202306011728.tar.gz) into `mason/packages/jdtls`.
     2. Extract [vscjava.vscode-java-debug-0.46.0.vsix](https://open-vsx.org/api/vscjava/vscode-java-debug/0.46.0/file/vscjava.vscode-java-debug-0.46.0.vsix) into `mason/packages/java-debug-adapter`.
 
     | Operating System | Data Directory |
