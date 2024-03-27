@@ -75,7 +75,13 @@ return {
     end
   },
   -- TODO: Plugins under consideration:
-  -- { 'ggandor/leap.nvim' },
+  {
+    'ggandor/leap.nvim',
+    commit = '68ca052dfdcda5e4e958d1ba0fef35e94a3e02e8',
+    config = function()
+      require('leap').create_default_mappings()
+    end
+  },
   -- { 'andymas/vim-matchup' },
   --
   -- smooth scrolling
