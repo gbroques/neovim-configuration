@@ -2,6 +2,7 @@
 -- Eclipse Java development tools (JDT) Language Server downloaded from:
 -- https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.24.0/jdt-language-server-1.24.0-202306011728.tar.gz
 local jdtls = require('jdtls')
+local jdtls_tests = require('jdtls.tests')
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 -- Paths
@@ -148,6 +149,8 @@ local config = {
     -- https://github.com/mfussenegger/dotfiles/blob/833d634251ebf3bf7e9899ed06ac710735d392da/vim/.config/nvim/ftplugin/java.lua#L88-L94
     -- Should these be in keymaps?
     vim.keymap.set('n', '<leader>lo', jdtls.organize_imports, { desc = 'Organize imports', buffer = bufnr })
+    vim.keymap.set('n', '<leader>ls', jdtls_tests.goto_subjects, { desc = 'Goto test class or class under test', buffer = bufnr })
+    vim.keymap.set('n', '<leader>lt', jdtls_tests.generate, { desc = 'Generate tests for the current class', buffer = bufnr })
     -- Should 'd' be reserved for debug?
     vim.keymap.set('n', '<leader>df', function()
       jdtls.test_class({ config_overrides = java_test_config })
