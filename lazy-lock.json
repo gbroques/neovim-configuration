@@ -17,7 +17,7 @@
   "gx.nvim": { "branch": "main", "commit": "38d776a0b35b9daee5020bf3336564571dc785af" },
   "heirline.nvim": { "branch": "master", "commit": "2a151df2dc870e79b138a59ebaaaddf3d1b0d703" },
   "indent-blankline.nvim": { "branch": "master", "commit": "ceaf730b13e332cd76600d9795722413c236c684" },
-  "lazy.nvim": { "branch": "main", "commit": "08954f723bf2d442ea020551e3acc956f4dc6dc7" },
+  "lazy.nvim": { "branch": "main", "commit": "e753eb602539bdad9f0709066d5893a788cb5db9" },
   "leap.nvim": { "branch": "main", "commit": "68ca052dfdcda5e4e958d1ba0fef35e94a3e02e8" },
   "live-command.nvim": { "branch": "main", "commit": "d460067d47948725a6f25b20f31ea8bbfdfe4622" },
   "lsp-progress.nvim": { "branch": "main", "commit": "cabf7fde50cc0dad367a03a1542d9670d1118bd0" },
