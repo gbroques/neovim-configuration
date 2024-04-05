@@ -5,6 +5,8 @@ return {
     event = { 'LspAttach' }, -- telescope used as vim.ui.select for code actions
     cmd = { 'Telescope' },
     keys = {
+      -- TODO: Cycle through history
+      -- https://www.reddit.com/r/neovim/comments/phndpv/comment/hbl89xp/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 
       { '<leader>f',  ':Telescope frecency<CR>',     desc = 'Find files' },
       { '<leader>sb', ':Telescope buffers<CR>',      desc = 'Buffers' },
