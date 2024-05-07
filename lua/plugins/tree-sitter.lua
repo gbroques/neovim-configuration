@@ -2,7 +2,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate', -- Update installed parsers when upgrading plugin
-    commit = '51ea343f705a89326cff8dd7a0542d7fe0e6699a',
+    commit = 'acefffae27b5105a717b213e19c5975bf7a4ba68',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       {
@@ -20,7 +20,7 @@ return {
       {
         'nvim-treesitter/nvim-treesitter-textobjects',
         dependencies = 'nvim-treesitter/nvim-treesitter',
-        commit = '83c59ed1eeae70a55605990993cf4d208948fdf7'
+        commit = '23b820146956b3b681c19e10d3a8bc0cbd9a1d4c'
       },
       {
         'JoosepAlviste/nvim-ts-context-commentstring'
