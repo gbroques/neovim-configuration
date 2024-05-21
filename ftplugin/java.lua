@@ -159,7 +159,7 @@ local config = {
       jdtls.test_nearest_method({ config_overrides = java_test_config })
     end, { desc = 'Test method (debug nearest)' })
     vim.keymap.set('n', '<leader>rv', jdtls.extract_variable_all, { desc = 'Extract variable', buffer = bufnr })
-    vim.keymap.set('v', '<leader>rm', [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
+    vim.keymap.set('v', '<leader>rm', "<CMD>lua require('jdtls').extract_method(true)<CR>",
       { desc = 'Extract method', buffer = bufnr })
     vim.keymap.set('n', '<leader>rc', jdtls.extract_constant, { desc = 'Extract constant', buffer = bufnr })
   end
