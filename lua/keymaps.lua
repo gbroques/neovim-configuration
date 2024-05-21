@@ -89,7 +89,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         source = true
       })
     end, { buffer = event.buf, desc = 'Show line diagnostics' })
-    set_lsp_keymap('n', 'gs', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+    -- gs overlaps with 'go substitute'
+    -- set_lsp_keymap('n', 'gs', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
     set_lsp_keymap('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Goto t(y)pe definition' })
     -- TODO
     -- Consider lspsaga https://nvimdev.github.io/lspsaga/codeaction/

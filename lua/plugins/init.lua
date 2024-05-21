@@ -79,7 +79,8 @@ return {
     'ggandor/leap.nvim',
     commit = '68ca052dfdcda5e4e958d1ba0fef35e94a3e02e8',
     config = function()
-      require('leap').create_default_mappings()
+      vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+      vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
     end
   },
   -- { 'andymas/vim-matchup' },
@@ -99,7 +100,14 @@ return {
   -- { 'wellle/targets.vim' },
   -- ciq - change in quotes "" '' or ``
   -- { 'echasnovski/mini.ai' },
-  -- { 'gbprod/substitute.nvim' },
+  {
+    'gbprod/substitute.nvim',
+    commit = '17ffaeb5a1dc2dbef39cf0865d8a4b6000836714',
+    config = function()
+      require('substitute').setup()
+      vim.keymap.set('n', 'gs', require('substitute').operator, { noremap = true })
+    end
+  },
   -- gs is taken by vim.lsp.buf.signature_help currently
   -- s will be used for leap
   -- { 'simrat39/symbols-outline.nvim' },
