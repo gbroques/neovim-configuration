@@ -107,8 +107,11 @@ return {
       null_ls.setup({
         debug = true,
         sources = {
+          -- TODO
+          -- https://github.com/nvimtools/none-ls.nvim/issues/58
           -- JavaScript
           -- Pass --debug in extra_args to troubleshoot issues.
+          -- use eslint-language-server instead
           null_ls.builtins.diagnostics.eslint_d.with({
             extra_args = { '--config', eslint_config_path }
           }),
@@ -117,8 +120,11 @@ return {
           }),
 
           -- Python
+          -- use ruff / available in none-ls-extras.nvim
+          -- https://github.com/astral-sh/ruff-lsp
           null_ls.builtins.diagnostics.flake8,  -- linter
           null_ls.builtins.diagnostics.mypy,    -- static type checker
+          -- TODO: use ruff
           null_ls.builtins.formatting.autopep8, -- formatter
           null_ls.builtins.formatting.isort,    -- import sorter
         },
