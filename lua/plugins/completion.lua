@@ -6,7 +6,7 @@ return {
       -- Completion sources
       {
         'hrsh7th/cmp-nvim-lsp',
-        commit = '44b16d11215dce86f253ce0c30949813c0a90765'
+        commit = '39e2eda76828d88b773cc27a3f61d2ad782c922d'
       },
       {
         'hrsh7th/cmp-buffer',
@@ -18,7 +18,7 @@ return {
       },
       {
         'hrsh7th/cmp-cmdline',
-        commit = '8ee981b4a91f536f52add291594e89fb6645e451'
+        commit = 'd250c63aa13ead745e3a40f61fdd3470efde3923'
       },
       {
         'dmitmel/cmp-cmdline-history',
@@ -26,18 +26,18 @@ return {
       },
       {
         'hrsh7th/cmp-nvim-lsp-signature-help',
-        commit = '3d8912ebeb56e5ae08ef0906e3a54de1c66b92f1'
+        commit = '031e6ba70b0ad5eee49fd2120ff7a2e325b17fa7'
       },
       {
         'hrsh7th/cmp-nvim-lsp-document-symbol',
-        commit = 'f0f53f704c08ea501f9d222b23491b0d354644b0'
+        commit = 'f94f7ba948e32cd302caba1c2ca3f7c697fb4fcf'
       },
 
       -- Snippets
       -- snippet engine required for JDTLS completions
       {
         'L3MON4D3/LuaSnip',
-        tag = "v1.2.1",
+        commit = "ac7cbc0e85710db7cba6510b1d8e6a1a551444f7",
         dependencies = { "rafamadriz/friendly-snippets" },
         config = function()
           require('luasnip').config.setup {}
@@ -46,7 +46,7 @@ return {
       },
       {
         'saadparwaiz1/cmp_luasnip',
-        commit = '18095520391186d634a0045dacaa346291096566'
+        commit = '05a9ab28b53f71d1aece421ef32fee2cb857a843'
       },
       {
         'rafamadriz/friendly-snippets',

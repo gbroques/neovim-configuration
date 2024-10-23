@@ -2,7 +2,7 @@ return {
   {
     -- Configuration for Neovim's LSP client.
     'neovim/nvim-lspconfig',
-    commit = 'b6b34b9acf84949f0ac1c00747765e62b81fb38d',
+    commit = '0d62a16429dba5fded93a076237079b81527e8f3',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       {
@@ -22,7 +22,7 @@ return {
       },
       {
         'williamboman/mason-lspconfig.nvim',
-        commit = '56e435e09f8729af2d41973e81a0db440f8fe9c9',
+        commit = '7446f47b3dfb7df801f31a6f6783c2ad119a6935',
         config = function()
           require('mason-lspconfig').setup({
             ensure_installed = { 'lua_ls' },
@@ -30,11 +30,12 @@ return {
         end
       },
       { 'hrsh7th/cmp-nvim-lsp' },
-      {
-        -- Neovim Plugin Development
-        'folke/neodev.nvim',
-        tag = 'v2.5.2',
-      },
+      -- {
+      --   -- Neovim Plugin Development
+      --   -- Replace with https://github.com/folke/lazydev.nvim
+      --   'folke/neodev.nvim',
+      --   tag = 'v2.5.2',
+      -- },
     },
     config = function()
       local lspconfig = require('lspconfig')
@@ -68,7 +69,7 @@ return {
 
         -- IMPORTANT: setup neodev BEFORE lspconfig.lua_ls
         if server == 'lua_ls' then
-          require('neodev').setup({})
+          -- require('neodev').setup({})
         end
 
         lspconfig[server].setup(opts)
@@ -97,12 +98,12 @@ return {
     -- need to figure out eslint_d alternative
     -- See lsp.lua
     'nvimtools/none-ls.nvim',
-    commit = 'bbaf5a96913aa92281f154b08732be2f57021c45',
+    commit = 'dcc8cd4efdcb29275681a3c95786a816330dbca6',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local null_ls = require('null-ls')
 
-      local eslint_config_path = os.getenv('ESLINT_CONFIG_PATH')
+      -- local eslint_config_path = os.getenv('ESLINT_CONFIG_PATH')
 
       null_ls.setup({
         debug = true,
@@ -112,20 +113,20 @@ return {
           -- JavaScript
           -- Pass --debug in extra_args to troubleshoot issues.
           -- use eslint-language-server instead
-          null_ls.builtins.diagnostics.eslint_d.with({
-            extra_args = { '--config', eslint_config_path }
-          }),
-          null_ls.builtins.formatting.eslint_d.with({
-            extra_args = { '--config', eslint_config_path }
-          }),
+          -- null_ls.builtins.diagnostics.eslint_d.with({
+          --   extra_args = { '--config', eslint_config_path }
+          -- }),
+          -- null_ls.builtins.formatting.eslint_d.with({
+          --   extra_args = { '--config', eslint_config_path }
+          -- }),
 
           -- Python
           -- use ruff / available in none-ls-extras.nvim
           -- https://github.com/astral-sh/ruff-lsp
-          null_ls.builtins.diagnostics.flake8,  -- linter
+          -- null_ls.builtins.diagnostics.flake8,  -- linter
           null_ls.builtins.diagnostics.mypy,    -- static type checker
           -- TODO: use ruff
-          null_ls.builtins.formatting.autopep8, -- formatter
+          -- null_ls.builtins.formatting.autopep8, -- formatter
           null_ls.builtins.formatting.isort,    -- import sorter
         },
       })

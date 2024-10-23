@@ -2,21 +2,21 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate', -- Update installed parsers when upgrading plugin
-    commit = 'acefffae27b5105a717b213e19c5975bf7a4ba68',
+    commit = 'bab7b0f20bd3e805b77231a77f516c7d69382693',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       {
         'windwp/nvim-ts-autotag',
-        commit = '6be1192965df35f94b8ea6d323354f7dc7a557e4'
+        commit = 'e239a560f338be31337e7abc3ee42515daf23f5e'
       },
       {
         'HiPhish/rainbow-delimiters.nvim',
-        commit = '849803e0a687c6ef7c9a0d305bd4d441017b8abf'
+        commit = 'd227e6c9879bb50af35cd733461198666981d482'
       },
       {
         'nvim-treesitter/nvim-treesitter-textobjects',
         dependencies = 'nvim-treesitter/nvim-treesitter',
-        commit = '23b820146956b3b681c19e10d3a8bc0cbd9a1d4c'
+        commit = '0d79d169fcd45a8da464727ac893044728f121d4'
       },
       {
         'JoosepAlviste/nvim-ts-context-commentstring'

@@ -1,7 +1,7 @@
 return {
   {
     'petertriho/nvim-scrollbar',
-    commit = '35f99d559041c7c0eff3a41f9093581ceea534e8',
+    commit = '6994eb9f73d5fdc36ee2c8717940e8c853e51a49',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       'folke/tokyonight.nvim'

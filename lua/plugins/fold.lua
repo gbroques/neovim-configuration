@@ -1,12 +1,12 @@
 return {
   {
     'kevinhwang91/nvim-ufo',
-    commit = '43e39ec74cd57c45ca9d8229a796750f6083b850',
+    commit = '203c9f434feec57909ab4b1e028abeb3349b7847',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       {
         'kevinhwang91/promise-async',
-        commit = 'e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e'
+        commit = '119e8961014c9bfaf1487bf3c2a393d254f337e2'
       }
     },
     config = function()

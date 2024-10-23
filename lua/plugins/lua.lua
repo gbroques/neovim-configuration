@@ -2,7 +2,7 @@ return {
   -- Debug Adapter
   {
     'jbyuki/one-small-step-for-vimkind',
-    commit = '5cacc816153c66a50de92c9cee29077b4a380254',
+    commit = 'ad065ad2c814249cfb9e344ce5b2b35d36fbc09f',
     ft = { 'lua', 'vim' },
     dependencies = {
       'mfussenegger/nvim-dap'

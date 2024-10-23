@@ -1,7 +1,7 @@
 return {
   {
     'numToStr/Comment.nvim',
-    tag = 'v0.8.0',
+    commit = 'e30b7f2008e52442154b66f7c519bfd2f1e32acb',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('Comment').setup {
@@ -11,7 +11,7 @@ return {
     dependencies = {
       {
         'JoosepAlviste/nvim-ts-context-commentstring',
-        commit = '7f625207f225eea97ef7a6abe7611e556c396d2f'
+        commit = '9c74db656c3d0b1c4392fc89a016b1910539e7c0'
       }
     }
   }
