@@ -36,10 +36,6 @@ return {
         autopairs = { enable = true },
         autotag = { enable = true },
         rainbow = { enable = true },
-        context_commentstring = {
-          enable = true,
-          enable_autocmd = false,
-        },
         textobjects = {
           select = {
             enable = true,

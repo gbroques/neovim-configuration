@@ -11,7 +11,12 @@ return {
     dependencies = {
       {
         'JoosepAlviste/nvim-ts-context-commentstring',
-        commit = '9c74db656c3d0b1c4392fc89a016b1910539e7c0'
+        commit = '9c74db656c3d0b1c4392fc89a016b1910539e7c0',
+        config = function()
+          require('ts_context_commentstring').setup {
+            enable_autocmd = false
+          }
+        end
       }
     }
   }
