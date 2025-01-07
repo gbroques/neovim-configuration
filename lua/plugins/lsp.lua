@@ -55,7 +55,8 @@ return {
       local servers = {
         'lua_ls',
         'ts_ls',
-        'jedi_language_server'
+        'jedi_language_server',
+        'clangd'
       }
       for _, server in ipairs(servers) do
         local opts = {

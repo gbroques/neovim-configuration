@@ -50,6 +50,18 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
        :MasonInstall java-test@0.39.0
 
+### C++
+
+1. Install the tree-sitter C++ parser from inside Neovim:
+
+       :TSInstall cpp
+
+2. Install the following dependencies via Mason:
+
+       :MasonInstall clangd@19.1.2
+
+3. A [`compile_commands.json`](https://clangd.llvm.org/installation.html#compile_commandsjson) file must be generated on a per-project basis.
+
 ### JavaScript
 
 1. Install TypeScript Language Server:
