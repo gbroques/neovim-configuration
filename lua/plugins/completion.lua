@@ -1,7 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    commit = 'e1f1b40790a8cb7e64091fb12cc5ffe350363aa0',
+    commit = '8c82d0bd31299dbff7f8e780f5e06d2283de9678',
     dependencies = {
       -- Completion sources
       {
