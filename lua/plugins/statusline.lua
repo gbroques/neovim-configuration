@@ -292,7 +292,7 @@ return {
           else
             return table.concat(vim.tbl_map(function(client)
               return client.config.name
-            end, vim.lsp.get_active_clients()), " ")
+            end, vim.lsp.get_clients()), " ")
           end
         end,
       })
