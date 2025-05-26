@@ -2,7 +2,7 @@
 return {
   {
     'RRethy/vim-illuminate',
-    commit = '5eeb7951fc630682c322e88a9bbdae5c224ff0aa',
+    commit = '0d1e93684da00ab7c057410fecfc24f434698898',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local illuminate = require('illuminate')
