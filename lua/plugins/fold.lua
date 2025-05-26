@@ -1,7 +1,7 @@
 return {
   {
     'kevinhwang91/nvim-ufo',
-    commit = '203c9f434feec57909ab4b1e028abeb3349b7847',
+    commit = '3c7a3570e9c9dc198a2ad4491b0b0e51c4d4ba08',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       {
