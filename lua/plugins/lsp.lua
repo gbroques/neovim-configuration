@@ -2,12 +2,12 @@ return {
   {
     -- Configuration for Neovim's LSP client.
     'neovim/nvim-lspconfig',
-    commit = '0d62a16429dba5fded93a076237079b81527e8f3',
+    commit = 'd45702594afc661a9dfa95e96acf18c56006d4d9',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       {
         'williamboman/mason.nvim',
-        commit = '751b1fcbf3d3b783fcf8d48865264a9bcd8f9b10',
+        commit = '8024d64e1330b86044fed4c8494ef3dcd483a67c',
         config = function()
           require('mason').setup({
             -- Uncomment for troubleshooting:
@@ -22,7 +22,7 @@ return {
       },
       {
         'williamboman/mason-lspconfig.nvim',
-        commit = '7446f47b3dfb7df801f31a6f6783c2ad119a6935',
+        commit = '87888865fa1ce1928a25b9abbea8c8f7839bf522',
         config = function()
           require('mason-lspconfig').setup({
             ensure_installed = { 'lua_ls' },
