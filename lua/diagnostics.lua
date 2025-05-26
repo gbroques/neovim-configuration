@@ -3,16 +3,13 @@
 ---------------------------------------------------------------------
 local icons = require('icons')
 vim.diagnostic.config({
-  virtual_text = false
+  virtual_text = false,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = icons.diagnostics.error,
+      [vim.diagnostic.severity.HINT] = icons.diagnostics.hint,
+      [vim.diagnostic.severity.INFO] = icons.diagnostics.info,
+      [vim.diagnostic.severity.WARN] = icons.diagnostics.warning,
+    }
+  }
 })
-local function define_diagnostic_sign(name, icon)
-  local highlight = 'DiagnosticSign' .. name
-  vim.fn.sign_define(
-    highlight,
-    { text = icon, texthl = highlight }
-  )
-end
-define_diagnostic_sign('Error', icons.diagnostics.error)
-define_diagnostic_sign('Hint', icons.diagnostics.hint)
-define_diagnostic_sign('Info', icons.diagnostics.info)
-define_diagnostic_sign('Warn', icons.diagnostics.warning)

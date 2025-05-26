@@ -10,6 +10,7 @@ return {
       },
     },
     config = function()
+      local icons = require('icons')
       -- TODO:
       -- Build my own statusline.
       -- https://jip.dev/posts/a-simpler-vim-statusline/
@@ -239,8 +240,8 @@ return {
       local Diagnostics = {
         condition = conditions.has_diagnostics,
         static = {
-          error_icon = vim.fn.sign_getdefined('DiagnosticSignError')[1].text,
-          warn_icon = vim.fn.sign_getdefined('DiagnosticSignWarn')[1].text,
+          error_icon = icons.diagnostics.error .. ' ',
+          warn_icon = icons.diagnostics.warning .. ' ',
         },
         init = function(self)
           self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
