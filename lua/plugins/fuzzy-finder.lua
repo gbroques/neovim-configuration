@@ -1,7 +1,7 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    commit = 'da8b3d485975a8727bea127518b65c980521ae22',
+    commit = 'b4da76be54691e854d3e0e02c36b0245f945c2c7',
     event = { 'LspAttach' }, -- telescope used as vim.ui.select for code actions
     cmd = { 'Telescope' },
     keys = {
@@ -49,12 +49,12 @@ return {
       -- https://github.com/mfussenegger/nvim-jdtls/wiki/UI-Extensions
       {
         'nvim-telescope/telescope-ui-select.nvim',
-        commit = '62ea5e58c7bbe191297b983a9e7e89420f581369'
+        commit = '6e51d7da30bd139a6950adf2a47fda6df9fa06d2'
       },
       {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make',
-        commit = '9bc8237565ded606e6c366a71c64c0af25cd7a50'
+        commit = '1f08ed60cafc8f6168b72b80be2b2ea149813e55'
       },
       {
         -- Potential alternatives to telescope-frecency:
@@ -62,7 +62,7 @@ return {
         -- * prochri/telescope-all-recent.nvim
         -- * smartpde/telescope-recent-files
         'nvim-telescope/telescope-frecency.nvim',
-        commit = '4f3e007ec28eb248811f9d7074315fe1f8852199'
+        commit = '03a0efd1a8668b902bddef4b82cb7d46cd5ab22c'
       }
     },
     config = function()
