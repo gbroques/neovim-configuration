@@ -1,12 +1,12 @@
 return {
   {
     'rebelot/heirline.nvim',
-    commit = '7a79753c1a42c3f52e89a6c42429e7f871e560cd',
+    commit = 'fae936abb5e0345b85c3a03ecf38525b0828b992',
     event = 'VeryLazy',
     dependencies = {
       {
         'linrongbin16/lsp-progress.nvim',
-        commit = 'd5f4d28efe75ce636bfbe271eb45f39689765aab'
+        commit = 'f3df1df8f5ea33d082db047b5d2d2b83cc01cd8a'
       },
     },
     config = function()
