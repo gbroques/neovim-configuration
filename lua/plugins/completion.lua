@@ -1,24 +1,24 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    commit = '8c82d0bd31299dbff7f8e780f5e06d2283de9678',
+    commit = 'b5311ab3ed9c846b585c0c15b7559be131ec4be9',
     dependencies = {
       -- Completion sources
       {
         'hrsh7th/cmp-nvim-lsp',
-        commit = '39e2eda76828d88b773cc27a3f61d2ad782c922d'
+        commit = 'a8912b88ce488f411177fc8aed358b04dc246d7b'
       },
       {
         'hrsh7th/cmp-buffer',
-        commit = '3022dbc9166796b644a841a02de8dd1cc1d311fa'
+        commit = 'b74fab3656eea9de20a9b8116afa3cfc4ec09657'
       },
       {
         'hrsh7th/cmp-path',
-        commit = '91ff86cd9c29299a64f968ebb45846c485725f23'
+        commit = 'c6635aae33a50d6010bf1aa756ac2398a2d54c32'
       },
       {
         'hrsh7th/cmp-cmdline',
-        commit = 'd250c63aa13ead745e3a40f61fdd3470efde3923'
+        commit = 'd126061b624e0af6c3a556428712dd4d4194ec6d'
       },
       {
         'dmitmel/cmp-cmdline-history',
@@ -37,8 +37,8 @@ return {
       -- snippet engine required for JDTLS completions
       {
         'L3MON4D3/LuaSnip',
-        commit = "ac7cbc0e85710db7cba6510b1d8e6a1a551444f7",
-        dependencies = { "rafamadriz/friendly-snippets" },
+        commit = 'faf3c94a44508cec1b961406d36cc65113ff3b98',
+        dependencies = { 'rafamadriz/friendly-snippets' },
         config = function()
           require('luasnip').config.setup {}
           require("luasnip.loaders.from_vscode").lazy_load()
@@ -46,11 +46,11 @@ return {
       },
       {
         'saadparwaiz1/cmp_luasnip',
-        commit = '05a9ab28b53f71d1aece421ef32fee2cb857a843'
+        commit = '98d9cb5c2c38532bd9bdb481067b20fea8f32e90'
       },
       {
         'rafamadriz/friendly-snippets',
-        commit = '5749f093759c29e3694053d048ceb940fe12c3d3',
+        commit = '572f5660cf05f8cd8834e096d7b4c921ba18e175',
       },
     },
     event = { 'InsertEnter', 'CmdlineEnter' },
