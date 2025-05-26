@@ -61,25 +61,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
 
-    -- Center screen after goto definition.
+    -- TODO: Center screen after goto definition.
     -- References:
     -- https://www.reddit.com/r/neovim/comments/r756ur/comment/hmz7nrf/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
     -- https://www.reddit.com/r/neovim/comments/11frjpb/comment/jal86gg/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-    local lsp_util = require('vim.lsp.util')
-    local default_definition_handler = require('vim.lsp.handlers')['textDocument/definition']
-    local handle_definition = function(err, result, ctx, config)
-      default_definition_handler(err, result, ctx, config)
-      vim.cmd('norm zz')
-    end
-    local goto_definition = function()
-      local params = lsp_util.make_position_params()
-      vim.lsp.buf_request(event.buf, 'textDocument/definition', params, handle_definition)
-    end
+    -- The solution in these references no longer works in Neovim 11.
     local set_lsp_keymap = function(mode, lhs, rhs, opts)
       local keymap_opts = vim.tbl_extend('force', { buffer = event.buf }, opts)
       vim.keymap.set(mode, lhs, rhs, keymap_opts)
     end
-    set_lsp_keymap('n', 'gd', goto_definition, { desc = 'Goto definition' })
+    set_lsp_keymap('n', 'gd', vim.lsp.buf.definition, { desc = 'Goto definition' })
     set_lsp_keymap('n', 'gD', vim.lsp.buf.declaration, { desc = 'Goto declaration' })
     set_lsp_keymap('n', 'gI', vim.lsp.buf.implementation, { desc = 'Goto implementation' })
     set_lsp_keymap('n', 'gl', function()
