@@ -4,16 +4,6 @@
 -- TODO: See the following link for a reference of how to lazy-load various plugins
 -- https://github.com/2KAbhishek/nvim2k/blob/main/lua/plugins/list.lua
 return {
-  -- Project management
-  {
-    'ahmedkhalf/project.nvim',
-    commit = '8c6bad7d22eef1b71144b401c9f74ed01526a4fb',
-    event = 'VimEnter',
-    cmd = 'Telescope projects',
-    config = function()
-      require('project_nvim').setup({})
-    end
-  },
   {
     -- Reopen files at last edit position.
     'farmergreg/vim-lastplace',
