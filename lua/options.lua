@@ -57,5 +57,5 @@ vim.opt.splitright = true         -- Put new buffer on the right for vertical sp
 vim.opt.fillchars:append { diff = " " }
 vim.opt.guifont = 'JetBrainsMono NF'
 if vim.fn.has('macunix') == 0 then
-  vim.opt.shell = '/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe'
+  vim.opt.shell = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
 end
