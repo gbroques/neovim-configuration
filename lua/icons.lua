@@ -38,7 +38,7 @@ return {
     Variable = "",
   },
   diagnostics = {
-    hint = "",
+    hint = "󰌵",
     info = "",
     warning = "",
     error = "",
