@@ -2,7 +2,7 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    commit = 'c3c6544ee00333b0f1d6a13735d0dd302dba4f70',
+    commit = '1c733e8c1957dc67f47580fe9c458a13b5612d5b',
     -- The consequence of lazy-loading on NvimTreeToggle
     -- is that we use netrw if you open a directory with nvim.
     cmd = 'NvimTreeToggle',
