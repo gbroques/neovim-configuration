@@ -78,15 +78,9 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 3. Setup ESLint for formatting and diagnostics.
 
-`eslint` and `eslint_d` MUST be in the `PATH`.
+    npm install -g vscode-langservers-extracted
 
-[`eslint_d`](https://github.com/mantoni/eslint_d.js/) speeds up ESLint and can be installed globally:
-
-    npm install -g eslint_d
-
-An enviroment variable, `ESLINT_CONFIG_PATH`, containing the path to the ESLint configuration file MUST be set.
-
-This is passed to `eslint`'s CLI `--config` option.
+Two enviroment variables, `ESLINT_NODE_PATH` and `ESLINT_CONFIG_FILE`, specifying a path with `node_modules` containing ESLint and a path to the ESLint configuration file MUST be set.
 
 ### Tree-sitter
 

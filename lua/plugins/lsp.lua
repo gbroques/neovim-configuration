@@ -55,6 +55,7 @@ return {
       local servers = {
         'lua_ls',
         'ts_ls',
+        'eslint',
         'jedi_language_server',
         'clangd'
       }
