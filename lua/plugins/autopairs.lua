@@ -2,7 +2,7 @@
 return {
   {
     'windwp/nvim-autopairs',
-    commit = 'e8f7dd7a72de3e7b6626c050a802000e69d53ff0',
+    commit = '4d74e75913832866aa7de35e4202463ddf6efd1b',
     -- TODO: Consider CmdlineEnter if autopairs ever supports that:
     -- event = { 'InsertEnter', 'CmdlineEnter' },
     -- https://github.com/windwp/nvim-autopairs/issues/309
