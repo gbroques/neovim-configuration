@@ -92,7 +92,7 @@ return {
   -- { 'echasnovski/mini.ai' },
   {
     'gbprod/substitute.nvim',
-    commit = '17ffaeb5a1dc2dbef39cf0865d8a4b6000836714',
+    commit = '9db749a880e3dd3b0eb57f698aa8f1e1630e1f25',
     config = function()
       require('substitute').setup()
       vim.keymap.set('n', 'gs', require('substitute').operator, { noremap = true })
