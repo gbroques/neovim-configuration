@@ -1,6 +1,6 @@
 return {
   'folke/tokyonight.nvim',
-  tag = 'v2.0.0',
+  tag = 'v4.11.0',
   config = function()
     -- Troubleshooting
     -- ===============
