@@ -133,12 +133,12 @@ return {
   -- Utility
   {
     'nvim-lua/plenary.nvim',
-    commit = '1a6a7c929628566cf406aa7da1d048a1ddc7e9a8',
+    commit = '857c5ac632080dba10aae49dba902ce3abf91b35',
     lazy = true
   },
   {
     'nvim-tree/nvim-web-devicons',
-    commit = '14b3a5ba63b82b60cde98d0a40319d80f25e8301',
+    commit = '1fb58cca9aebbc4fd32b086cb413548ce132c127',
     lazy = true
   },
   {
