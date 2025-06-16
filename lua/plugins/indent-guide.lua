@@ -5,17 +5,25 @@ return {
     tag = 'v3.9.0',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      require('indent_blankline').setup {
-        show_trailing_blankline_indent = false,
-        show_first_indent_level = true,
-        use_treesitter = true,
-        show_current_context = true,
-        buftype_exclude = { 'terminal', 'nofile' },
-        filetype_exclude = {
-          'help',
-          'packer',
-          'NvimTree',
-        },
+      require('ibl').setup {
+        exclude = {
+          filetypes = {
+            'lspinfo',
+            'packer',
+            'checkhealth',
+            'help',
+            'gitcommit',
+            'TelescopePrompt',
+            'TelescopeResults',
+            'NvimTree'
+          },
+          buftypes = {
+            'terminal',
+            'nofile',
+            'quickfix',
+            'prompt'
+          }
+        }
       }
     end
   },
