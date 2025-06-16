@@ -41,7 +41,7 @@ return {
   },
   {
     'smjonas/live-command.nvim',
-    commit = 'd460067d47948725a6f25b20f31ea8bbfdfe4622',
+    commit = '05b9f886628f3e9e6122e734c1fac4f13dcb64b4',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('live-command').setup {
