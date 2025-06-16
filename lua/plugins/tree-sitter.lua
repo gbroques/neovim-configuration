@@ -16,7 +16,7 @@ return {
       {
         'nvim-treesitter/nvim-treesitter-textobjects',
         dependencies = 'nvim-treesitter/nvim-treesitter',
-        commit = '0f051e9813a36481f48ca1f833897210dbcfffde'
+        commit = '89ebe73cd2836db80a22d9748999ace0241917a5'
       },
       {
         'JoosepAlviste/nvim-ts-context-commentstring'
