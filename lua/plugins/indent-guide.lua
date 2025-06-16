@@ -2,7 +2,7 @@ return {
   -- Editor Pane
   {
     'lukas-reineke/indent-blankline.nvim',
-    tag = 'v2.20.6',
+    tag = 'v3.9.0',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('indent_blankline').setup {
