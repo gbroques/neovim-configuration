@@ -49,7 +49,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 5. Install the following dependencies via Mason (to find the latest version goto https://mason-registry.dev/registry/list?search=java-test):
 
-       :MasonInstall java-test@0.43.1
+       :MasonInstall java-test@0.43.0
 
 ### C++
 

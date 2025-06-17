@@ -46,16 +46,18 @@ if not dir_exists(java_debug_adapter_path) then
   vim.notify("Install Java Debug extension. See README.md for instructions.", vim.log.levels.WARN)
 end
 local java_debug_path = vim.fn.glob(join_path(java_debug_adapter_path,
-   'extension', 'server', 'com.microsoft.java.debug.plugin-*.jar'))
+  'extension', 'server', 'com.microsoft.java.debug.plugin-*.jar'))
 local java_test_path = join_path(mason_packages_path, 'java-test')
 if not dir_exists(java_test_path) then
   vim.notify("Install Java Test extension. See README.md for instructions.", vim.log.levels.WARN)
 end
 local vscode_java_test_paths = vim.fn.glob(join_path(java_test_path,
-   'extension', 'server', '*.jar'), true)
+  'extension', 'server', '*.jar'), true)
 vscode_java_test_paths = vim.split(vscode_java_test_paths, '\n')
 vscode_java_test_paths = vim.tbl_filter(function(path)
-  return not vim.endswith(path, 'com.microsoft.java.test.runner-jar-with-dependencies.jar')
+  -- TODO: Make non-versioned jars an array / table, or use pattern that filters JARs with versions
+  return not vim.endswith(path, 'com.microsoft.java.test.runner-jar-with-dependencies.jar') and
+      not vim.endswith(path, 'jacocoagent.jar')
 end, vscode_java_test_paths)
 local launcher_jar_path = vim.fn.glob(join_path(jdtls_path, 'plugins', 'org.eclipse.equinox.launcher_*.jar'))
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------
