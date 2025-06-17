@@ -1,7 +1,7 @@
 return {
   {
     'lewis6991/gitsigns.nvim',
-    commit = 'ee7634ab4f0a6606438fe13e16cbf2065589a5ed',
+    commit = '88205953bd748322b49b26e1dfb0389932520dc9',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       'petertriho/nvim-scrollbar',
