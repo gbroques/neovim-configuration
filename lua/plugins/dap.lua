@@ -3,15 +3,19 @@ return {
   -- TODO LiadOz/nvim-dap-repl-highlights
   {
     'mfussenegger/nvim-dap',
-    tag = '0.6.0',
+    tag = '0.10.0',
     cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
     ft = { 'java ' }, -- for mfussenegger/nvim-jdtls
     dependencies = {
       {
         'rcarriga/nvim-dap-ui',
-        tag = 'v3.8.3',
+        tag = 'v4.0.0',
         config = true
       },
+      {
+        'nvim-neotest/nvim-nio',
+        tag = 'v1.10.1'
+      }
     },
     config = function()
       local dap = require('dap')

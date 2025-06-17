@@ -51,6 +51,14 @@ vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search h
 vim.keymap.set('v', '<leader>p', '"_dP')
 
 -- LSP
+-- Starting from 0.11, Neovim unconditionally sets global gr* default keymaps.
+-- See https://neovim.io/doc/user/lsp.html#_global-defaults
+-- We unset these in favor of 'gr' for 'get references' using telescope.
+vim.keymap.del('n', 'gra')
+vim.keymap.del('n', 'gri')
+vim.keymap.del('n', 'grn')
+vim.keymap.del('n', 'grr')
+
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {

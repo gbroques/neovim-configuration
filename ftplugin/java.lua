@@ -5,6 +5,18 @@ local jdtls = require('jdtls')
 local jdtls_tests = require('jdtls.tests')
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
+function dir_exists(path)
+  local ok, err, code = os.rename(path, path)
+  if not ok then
+    -- Check for permission denied, which still means the directory exists
+    if code == 13 then
+      return true
+    end
+    return false
+  end
+  return true
+end
+
 -- Paths
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------
 local function join_path(...)
@@ -21,14 +33,26 @@ local function join_path(...)
   end
   return path
 end
-local java_path = join_path('C:', 'Program Files', 'Java', 'jdk-17.0.4.1', 'bin', 'java')
+local java_path = join_path('C:', 'Program Files', 'Zulu', 'zulu-21', 'bin', 'java')
 local formatter_settings_path = vim.fn.expand(join_path('~', '.vscode', 'formatter.xml'))
 local mason_packages_path = join_path(vim.fn.stdpath('data'), 'mason', 'packages')
 local jdtls_path = join_path(mason_packages_path, 'jdtls')
-local java_debug_path = vim.fn.glob(join_path(mason_packages_path,
-  'java-debug-adapter', 'extension', 'server', 'com.microsoft.java.debug.plugin-*.jar'))
-local vscode_java_test_paths = vim.fn.glob(join_path(mason_packages_path,
-  'java-test', 'extension', 'server', '*.jar'), true)
+if not dir_exists(jdtls_path) then
+  vim.notify("Install JDTLS. See README.md for instructions.", vim.log.levels.WARN)
+end
+
+local java_debug_adapter_path = join_path(mason_packages_path, 'java-debug-adapter')
+if not dir_exists(java_debug_adapter_path) then
+  vim.notify("Install Java Debug extension. See README.md for instructions.", vim.log.levels.WARN)
+end
+local java_debug_path = vim.fn.glob(join_path(java_debug_adapter_path,
+   'extension', 'server', 'com.microsoft.java.debug.plugin-*.jar'))
+local java_test_path = join_path(mason_packages_path, 'java-test')
+if not dir_exists(java_test_path) then
+  vim.notify("Install Java Test extension. See README.md for instructions.", vim.log.levels.WARN)
+end
+local vscode_java_test_paths = vim.fn.glob(join_path(java_test_path,
+   'extension', 'server', '*.jar'), true)
 vscode_java_test_paths = vim.split(vscode_java_test_paths, '\n')
 vscode_java_test_paths = vim.tbl_filter(function(path)
   return not vim.endswith(path, 'com.microsoft.java.test.runner-jar-with-dependencies.jar')
@@ -96,13 +120,17 @@ local config = {
         -- And search for `interface RuntimeOption`
         -- The `name` is NOT arbitrary, but must match one of the elements from `enum ExecutionEnvironment` in the link above
         runtimes = {
-          {
-            name = 'JavaSE-11',
-            path = 'C:\\Program Files\\AdoptOpenJDK\\jdk-11.0.10.9-hotspot',
-          },
+          -- {
+          --   name = 'JavaSE-11',
+          --   path = 'C:\\Program Files\\AdoptOpenJDK\\jdk-11.0.10.9-hotspot',
+          -- },
           {
             name = "JavaSE-17",
-            path = 'C:\\Program Files\\Java\\jdk-17.0.4.1',
+            path = 'C:\\Program Files\\Zulu\\zulu-17',
+          },
+          {
+            name = "JavaSE-21",
+            path = 'C:\\Program Files\\Zulu\\zulu-21',
           },
         }
       },
@@ -149,8 +177,10 @@ local config = {
     -- https://github.com/mfussenegger/dotfiles/blob/833d634251ebf3bf7e9899ed06ac710735d392da/vim/.config/nvim/ftplugin/java.lua#L88-L94
     -- Should these be in keymaps?
     vim.keymap.set('n', '<leader>lo', jdtls.organize_imports, { desc = 'Organize imports', buffer = bufnr })
-    vim.keymap.set('n', '<leader>ls', jdtls_tests.goto_subjects, { desc = 'Goto test class or class under test', buffer = bufnr })
-    vim.keymap.set('n', '<leader>lt', jdtls_tests.generate, { desc = 'Generate tests for the current class', buffer = bufnr })
+    vim.keymap.set('n', '<leader>ls', jdtls_tests.goto_subjects,
+      { desc = 'Goto test class or class under test', buffer = bufnr })
+    vim.keymap.set('n', '<leader>lt', jdtls_tests.generate,
+      { desc = 'Generate tests for the current class', buffer = bufnr })
     -- Should 'd' be reserved for debug?
     vim.keymap.set('n', '<leader>df', function()
       jdtls.test_class({ config_overrides = java_test_config })

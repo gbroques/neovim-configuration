@@ -24,16 +24,17 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 ### Java
 
-1. Install Java 17 in the following directory:
+1. Install Java 21 in the following directory:
 
-       C:\Program Files\Java\jdk-17.0.4.1
+       C:\Program Files\Zulu\zulu-21
 
 2. Save formatter settings at `~/.vscode/formatter.xml`.
 
 3. Install the following projects in a subdirectory within the standard data directory for your operating system:
 
-    1. Extract [jdt-language-server-1.24.0-202306011728.tar.gz](https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.24.0/jdt-language-server-1.24.0-202306011728.tar.gz) into `mason/packages/jdtls`.
-    2. Extract [vscjava.vscode-java-debug-0.46.0.vsix](https://open-vsx.org/api/vscjava/vscode-java-debug/0.46.0/file/vscjava.vscode-java-debug-0.46.0.vsix) into `mason/packages/java-debug-adapter`.
+    1. Extract [jdt-language-server-1.46.0-202503271314.tar.gz](https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.46.0/jdt-language-server-1.46.0-202503271314.tar.gz) into `mason/packages/jdtls` (to find the latest version, goto https://download.eclipse.org/jdtls/milestones/). Make sure the `bin/` director is added to the `PATH` variable so the `jdtls` binary is accessible.
+    f)
+    2. Extract [vscjava.vscode-java-debug-0.58.2.vsix](https://open-vsx.org/api/vscjava/vscode-java-debug/0.58.2/file/vscjava.vscode-java-debug-0.58.2.vsix) into `mason/packages/java-debug-adapter` (to find the latest version goto https://open-vsx.org/extension/vscjava/vscode-java-debug).
 
     | Operating System | Data Directory |
     | ---------------- | -------------- |
@@ -46,9 +47,9 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
        :TSInstall java
 
-5. Install the following dependencies via Mason:
+5. Install the following dependencies via Mason (to find the latest version goto https://mason-registry.dev/registry/list?search=java-test):
 
-       :MasonInstall java-test@0.39.0
+       :MasonInstall java-test@0.43.1
 
 ### C++
 
