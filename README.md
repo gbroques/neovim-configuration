@@ -65,19 +65,20 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 ### JavaScript
 
-1. Install TypeScript Language Server:
+1. Install TypeScript and ESLint language servers:
 
-       :MasonInstall typescript-language-server
+       :MasonInstall typescript-language-server eslint-lsp
 
-**Reference:** (if MasonInstall fails) https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/ts_ls.lua#L26
+**References:** (if MasonInstall fails)
+
+* https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/ts_ls.lua#L26
+* https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/eslint.lua#L171
 
 2. Install the tree-sitter JavaScript parser from inside Neovim:
 
        :TSInstall javascript
 
 3. Setup ESLint for formatting and diagnostics.
-
-    npm install -g vscode-langservers-extracted
 
 Two enviroment variables, `ESLINT_NODE_PATH` and `ESLINT_CONFIG_FILE`, specifying a path with `node_modules` containing ESLint and a path to the ESLint configuration file MUST be set.
 
