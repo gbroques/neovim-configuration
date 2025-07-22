@@ -2,14 +2,12 @@ return {
   {
     -- Configuration for Neovim's LSP client.
     'neovim/nvim-lspconfig',
-    commit = 'd45702594afc661a9dfa95e96acf18c56006d4d9',
+    tag = 'v2.3.0',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       {
         'williamboman/mason.nvim',
-        -- TODO: Upgrade to v2.0.0. See:
-        -- https://github.com/mason-org/mason.nvim/releases/tag/v2.0.0
-        commit = '8024d64e1330b86044fed4c8494ef3dcd483a67c',
+        tag = 'v2.0.0',
         config = function()
           require('mason').setup({
             -- Uncomment for troubleshooting:
@@ -24,7 +22,7 @@ return {
       },
       {
         'williamboman/mason-lspconfig.nvim',
-        commit = '87888865fa1ce1928a25b9abbea8c8f7839bf522',
+        tag = 'v2.0.0',
         config = function()
           require('mason-lspconfig').setup({
             ensure_installed = { 'lua_ls' },
@@ -40,7 +38,6 @@ return {
       -- },
     },
     config = function()
-      local lspconfig = require('lspconfig')
       local client_capabilities = vim.lsp.protocol.make_client_capabilities()
       -- turn on `window/workDoneProgress` capability
       local capabilities = require('cmp_nvim_lsp').default_capabilities(client_capabilities)
@@ -52,6 +49,9 @@ return {
         dynamicRegistration = false,
         lineFoldingOnly = true
       }
+      vim.lsp.config('*', {
+        capabilities = capabilities
+      })
       -- setup inspired from LunarVim
       -- https://github.com/LunarVim/Launch.nvim/blob/e4d2fb941ecce66cc012ee88ddb997dc9185aedc/lua/user/lspconfig.lua#L51-L116
       local servers = {
@@ -62,12 +62,7 @@ return {
         'clangd'
       }
       for _, server in ipairs(servers) do
-        local opts = {
-          capabilities = capabilities,
-        }
-
-        -- TODO: Define language server settings in lsp/<name>.lua, see:
-        -- https://neovim.io/doc/user/lsp.html#lsp-config
+        local opts = {}
         local require_ok, settings = pcall(require, 'plugins.language-server-settings.' .. server)
         if require_ok then
           opts = vim.tbl_deep_extend('force', settings, opts)
@@ -78,9 +73,8 @@ return {
           -- require('neodev').setup({})
         end
 
-        -- TODO: Upgrade to lspconfig 2.0.0. See:
-        -- https://github.com/mason-org/mason-lspconfig.nvim/releases/tag/v2.0.0
-        lspconfig[server].setup(opts)
+        vim.lsp.config(server, opts)
+        vim.lsp.enable(server)
       end
       -- YAML
       -- TODO: Get OpenAPI workflow for Neovim working.
