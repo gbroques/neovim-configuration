@@ -7,6 +7,8 @@ return {
     dependencies = {
       {
         'williamboman/mason.nvim',
+        -- TODO: Upgrade to v2.0.0. See:
+        -- https://github.com/mason-org/mason.nvim/releases/tag/v2.0.0
         commit = '8024d64e1330b86044fed4c8494ef3dcd483a67c',
         config = function()
           require('mason').setup({
@@ -74,6 +76,8 @@ return {
           -- require('neodev').setup({})
         end
 
+        -- TODO: Upgrade to lspconfig 2.0.0. See:
+        -- https://github.com/mason-org/mason-lspconfig.nvim/releases/tag/v2.0.0
         lspconfig[server].setup(opts)
       end
       -- YAML
