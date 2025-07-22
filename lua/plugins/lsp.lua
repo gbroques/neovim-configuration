@@ -66,6 +66,8 @@ return {
           capabilities = capabilities,
         }
 
+        -- TODO: Define language server settings in lsp/<name>.lua, see:
+        -- https://neovim.io/doc/user/lsp.html#lsp-config
         local require_ok, settings = pcall(require, 'plugins.language-server-settings.' .. server)
         if require_ok then
           opts = vim.tbl_deep_extend('force', settings, opts)
