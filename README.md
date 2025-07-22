@@ -67,11 +67,9 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 1. Install TypeScript Language Server:
 
-       npm install -g typescript typescript-language-server
+       :MasonInstall typescript-language-server
 
-`typescript-language-server` MUST be in the `PATH`.
-
-**Reference:** https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/ts_ls.lua#L26
+**Reference:** (if MasonInstall fails) https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/ts_ls.lua#L26
 
 2. Install the tree-sitter JavaScript parser from inside Neovim:
 
