@@ -71,7 +71,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 `typescript-language-server` MUST be in the `PATH`.
 
-**Reference:** https://github.com/neovim/nvim-lspconfig/blob/v0.1.6/lua/lspconfig/server_configurations/tsserver.lua#L34
+**Reference:** https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/ts_ls.lua#L26
 
 2. Install the tree-sitter JavaScript parser from inside Neovim:
 
