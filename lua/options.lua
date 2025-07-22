@@ -2,14 +2,17 @@
 -- vim.opt.clipboard = 'unnamedplus' slows down startup time because Neovim has to locate the system clipboard.
 -- See the following Reddit thread:
 -- https://www.reddit.com/r/neovim/comments/17ieyn2/comment/k6tpk8a/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
--- For xsel options, see:
--- https://github.com/neovim/neovim/blob/v0.9.4/runtime/autoload/provider/clipboard.vim#L107-L112
+
 -- Returns TRUE if `cmd` exits with success, else FALSE.
 local function cmd_ok(cmd)
   vim.fn.system(cmd)
   return vim.v.shell_error == 0
 end
+
+-- Linux
 if vim.fn.empty(os.getenv('DISPLAY')) and vim.fn.executable('sel') and cmd_ok('xsel -o -b') then
+  -- For xsel configuration, see:
+  -- https://github.com/neovim/neovim/blob/v0.11.3/runtime/autoload/provider/clipboard.vim#L95-L101
   vim.g.clipboard = {
     name = 'xsel',
     copy = {
@@ -22,6 +25,23 @@ if vim.fn.empty(os.getenv('DISPLAY')) and vim.fn.executable('sel') and cmd_ok('x
     },
     cache_enabled = 1
   }
+-- Mac
+elseif vim.fn.executable('pbcopy') and vim.fn.executable('pbpaste') then
+  -- For pbcopy configuration, see:
+  -- https://github.com/neovim/neovim/blob/v0.11.3/runtime/autoload/provider/clipboard.vim#L70-L77
+  vim.g.clipboard = {
+    name = 'pbcopy',
+    copy = {
+      ['+'] = 'pbcopy',
+      ['*'] = '+'
+    },
+    paste = {
+      ['+'] = 'pbpaste',
+      ['*'] = '+'
+    },
+    cache_enabled = 1
+  }
+-- Windows
 elseif vim.fn.executable('win32yank') then
   vim.g.clipboard = {
     name = 'win32yank',
