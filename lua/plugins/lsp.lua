@@ -30,12 +30,29 @@ return {
         end
       },
       { 'hrsh7th/cmp-nvim-lsp' },
-      -- {
-      --   -- Neovim Plugin Development
-      --   -- Replace with https://github.com/folke/lazydev.nvim
-      --   'folke/neodev.nvim',
-      --   tag = 'v2.5.2',
-      -- },
+      {
+        -- Neovim Plugin Development
+        'folke/lazydev.nvim',
+        tag = 'v1.9.0',
+        ft = 'lua', -- only load on lua files
+        opts = {
+          library = {
+            -- See the configuration section for more details
+            -- Load luvit types when the `vim.uv` word is found
+            { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+          },
+        },
+      },
+      {
+        "hrsh7th/nvim-cmp",
+        opts = function(_, opts)
+          opts.sources = opts.sources or {}
+          table.insert(opts.sources, {
+            name = "lazydev",
+            group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+          })
+        end,
+      },
     },
     config = function()
       local client_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -126,10 +143,10 @@ return {
           -- use ruff / available in none-ls-extras.nvim
           -- https://github.com/astral-sh/ruff-lsp
           -- null_ls.builtins.diagnostics.flake8,  -- linter
-          null_ls.builtins.diagnostics.mypy,    -- static type checker
+          null_ls.builtins.diagnostics.mypy, -- static type checker
           -- TODO: use ruff
           -- null_ls.builtins.formatting.autopep8, -- formatter
-          null_ls.builtins.formatting.isort,    -- import sorter
+          null_ls.builtins.formatting.isort, -- import sorter
         },
       })
     end
