@@ -79,3 +79,6 @@ vim.opt.guifont = 'JetBrainsMono NF'
 if vim.fn.has('macunix') == 0 then
   vim.opt.shell = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
 end
+-- Keep cursor vertically centered (especially after go to definition jumps)
+-- https://www.reddit.com/r/neovim/comments/1jqfpyy/comment/ml7q56l/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+vim.opt.scrolloff = 999

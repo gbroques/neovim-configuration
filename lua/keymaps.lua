@@ -67,11 +67,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
 
-    -- TODO: Center screen after goto definition.
-    -- References:
-    -- https://www.reddit.com/r/neovim/comments/r756ur/comment/hmz7nrf/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-    -- https://www.reddit.com/r/neovim/comments/11frjpb/comment/jal86gg/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-    -- The solution in these references no longer works in Neovim 11.
     local set_lsp_keymap = function(mode, lhs, rhs, opts)
       local keymap_opts = vim.tbl_extend('force', { buffer = event.buf }, opts)
       vim.keymap.set(mode, lhs, rhs, keymap_opts)
