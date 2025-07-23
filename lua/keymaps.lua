@@ -38,8 +38,6 @@ vim.keymap.set('n', 'Y', 'y$')
 -- TODO: Should these be more ergonomic? Helix uses gn and gp for next / pervious buffer.
 --       Square brackets are a bit of a stretch for such a commonly performed action.
 --       gnn used by treesitter for incremental selection
-vim.keymap.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
-vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close buffer' })
 
 
