@@ -21,8 +21,7 @@ end
 -- -----------------------------------------------------------------------------------------------------------------------------------------------------
 local function join_path(...)
   local segments = { ... }
-  -- TODO: Get different path separator by OS.
-  local sep = '\\'
+  local sep = vim.fn.has('macunix') == 0 and '\\' or '/'
   local path = ''
   for i, segment in ipairs(segments) do
     if i == 1 then -- first index starts at 1
@@ -33,7 +32,7 @@ local function join_path(...)
   end
   return path
 end
-local java_path = join_path('C:', 'Program Files', 'Zulu', 'zulu-21', 'bin', 'java')
+local java_path = join_path('/Library', 'Java', 'JavaVirtualMachines', 'zulu-21.jdk', 'Contents', 'Home', 'bin', 'java')
 local formatter_settings_path = vim.fn.expand(join_path('~', '.vscode', 'formatter.xml'))
 local mason_packages_path = join_path(vim.fn.stdpath('data'), 'mason', 'packages')
 local jdtls_path = join_path(mason_packages_path, 'jdtls')
@@ -128,11 +127,11 @@ local config = {
           -- },
           {
             name = "JavaSE-17",
-            path = 'C:\\Program Files\\Zulu\\zulu-17',
+            path = '/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home',
           },
           {
             name = "JavaSE-21",
-            path = 'C:\\Program Files\\Zulu\\zulu-21',
+            path = '/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home',
           },
         }
       },
