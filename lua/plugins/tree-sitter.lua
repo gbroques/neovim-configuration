@@ -106,12 +106,6 @@ return {
       -- vim.keymap.set({ 'n', 'x', 'o' }, 't', ts_repeat_move.builtin_t)
       -- vim.keymap.set({ 'n', 'x', 'o' }, 'T', ts_repeat_move.builtin_T)
       -- TODO: Try ghostbuster91/nvim-next
-
-      -- Diagnostics
-      local next_diagnostic_repeat, prev_diagnostic_repeat = ts_repeat_move.make_repeatable_move_pair(
-        vim.diagnostic.goto_next, vim.diagnostic.goto_prev)
-      vim.keymap.set('n', ']d', next_diagnostic_repeat, { desc = 'Next diagnostic' })
-      vim.keymap.set('n', '[d', prev_diagnostic_repeat, { desc = 'Previous diagnostic' })
     end
   },
 
