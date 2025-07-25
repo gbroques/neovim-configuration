@@ -2,7 +2,7 @@ return {
   {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    commit = 'a35468cd72645dbd52c0624ceead5f301c566dff',
+    commit = '2b3cbcdd980cae1e022409289245053f62fb50f6',
     event = 'VimEnter',
     config = function()
       local alpha = require('alpha')
