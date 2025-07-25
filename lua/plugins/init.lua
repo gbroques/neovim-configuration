@@ -55,6 +55,10 @@ return {
   },
   {
     -- TODO: consider lspsaga instead of dressing.nvim for LSP rename input
+    -- TODO: this was archived and snacks.nvim was a suggested replacement
+    -- See https://github.com/stevearc/dressing.nvim/issues/190
+    --     https://github.com/folke/snacks.nvim/blob/main/docs/input.md
+    -- For vim.ui.input and LSP renames.
     'stevearc/dressing.nvim',
     commit = '8b7ae53d7f04f33be3439a441db8071c96092d19',
     event = { 'BufReadPre', 'BufNewFile' },
