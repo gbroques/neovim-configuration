@@ -14,7 +14,7 @@ return {
       },
       {
         'hrsh7th/cmp-path',
-        commit = 'c6635aae33a50d6010bf1aa756ac2398a2d54c32'
+        commit = 'e52e640b7befd8113b3350f46e8cfcfe98fcf730'
       },
       {
         'hrsh7th/cmp-cmdline',
