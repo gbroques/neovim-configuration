@@ -117,4 +117,5 @@ vim.keymap.set('n', '<leader>x', '<cmd>source %<CR>', { desc = 'Execute / source
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
-vim.keymap.set('n', '<leader>t', ':vnew term://fish<CR>', { desc = 'Terminal' })
+local root_dir = require('jdtls.setup').find_root({ 'pom.xml', '.git' })
+vim.keymap.set('n', '<leader>t', ':vnew term://' .. root_dir .. '//fish<CR>', { desc = 'Terminal' })
