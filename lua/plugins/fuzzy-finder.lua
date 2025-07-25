@@ -9,6 +9,13 @@ return {
       -- https://www.reddit.com/r/neovim/comments/phndpv/comment/hbl89xp/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 
       -- TODO: Fix 'A' automatically inserted into Telescope picker
+      -- Seems to only happen when first openting frecency,
+      -- and doesn't occur when opening other pickers such as :Telescope find_files
+      -- https://github.com/nvim-telescope/telescope-frecency.nvim/issues/270
+      -- Running :FrecencyValidate to remove entries fixes it.
+      --
+      -- Related problem in Telescope:
+      -- https://github.com/nvim-telescope/telescope-frecency.nvim/issues/270#issuecomment-2820374822
       -- https://github.com/nvim-telescope/telescope.nvim/issues/2195
       -- https://www.reddit.com/r/neovim/comments/1ed65xm/telescope_prompt_prefilled_with_a_when_using/?rdt=40029
       -- https://github.com/nvim-telescope/telescope.nvim/blob/b4da76be54691e854d3e0e02c36b0245f945c2c7/lua/telescope/pickers.lua#L601-L602
