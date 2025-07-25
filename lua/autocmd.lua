@@ -28,5 +28,3 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   end
 })
 
--- https://vi.stackexchange.com/questions/3670/how-to-enter-insert-mode-when-entering-neovim-terminal-pane
-vim.api.nvim_create_autocmd({ 'TermOpen' }, { command = 'startinsert' })
