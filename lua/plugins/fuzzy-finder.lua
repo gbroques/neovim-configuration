@@ -88,6 +88,12 @@ return {
             width = { padding = 0 },
             height = { padding = 0 },
           },
+          mappings = {
+            i = {
+              ['<C-Down>'] = require('telescope.actions').cycle_history_next,
+              ['<C-Up>'] = require('telescope.actions').cycle_history_prev,
+            },
+          },
         },
         pickers = {
           lsp_references = {
