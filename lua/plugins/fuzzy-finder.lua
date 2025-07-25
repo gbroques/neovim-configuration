@@ -8,6 +8,10 @@ return {
       -- TODO: Cycle through history
       -- https://www.reddit.com/r/neovim/comments/phndpv/comment/hbl89xp/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 
+      -- TODO: Fix 'A' automatically inserted into Telescope picker
+      -- https://github.com/nvim-telescope/telescope.nvim/issues/2195
+      -- https://www.reddit.com/r/neovim/comments/1ed65xm/telescope_prompt_prefilled_with_a_when_using/?rdt=40029
+      -- https://github.com/nvim-telescope/telescope.nvim/blob/b4da76be54691e854d3e0e02c36b0245f945c2c7/lua/telescope/pickers.lua#L601-L602
       { '<leader>f',  ':Telescope frecency<CR>',     desc = 'Find files' },
       { '<leader>sb', ':Telescope buffers<CR>',      desc = 'Buffers' },
       { '<leader>sc', ':Telescope commands<CR>',     desc = 'Commands' },
