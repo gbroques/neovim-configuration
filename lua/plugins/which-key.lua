@@ -23,6 +23,9 @@ return {
         l = {
           name = 'lsp'
         },
+        p = {
+          name = 'pickers'
+        },
         r = {
           name = 'refactor'
         },
