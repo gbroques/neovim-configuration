@@ -35,3 +35,14 @@ vim.api.nvim_create_autocmd({ 'TermOpen' }, {
     end
   end
 })
+-- Automatically close terminal buffer when process exits successfully (Ctrl + d),
+-- or when using the exit command in fish.
+-- https://fishshell.com/docs/current/cmds/exit.html
+vim.api.nvim_create_autocmd("TermClose", {
+  callback = function()
+    local status = vim.v.event.status
+    if status == 0 or status == 255 then
+      vim.cmd("bdelete! " .. vim.fn.expand("<abuf>"))
+    end
+  end
+})
