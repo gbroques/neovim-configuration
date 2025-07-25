@@ -39,7 +39,11 @@ vim.keymap.set('n', 'Y', 'y$')
 --       Square brackets are a bit of a stretch for such a commonly performed action.
 --       gnn used by treesitter for incremental selection
 vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close buffer' })
-
+-- Inspired by LazyVim
+-- https://www.lazyvim.org/keymaps#general
+-- H and L effectively do nothing due to scrolloff option set to 999 in options.lua
+vim.keymap.set('n', 'H', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', 'L', '<cmd>bnext<CR>', { desc = 'Next buffer' })
 
 -- Clear highlights
 vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlighting' })
