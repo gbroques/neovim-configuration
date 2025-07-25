@@ -18,6 +18,9 @@
 -- Normal --
 
 vim.keymap.set('n', '<leader>w', ':silent update<CR>', { desc = 'Write', silent = true })
+-- Make undo and redo silent
+vim.keymap.set('n', 'u', ':silent undo<CR>', { desc = 'Undo', silent = true })
+vim.keymap.set('n', '<C-r>', ':silent redo<CR>', { desc = 'Redo', silent = true })
 
 -- Better window navigation
 vim.keymap.set('n', '<C-h>', '<C-w>h')
