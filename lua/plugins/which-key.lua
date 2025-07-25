@@ -2,37 +2,23 @@
 return {
   {
     'folke/which-key.nvim',
-    tag = 'v1.4.3',
+    tag = 'v3.17.0',
     event = 'VeryLazy',
+    triggers = {
+      { '<leader>', mode = { 'n', 'v' } },
+    },
     config = function()
       local wk = require('which-key')
-      wk.setup({})
-      wk.register({
-        d = {
-          name = 'debug'
-        },
-        da = {
-          name = 'debug adapters'
-        },
-        g = {
-          name = 'git'
-        },
-        h = {
-          name = 'hunk'
-        },
-        l = {
-          name = 'lsp'
-        },
-        p = {
-          name = 'pickers'
-        },
-        r = {
-          name = 'refactor'
-        },
-        u = {
-          name = 'ui'
-        }
-      }, { prefix = '<leader>' })
+      wk.add({
+        { '<leader>d', group = 'debug' },
+        { '<leader>da', group = 'debug adapters' },
+        { '<leader>g', group = 'git' },
+        { '<leader>h', group = 'hunk' },
+        { '<leader>l', group = 'lsp' },
+        { '<leader>p', group = 'pickers' },
+        { '<leader>r', group = 'refactor' },
+        { '<leader>u', group = 'ui' },
+      })
     end
   }
 }
