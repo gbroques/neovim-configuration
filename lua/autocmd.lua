@@ -25,5 +25,13 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   end
 })
 
+-- Automatically enter INSERT mode upon opening a terminal.
 -- https://vi.stackexchange.com/questions/3670/how-to-enter-insert-mode-when-entering-neovim-terminal-pane
-vim.api.nvim_create_autocmd({ 'TermOpen' }, { command = 'startinsert' })
+-- https://github.com/nvim-neotest/neotest/issues/2#issuecomment-1149532666
+vim.api.nvim_create_autocmd({ 'TermOpen' }, {
+  callback = function()
+    if vim.startswith(vim.api.nvim_buf_get_name(0), "term://") then
+      vim.cmd("startinsert")
+    end
+  end
+})
