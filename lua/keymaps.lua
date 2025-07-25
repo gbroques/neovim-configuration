@@ -93,7 +93,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.format { async = true }
     end, { desc = 'Format' })
     set_lsp_keymap('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename' });
-    set_lsp_keymap('n', 'K', vim.lsp.buf.hover, { desc = 'Hover keyword' })
   end,
 })
 
