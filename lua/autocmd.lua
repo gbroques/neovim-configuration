@@ -8,15 +8,12 @@
 -- See also:
 -- https://itmecho.com/blog/neovim-lua-hooks-with-user-events
 
-
--- highlight yanked selection
--- https://neovim.io/doc/user/lua.html#lua-highlight
--- Conflicts with vim-illuminate plugin. See:
--- https://github.com/RRethy/vim-illuminate/issues/107
--- local handle_highlight = function(e)
---   vim.highlight.on_yank({ higroup = 'IncSearch' })
--- end
--- vim.api.nvim_create_autocmd('TextYankPost', { pattern = '*', callback = handle_highlight })
+-- Highlight yanked selection.
+-- https://neovim.io/doc/user/lua.html#vim.hl
+local handle_highlight = function()
+  vim.hl.on_yank({ higroup = 'IncSearch' })
+end
+vim.api.nvim_create_autocmd('TextYankPost', { pattern = '*', callback = handle_highlight })
 
 -- Open help window in a vertical split to the right.
 -- https://vi.stackexchange.com/a/39697
