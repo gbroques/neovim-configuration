@@ -114,6 +114,8 @@ return {
     commit = '4d77ff02063cf88963d5cf10683ab1fd15d072de',
     ft = { 'java' }
   },
+  -- TODO: Consider java.nvim for file renames.
+  -- https://github.com/simaxme/java.nvim/tree/main
   -- YAML & JSON
   -- TODO:
   -- YAML Language Server doesn't work with openapi 3.0
