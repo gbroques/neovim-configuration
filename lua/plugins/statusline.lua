@@ -71,7 +71,6 @@ return {
         end
       }
 
-
       local Mode = {
         static = {
           -- Mode names copied from lualine:
