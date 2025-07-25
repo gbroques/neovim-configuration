@@ -15,13 +15,13 @@ local handle_highlight = function()
 end
 vim.api.nvim_create_autocmd('TextYankPost', { pattern = '*', callback = handle_highlight })
 
--- Open help window in a vertical split to the right.
+-- Automatically make the help window the only one on the screen.
 -- https://vi.stackexchange.com/a/39697
 vim.api.nvim_create_autocmd('BufWinEnter', {
-  group = vim.api.nvim_create_augroup('help_window_right', {}),
+  group = vim.api.nvim_create_augroup('maximize_help', {}),
   pattern = { '*.txt' },
   callback = function()
-    if vim.o.filetype == 'help' then vim.cmd.wincmd('L') end
+    if vim.o.filetype == 'help' then vim.cmd.wincmd('o') end
   end
 })
 
