@@ -7,6 +7,8 @@ return {
     config = function()
       local alpha = require('alpha')
       local startify = require('alpha.themes.startify')
+      -- TODO: Use colemak home row 'arst neio' for MRU instead of numbers
+      -- can make 'b' new buffer instead of 'e'
       -- disable MRU
       startify.section.mru.val = { { type = "padding", val = 0 } }
       -- startify.section.header.val = {} -- Remove default 'neovim header'
