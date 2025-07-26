@@ -104,6 +104,28 @@ Clone to Neovim configuration directory depending on operating system:
 
 `:help config`
 
+## Text Objects
+
+All of the built-in vim text-objects are maintained, with some additional ones mainly from tree-sitter.
+
+* `a`rgument (*tree-sitter*)
+* `b` alias for () (*built-in*)
+* `B` alias for {} (*built-in*)
+* `c`lass (*tree-sitter*)
+* con`d`itional (*tree-sitter*)
+* `f`unction (*tree-sitter*)
+* `gn` next search pattern (*built-in*)
+* `gN` last search pattern (*built-in*)
+* `h`unk (only ih 'inner hunk' supported) (*gitsigns*)
+* `l`oop (*tree-sitter*)
+* `p`aragraph (*built-in*)
+* `w`ord (*built-in*)
+* `s`entence (*built-in*)
+* `t`ag (*built-in*)
+* `[]`, `<>`, `()`, `{}`, `"`, `'`, `` ` `` (*built-in*)
+
+See `:help text-objects` for details on built-in text-objects.
+
 ## References
 
 Neovim IDE Distributions:

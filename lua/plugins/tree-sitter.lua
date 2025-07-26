@@ -42,6 +42,7 @@ return {
             -- Automatically jump forward to textobj, similar to targets.vim
             lookahead = true,
             keymaps = {
+              -- Text objects
               ['aa'] = { query = '@parameter.outer', desc = 'an argument' },
               ['ia'] = { query = '@parameter.inner', desc = 'inner argument' },
               ['ac'] = { query = '@class.outer', desc = 'a class' },
