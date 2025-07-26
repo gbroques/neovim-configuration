@@ -137,6 +137,8 @@ return {
   -- },
 
   -- Utility
+  -- TODO: Look at opening last edited file automatically or automatically saving sessions per project
+  -- https://neovimcraft.com/?search=tag%3Asession
   {
     'nvim-lua/plenary.nvim',
     commit = '857c5ac632080dba10aae49dba902ce3abf91b35',
