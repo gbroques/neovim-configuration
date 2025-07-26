@@ -4,15 +4,14 @@ return {
     'folke/which-key.nvim',
     tag = 'v3.17.0',
     event = 'VeryLazy',
-    triggers = {
-      { '<leader>', mode = { 'n', 'v' } },
-    },
-    win = {
-      -- Show all the mappings without scrolling
-      height = { min = 4, max = 999 },
-    },
     config = function()
       local wk = require('which-key')
+      wk.setup({
+        triggers = {
+          { '<leader>', mode = { 'n', 'v' } },
+        },
+        preset = 'modern'
+      })
       wk.add({
         { '<leader>d', group = 'debug' },
         { '<leader>da', group = 'debug adapters' },
