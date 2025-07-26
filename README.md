@@ -104,6 +104,21 @@ Clone to Neovim configuration directory depending on operating system:
 
 `:help config`
 
+## Operators
+
+* `c`hange (*built-in*)
+* `d`elete (*built-in*)
+* `gb` go blockwise comment (*Comment.nvim*)
+* `gc` go linewise comment (*Comment.nvim*)
+* `gs` go substitute (*substitute.nvim*)
+* `gu` make lowercase (*built-in*)
+* `gU` make uppercase (*built-in*)
+* `y`ank (*built-in*)
+* `>` shift right (*built-in*)
+* `<` shift left (*built-in*)
+
+See `:help operator` for details on built-in operators.
+
 ## Text Objects
 
 All of the built-in vim text-objects are maintained, with some additional ones mainly from tree-sitter.
