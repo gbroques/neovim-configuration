@@ -30,7 +30,7 @@ return {
       local Space = { provider = ' ' }
 
       -- Mode colors copied from tokyonight lualine theme:
-      -- https://github.com/folke/tokyonight.nvim/blob/v1.17.0/lua/lualine/themes/tokyonight.lua#L6-L41
+      -- https://github.com/folke/tokyonight.nvim/blob/v4.11.0/lua/lualine/themes/_tokyonight.lua#L11-L46
       local mode_colors = {
         normal = colors.blue,
         insert = colors.green,
@@ -43,27 +43,52 @@ return {
       -- Base component for other components to inherit mode_color method from.
       local ModeAwareStatusLine = {
         static = {
-          -- :h mode()
-          color_by_first_mode_character = {
-            n = mode_colors.normal,
-            i = mode_colors.insert,
-            v = mode_colors.visual,
-            V = mode_colors.visual,
+          mode_colors = {
+            -- :help mode()
+            ['n']     = mode_colors.normal,
+            ['no']    = mode_colors.replace,
+            ['nov']   = mode_colors.replace,
+            ['noV']   = mode_colors.replace,
             -- CTRL-V
-            ['\22'] = mode_colors.visual,
-            c = mode_colors.command,
-            s = mode_colors.visual,
-            S = mode_colors.visual,
+            ['no\22'] = mode_colors.replace,
+            ['niI']   = mode_colors.normal,
+            ['niR']   = mode_colors.normal,
+            ['niV']   = mode_colors.normal,
+            ['nt']    = mode_colors.normal,
+            ['ntT']   = mode_colors.normal,
+            ['v']     = mode_colors.visual,
+            ['vs']    = mode_colors.visual,
+            ['V']     = mode_colors.visual,
+            ['Vs']    = mode_colors.visual,
+            -- CTRL-V
+            ['\22']   = mode_colors.visual,
+            ['\22s']  = mode_colors.visual,
+            ['s']     = mode_colors.replace,
+            ['S']     = mode_colors.replace,
             -- CTRL-S
-            ['\19'] = mode_colors.visual,
-            R = mode_colors.replace,
-            r = mode_colors.replace,
-            ['!'] = mode_colors.terminal,
-            t = mode_colors.terminal,
+            ['\19']   = mode_colors.replace,
+            ['i']     = mode_colors.insert,
+            ['ic']    = mode_colors.insert,
+            ['ix']    = mode_colors.insert,
+            ['R']     = mode_colors.replace,
+            ['Rc']    = mode_colors.replace,
+            ['Rx']    = mode_colors.replace,
+            ['Rv']    = mode_colors.visual,
+            ['Rvc']   = mode_colors.visual,
+            ['Rvx']   = mode_colors.visual,
+            ['c']     = mode_colors.command,
+            ['cv']    = mode_colors.terminal,
+            ['ce']    = mode_colors.terminal,
+            ['r']     = mode_colors.replace,
+            ['rm']    = mode_colors.replace,
+            ['r?']    = mode_colors.replace,
+            ['!']     = mode_colors.terminal,
+            ['t']     = mode_colors.terminal,
           },
           mode_color = function(self)
-            local mode = conditions.is_active() and vim.fn.mode(1) or 'n'
-            return self.color_by_first_mode_character[mode]
+            local mode_code = vim.api.nvim_get_mode().mode
+            local mode = conditions.is_active() and mode_code or 'n'
+            return self.mode_colors[mode]
           end
         },
         condition = function()
@@ -76,6 +101,7 @@ return {
           -- Mode names copied from lualine:
           -- https://github.com/nvim-lualine/lualine.nvim/blob/e37d5d325da9c472c73d97bd0210c480c5d9babc/lua/lualine/utils/mode.lua#L6-L43
           mode_names = {
+            -- :help mode()
             ['n']     = 'NORMAL',
             ['no']    = 'O-PENDING',
             ['nov']   = 'O-PENDING',
@@ -90,10 +116,12 @@ return {
             ['vs']    = 'VISUAL',
             ['V']     = 'V-LINE',
             ['Vs']    = 'V-LINE',
+            -- CTRL-V
             ['\22']   = 'V-BLOCK',
             ['\22s']  = 'V-BLOCK',
             ['s']     = 'SELECT',
             ['S']     = 'S-LINE',
+            -- CTRL-S
             ['\19']   = 'S-BLOCK',
             ['i']     = 'INSERT',
             ['ic']    = 'INSERT',
@@ -115,7 +143,8 @@ return {
           },
         },
         provider = function(self)
-          return ' ' .. self.mode_names[vim.fn.mode()] .. ' '
+          local mode_code = vim.api.nvim_get_mode().mode
+          return ' ' .. self.mode_names[mode_code] .. ' '
         end,
         hl = function(self)
           return { fg = colors.black, bg = self:mode_color() }
