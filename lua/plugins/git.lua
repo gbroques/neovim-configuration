@@ -63,9 +63,13 @@ return {
       }
 
       local ts_repeat_move = require('nvim-treesitter.textobjects.repeatable_move')
-      -- TODO: Fix deprecation warnings by using gitsigns.nav_hunk
-      local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gitsigns.next_hunk,
-        gitsigns.prev_hunk)
+      local function next_hunk()
+        gitsigns.nav_hunk('next')
+      end
+      local function prev_hunk()
+        gitsigns.nav_hunk('prev')
+      end
+      local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(next_hunk, prev_hunk)
       vim.keymap.set({ 'n', 'x', 'o' }, ']h', next_hunk_repeat, { desc = 'Next hunk' })
       vim.keymap.set({ 'n', 'x', 'o' }, '[h', prev_hunk_repeat, { desc = 'Previous hunk' })
 
