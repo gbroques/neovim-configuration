@@ -33,6 +33,7 @@ return {
   {
     'tpope/vim-surround',
     tag = 'v2.2',
+    -- TODO: s conflicts with leap.nvim
     keys = { 'cs', 'ds', 'ys' }
   },
   {
@@ -73,6 +74,7 @@ return {
     'ggandor/leap.nvim',
     commit = '68ca052dfdcda5e4e958d1ba0fef35e94a3e02e8',
     config = function()
+      -- TODO: s conflicts with cs, ds, and ys for surround
       vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
       vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
     end

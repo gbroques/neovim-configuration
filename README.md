@@ -107,13 +107,16 @@ Clone to Neovim configuration directory depending on operating system:
 ## Operators
 
 * `c`hange (*built-in*)
+* `cs` change surrounding (*surround.vim*)
 * `d`elete (*built-in*)
+* `ds` delete surrounding (*surround.vim*)
 * `gb` go blockwise comment (*Comment.nvim*)
 * `gc` go linewise comment (*Comment.nvim*)
 * `gs` go substitute (*substitute.nvim*)
 * `gu` make lowercase (*built-in*)
 * `gU` make uppercase (*built-in*)
 * `y`ank (*built-in*)
+* `ys` add surrounding (*surround.vim*)
 * `>` shift right (*built-in*)
 * `<` shift left (*built-in*)
 
