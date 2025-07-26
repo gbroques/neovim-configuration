@@ -87,11 +87,18 @@ return {
   -- { 'chentoast/marks.nvim' },
   -- { 'chrisgrieser/nvim-alt-substitute' },
   -- { 'chrisgrieser/nvim-spider' }, -- camel case / snake case motions
-  -- Add custom text objects
+
+  -- TEXT OBJECTS PLUGINS
   -- Read https://thevaluable.dev/vim-create-text-objects/
+  -- Similar to subword text object in nvim-various-textobjs, but uses v instead of S.
   -- { 'Julian/vim-textobj-variable-segment' },
+
+  -- text objects of interest are subword, quote, value, key, number, and html attribute
   -- { 'chrisgrieser/nvim-various-textobjs' },
+
+  -- Has special operators to specially handle whitespace (like `I` and `A`)
   -- { 'wellle/targets.vim' },
+
   -- ciq - change in quotes "" '' or ``
   -- { 'echasnovski/mini.ai' },
   {
