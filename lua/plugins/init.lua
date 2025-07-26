@@ -17,7 +17,7 @@ return {
     event = 'InsertEnter',
     config = function()
       -- 'dh' is a convenient escape from Insert mode in Colemak.
-      require('better_escape').setup({ mappings = { i = { d = { h = '<Esc>'} } } })
+      require('better_escape').setup({ mappings = { i = { d = { h = '<Esc>' } } } })
     end
   },
   {
@@ -31,9 +31,9 @@ return {
   -- Try a new surround plugin like echasnovski/mini.surround or
   -- kylechui/nvim-surround with dot repeat builtin?
   {
+    -- TODO: cs, ds, and ys don't seem to enter operator pending mode
     'tpope/vim-surround',
     tag = 'v2.2',
-    -- TODO: s conflicts with leap.nvim
     keys = { 'cs', 'ds', 'ys' }
   },
   {
@@ -69,16 +69,20 @@ return {
       })
     end
   },
-  -- TODO: Plugins under consideration:
   {
     'ggandor/leap.nvim',
     commit = '68ca052dfdcda5e4e958d1ba0fef35e94a3e02e8',
     config = function()
-      -- TODO: s conflicts with cs, ds, and ys for surround
-      vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
-      vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+      -- Map z instead of s in operator pending mode as it conflicts with cs, ds, and ys for surround in normal mode.
+      -- https://www.reddit.com/r/neovim/comments/13j3j45/comment/jkcuj2b/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+      -- x is for visual mode, see :help map-modes
+      vim.keymap.set({ 'n', 'x' }, 's', '<Plug>(leap-forward)')
+      vim.keymap.set({ 'n', 'x' }, 'S', '<Plug>(leap-backward)')
+      vim.keymap.set('o', 'z', '<Plug>(leap-forward)')
+      vim.keymap.set('o', 'Z', '<Plug>(leap-backward)')
     end
   },
+  -- TODO: Plugins under consideration:
   -- { 'andymas/vim-matchup' },
   --
   -- smooth scrolling
