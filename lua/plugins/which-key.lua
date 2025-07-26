@@ -16,12 +16,15 @@ return {
       wk.add({
         { '<leader>d', group = 'debug' },
         { '<leader>da', group = 'debug adapters' },
-        { '<leader>g', group = 'git' },
-        { '<leader>h', group = 'hunk' },
-        { '<leader>l', group = 'lsp' },
-        { '<leader>p', group = 'pickers' },
+        { '<leader>e', icon = { icon = '󰍍', color = 'azure' } },
+        { '<leader>g', group = 'git', icon = { icon = '󰊢', color = 'orange' } },
+        { '<leader>h', group = 'hunk', icon = { icon = '', color = 'red' } },
+        { '<leader>s', icon = { icon = '', color = 'blue' } },
+        { '<leader>l', group = 'lsp', icon = { icon = '', color = 'yellow' } },
+        { '<leader>p', group = 'pickers', icon = { icon = "", color = "blue" } },
         { '<leader>r', group = 'refactor' },
         { '<leader>u', group = 'ui' },
+        { '<leader>w', icon = '' }
       })
     end
   }
