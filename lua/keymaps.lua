@@ -125,4 +125,6 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
 local root_dir = require('jdtls.setup').find_root({ 'pom.xml', '.git' })
-vim.keymap.set('n', '<leader>t', ':edit term://' .. root_dir .. '//fish<CR>', { desc = 'Terminal' })
+-- see :h filename-modifiers for %:p:h
+local terminal_start_dir = root_dir ~= nil and root_dir or '%:p:h'
+vim.keymap.set('n', '<leader>t', ':edit term://' .. terminal_start_dir .. '//fish<CR>', { desc = 'Terminal' })
