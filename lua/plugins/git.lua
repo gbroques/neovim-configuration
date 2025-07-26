@@ -42,7 +42,7 @@ return {
           map('n', '<leader>gd', gs.diffthis, { desc = 'Diff' })
 
           -- Text object
-          map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+          map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'inner hunk' })
 
           local toggle_statusline = function()
             vim.opt.laststatus = vim.o.laststatus == 3 and 0 or 3
