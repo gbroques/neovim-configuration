@@ -7,6 +7,10 @@ return {
     triggers = {
       { '<leader>', mode = { 'n', 'v' } },
     },
+    win = {
+      -- Show all the mappings without scrolling
+      height = { min = 4, max = 999 },
+    },
     config = function()
       local wk = require('which-key')
       wk.add({
