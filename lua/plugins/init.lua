@@ -33,6 +33,9 @@ return {
     'kylechui/nvim-surround',
     tag = 'v3.1.2',
     event = 'VeryLazy',
+    dependencies = {
+      'folke/tokyonight.nvim'
+    },
     config = function ()
       require('nvim-surround').setup()
       local colors = require('tokyonight.colors').setup()
