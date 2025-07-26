@@ -5,7 +5,6 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       'petertriho/nvim-scrollbar',
-      'nvim-treesitter/nvim-treesitter-textobjects'
     },
     config = function()
       local gitsigns = require('gitsigns')
@@ -62,16 +61,14 @@ return {
         end
       }
 
-      local ts_repeat_move = require('nvim-treesitter.textobjects.repeatable_move')
       local function next_hunk()
         gitsigns.nav_hunk('next')
       end
       local function prev_hunk()
         gitsigns.nav_hunk('prev')
       end
-      local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(next_hunk, prev_hunk)
-      vim.keymap.set({ 'n', 'x', 'o' }, ']h', next_hunk_repeat, { desc = 'Next hunk' })
-      vim.keymap.set({ 'n', 'x', 'o' }, '[h', prev_hunk_repeat, { desc = 'Previous hunk' })
+      vim.keymap.set({ 'n', 'x', 'o' }, ']h', next_hunk, { desc = 'Next hunk' })
+      vim.keymap.set({ 'n', 'x', 'o' }, '[h', prev_hunk, { desc = 'Previous hunk' })
 
       require('scrollbar.handlers.gitsigns').setup()
     end
