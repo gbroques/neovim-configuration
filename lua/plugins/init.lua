@@ -28,17 +28,17 @@ return {
     config = true
   },
   -- TODO:
-  -- Try a new surround plugin like echasnovski/mini.surround or
-  -- kylechui/nvim-surround with dot repeat builtin?
+  -- Try echasnovski/mini.surround?
   {
-    -- TODO: cs, ds, and ys don't seem to enter operator pending mode
-    'tpope/vim-surround',
-    tag = 'v2.2',
-    keys = { 'cs', 'ds', 'ys' }
-  },
-  {
-    'tpope/vim-repeat',
-    tag = 'v1.2'
+    'kylechui/nvim-surround',
+    tag = 'v3.1.2',
+    event = 'VeryLazy',
+    config = function ()
+      require('nvim-surround').setup()
+      local colors = require('tokyonight.colors').setup()
+      -- https://github.com/folke/tokyonight.nvim/blob/v4.11.0/lua/tokyonight/groups/mini_surround.lua#L9
+      vim.api.nvim_set_hl(0, 'NvimSurroundHighlight', { bg = colors.orange, fg = colors.black })
+    end
   },
   {
     'smjonas/live-command.nvim',
