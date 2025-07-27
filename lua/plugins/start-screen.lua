@@ -9,6 +9,7 @@ return {
       local startify = require('alpha.themes.startify')
       startify.section.header.val = {
         -- Source: https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/text/neovim.lua#L21-L32
+        -- See: https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
         [[                                                                       ]],
         [[  ██████   █████                   █████   █████  ███                  ]],
         [[ ░░██████ ░░███                   ░░███   ░░███  ░░░                   ]],

@@ -49,6 +49,8 @@ return {
         static = {
           mode_colors = {
             -- :help mode()
+            -- :help vim-modes
+            -- TODO: Add different colors for different modes even if the less obscure modes are all red like replace
             ['n']     = mode_colors.normal,
             ['no']    = mode_colors.replace,
             ['nov']   = mode_colors.replace,
