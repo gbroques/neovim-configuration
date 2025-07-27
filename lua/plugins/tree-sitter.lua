@@ -67,6 +67,7 @@ return {
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
               -- Override builtin gf 'goto file' as it's more ergonomic than ]m
+              -- Also gd usually goes to the file with an LSP server
               ['gf'] = { query = '@function.outer', desc = 'Goto next function' },
               [']]'] = { query = '@class.outer', desc = 'Next class start' },
             },
@@ -76,6 +77,7 @@ return {
             },
             goto_previous_start = {
               -- Override builtin gF 'goto file' as it's more ergonomic than [m
+              -- Also gd usually goes to the file with an LSP server
               ['gF'] = { query = '@function.outer', desc = 'Goto previous function' },
               ['[['] = { query = '@class.outer', desc = 'Previous class start' },
             },
