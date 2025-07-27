@@ -1,3 +1,5 @@
+local colors_module = require('colors')
+
 return {
   {
     'rebelot/heirline.nvim',
@@ -8,6 +10,7 @@ return {
         'linrongbin16/lsp-progress.nvim',
         commit = 'f3df1df8f5ea33d082db047b5d2d2b83cc01cd8a'
       },
+      'folke/tokyonight.nvim'
     },
     config = function()
       local icons = require('icons')
@@ -158,10 +161,7 @@ return {
         },
       }
 
-      --TODO: This is an internal module. Replace with copied functions.
-      --it makes more sense for lighten to be 30% instead of the inverse 70%
-      local colors_util = require('tokyonight.util')
-      local file_modified_lighten_percentage = 0.70
+      local file_modified_lighten_percentage = 0.30
 
       local function format_uri(uri)
         if vim.startswith(uri, 'jdt://') then
@@ -208,7 +208,7 @@ return {
         hl = function(self)
           local fg = self:mode_color()
           if vim.bo.modified then
-            fg = colors_util.lighten(fg, file_modified_lighten_percentage)
+            fg = colors_module.lighten(fg, file_modified_lighten_percentage)
           end
           return { fg = fg, bg = colors.fg_gutter }
         end,
@@ -232,7 +232,7 @@ return {
             return get_file_flag('●')
           end,
           hl = function(self)
-            return { fg = colors_util.lighten(self:mode_color(), file_modified_lighten_percentage) }
+            return { fg = colors_module.lighten(self:mode_color(), file_modified_lighten_percentage) }
           end
         },
         {
@@ -250,7 +250,7 @@ return {
         hl = function(self)
           local fg = self:mode_color()
           if vim.bo.modified then
-            fg = colors_util.lighten(fg, file_modified_lighten_percentage)
+            fg = colors_module.lighten(fg, file_modified_lighten_percentage)
           end
           return { fg = fg, bg = colors.fg_gutter }
         end,
