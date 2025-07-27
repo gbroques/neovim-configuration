@@ -116,6 +116,7 @@ return {
     config = function()
       require('substitute').setup()
       vim.keymap.set('n', 'gs', require('substitute').operator, { noremap = true })
+      vim.keymap.set('x', 'gs', require('substitute').visual, { noremap = true })
     end
   },
   -- gs is taken by vim.lsp.buf.signature_help currently
