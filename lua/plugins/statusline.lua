@@ -318,11 +318,11 @@ return {
         ---     The returned value will be returned as the result of `progress` API.
         format = function(client_messages)
           if #client_messages > 0 then
-            return table.concat(client_messages, " ")
+            return table.concat(client_messages, ' ')
           else
             return table.concat(vim.tbl_map(function(client)
               return client.config.name
-            end, vim.lsp.get_clients()), " ")
+            end, vim.lsp.get_clients()), ' ')
           end
         end,
       })
