@@ -88,6 +88,7 @@ return {
   },
   -- TODO: Plugins under consideration:
   -- { 'andymas/vim-matchup' },
+  -- { 'sphamba/smear-cursor.nvim', config = true },
   --
   -- smooth scrolling
   -- { 'karb94/neoscroll.nvim' },
