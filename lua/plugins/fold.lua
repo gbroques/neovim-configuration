@@ -1,8 +1,12 @@
 return {
   {
     'kevinhwang91/nvim-ufo',
-    commit = '3c7a3570e9c9dc198a2ad4491b0b0e51c4d4ba08',
-    event = { 'BufReadPre', 'BufNewFile' },
+    commit = '80fe8215ba566df2fbf3bf4d25f59ff8f41bc0e1',
+    -- Use lazy = false instead of BufReadPre or BufNewFile to fix
+    -- index out of bounds error:
+    -- https://github.com/kevinhwang91/nvim-ufo/issues/235
+    -- event = { 'BufReadPre', 'BufNewFile' },
+    lazy = false,
     dependencies = {
       {
         'kevinhwang91/promise-async',
@@ -10,6 +14,7 @@ return {
       }
     },
     config = function()
+      -- See also lsp.lua for advertising foldingRange capability to LSP servers.
       vim.o.foldcolumn = '0'
       vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
       vim.o.foldlevelstart = 99
