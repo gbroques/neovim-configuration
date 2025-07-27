@@ -73,6 +73,7 @@ return {
     end
   },
   {
+    -- TODO: Consider https://github.com/ggandor/flit.nvim for enhanced f and t.
     'ggandor/leap.nvim',
     commit = '68ca052dfdcda5e4e958d1ba0fef35e94a3e02e8',
     config = function()
