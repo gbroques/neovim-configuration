@@ -115,6 +115,7 @@ vim.keymap.set('n', '<leader>uw', function()
 end, { desc = 'Toggle wrap' })
 
 -- NvimTree
+-- TODO: Add <leader>ee and <leader>ef for NvimTreeFindFileToggl?
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { desc = 'Explorer' })
 
 vim.keymap.set('n', '<leader>x', '<cmd>source %<CR>', { desc = 'Execute / source file (vim)' })

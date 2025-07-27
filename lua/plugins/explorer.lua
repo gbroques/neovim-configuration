@@ -26,6 +26,8 @@ return {
           -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes#vinegar-style
           -- http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
 
+          -- TODO: Use https://github.com/antosha417/nvim-lsp-file-operations to update code when renaming via nvim-tree?
+
           -- Group empty directories for Java development
           group_empty = true,
           -- TODO: Should these come from icons module?
