@@ -36,7 +36,7 @@ return {
     dependencies = {
       'folke/tokyonight.nvim'
     },
-    config = function ()
+    config = function()
       require('nvim-surround').setup()
       local colors = require('tokyonight.colors').setup()
       -- https://github.com/folke/tokyonight.nvim/blob/v4.11.0/lua/tokyonight/groups/mini_surround.lua#L9
@@ -88,7 +88,16 @@ return {
   },
   -- TODO: Plugins under consideration:
   -- { 'andymas/vim-matchup' },
-  -- { 'sphamba/smear-cursor.nvim', config = true },
+  {
+    'sphamba/smear-cursor.nvim',
+    opts = {
+      -- Smooth cursor without smear
+      stiffness = 0.5,
+      trailing_stiffness = 0.5,
+      damping = 0.67,
+      matrix_pixel_threshold = 0.5,
+    },
+  },
   --
   -- smooth scrolling
   -- { 'karb94/neoscroll.nvim' },
