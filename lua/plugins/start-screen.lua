@@ -7,6 +7,19 @@ return {
     config = function()
       local alpha = require('alpha')
       local startify = require('alpha.themes.startify')
+      startify.section.header.val = {
+        -- Source: https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/text/neovim.lua#L21-L32
+        [[                                                                       ]],
+        [[  ██████   █████                   █████   █████  ███                  ]],
+        [[ ░░██████ ░░███                   ░░███   ░░███  ░░░                   ]],
+        [[  ░███░███ ░███   ██████   ██████  ░███    ░███  ████  █████████████   ]],
+        [[  ░███░░███░███  ███░░███ ███░░███ ░███    ░███ ░░███ ░░███░░███░░███  ]],
+        [[  ░███ ░░██████ ░███████ ░███ ░███ ░░███   ███   ░███  ░███ ░███ ░███  ]],
+        [[  ░███  ░░█████ ░███░░░  ░███ ░███  ░░░█████░    ░███  ░███ ░███ ░███  ]],
+        [[  █████  ░░█████░░██████ ░░██████     ░░███      █████ █████░███ █████ ]],
+        [[ ░░░░░    ░░░░░  ░░░░░░   ░░░░░░       ░░░      ░░░░░ ░░░░░ ░░░ ░░░░░  ]],
+        [[                                                                       ]],
+      }
       -- TODO: Use colemak home row 'arst neio' for MRU instead of numbers
       -- can make 'b' new buffer instead of 'e'
       -- disable MRU
