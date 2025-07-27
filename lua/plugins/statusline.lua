@@ -16,6 +16,7 @@ return {
       local icons = require('icons')
       -- TODO:
       -- Build my own statusline.
+      -- Toggle line endings or fileformat (ff) for dos or unix usind <leader>u mapping.
       -- https://jip.dev/posts/a-simpler-vim-statusline/
       -- https://zignar.net/2022/01/21/a-boring-statusline-for-neovim/
       -- https://nuxsh.is-a.dev/blog/custom-nvim-statusline.html
