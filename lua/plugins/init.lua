@@ -95,7 +95,7 @@ return {
   --
   -- { 'SmiteshP/nvim-navic' },
   -- { 'chentoast/marks.nvim' },
-  -- { 'chrisgrieser/nvim-alt-substitute' },
+  -- { 'chrisgrieser/nvim-rip-substitute' },
   -- { 'chrisgrieser/nvim-spider' }, -- camel case / snake case motions
 
   -- TEXT OBJECTS PLUGINS
